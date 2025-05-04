@@ -36,7 +36,7 @@ public class CargaDataset {
         LocalDate fechaHecho = LocalDate.parse(campos[5], formatter);
 
         Fuente origen = Fuente.DATASET;
-        Categoria categoria = Categoria.valueOf(categoriaStr);
+        Etiqueta categoria = new Etiqueta(categoriaStr);
         Contribuyente contribuyente = null;
         TipoDeHecho tipo = TipoDeHecho.TEXTO;
 

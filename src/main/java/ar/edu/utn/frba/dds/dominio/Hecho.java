@@ -7,7 +7,7 @@ import java.time.LocalDate;
 public class Hecho {
   private String titulo;
   private String descripcion;
-  private Categoria categoria;
+  private Etiqueta categoria;
   private Double latitud;
   private Double longitud;
   private LocalDate fechaAcontecimiento;
@@ -19,7 +19,7 @@ public class Hecho {
 
   //deberiamos pensar como nos conviene construir los hechos
   //lo hice asi de forma providional porque no tenemos especificaciones
-  public Hecho(String titulo, String descripcion, Categoria categoria,
+  public Hecho(String titulo, String descripcion, Etiqueta categoria,
                Double latitud, Double longitud, LocalDate fechaAcontecimiento,
                LocalDate fechaDeCarga, Fuente origen, Contribuyente contribuyente,
                TipoDeHecho tipoDeHecho) {
@@ -65,11 +65,9 @@ public class Hecho {
     return origen;
   }
 
-  public Categoria getCategoria() {
+  public Etiqueta getCategoria() {
     return categoria;
   }
-
-
 
   @Override
   public String toString() {
