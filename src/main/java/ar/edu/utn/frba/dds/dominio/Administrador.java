@@ -5,42 +5,37 @@ import java.util.List;
 
 public class Administrador {
 
-  private List<SolicitudDeEliminacion> solicitudesPrndientes;
+  //private List<SolicitudDeEliminacion> solicitudesPrndientes;
 
-  public Coleccion crearColeccion(String titulo, String descripcion, Fuente fuenteTipo,
-                                  Categoria criterioPertenencia, List<Hecho> listaHechos,
-                                  String fuente){
-
-    Coleccion nuevaColeccion = new Coleccion(titulo, descripcion, fuenteTipo,
-        criterioPertenencia, listaHechos, fuente);
-    //deberia validar que no exista ya esa coleccion
-    //ver con que criterio la identificamos univocamente
-    RegistroDeColecciones.agregarColeccion(nuevaColeccion);
-
-    return nuevaColeccion;
-  }
-
-  public Coleccion traerColeccionDesdeDataSet(Coleccion unaColeccion) {
+  public void traerColeccionDesdeDataSet(Categoria categoria,
+                                         String titulo, String descripcion,
+                                         List<Hecho> listaHechos,
+                                         String fuente) {
 
     CargaDataset data = new CargaDataset();
-    List<Hecho> todosLosHechos = new ArrayList<>();
+    List<Hecho> todosLosHechos;
     List<Hecho> filtrados = new ArrayList<>();
 
     try {
-      todosLosHechos = data.cargarHechosDesdeCsv(unaColeccion.getFuente());
+      todosLosHechos = data.cargarHechosDesdeCsv(fuente);
     } catch (Exception e) {
       throw new RuntimeException(e);
     }
 
+
     for (Hecho h : todosLosHechos) {
-      if (h.getCategoria() == unaColeccion.getCriterioPertenencia()) {
+      if (h.getCategoria() == categoria) {
         filtrados.add(h);
       }
     }
 
-    unaColeccion.setListaHechos(filtrados);
+    Coleccion nuevaColeccion = new Coleccion(titulo, descripcion, Fuente.DATASET,
+        categoria, filtrados, fuente);
 
-    return unaColeccion;
+    RegistroDeColecciones.agregarColeccion(nuevaColeccion);
+
+    System.out.println("Se extrajeron corrctamente los dados desde el archivo CSV");
+
   }
 
 

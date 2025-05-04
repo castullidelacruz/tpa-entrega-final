@@ -19,8 +19,16 @@ public class Coleccion {
     this.descripcion = requireNonNull(descripcion);
     this.fuenteTipo = requireNonNull(fuenteTipo);
     this.criterioPertenencia = requireNonNull(criterioPertenencia);
-    this.listaHechos = listaHechos;
+    this.listaHechos = new ArrayList<>(listaHechos);
     this.fuente = fuente;
+  }
+
+  public String getTitulo() {
+    return titulo;
+  }
+
+  public String getDescripcion() {
+    return descripcion;
   }
 
   public Fuente getFuenteTipo() {
@@ -30,7 +38,7 @@ public class Coleccion {
   public String getFuente() {
     return fuente;
   }
-
+  /*
   public List<Hecho> getListaHechos() {
     return listaHechos;
   }
@@ -38,24 +46,13 @@ public class Coleccion {
   public void setListaHechos(List<Hecho> listaHechos) {
     this.listaHechos = listaHechos;
   }
+  */
+  public List<Hecho> getListaHechos() {
+    return new ArrayList<>(listaHechos);
+  }
 
   public Categoria getCriterioPertenencia() {
     return criterioPertenencia;
-  }
-
-  public static String agregarHechoAColeccion(Hecho unHecho) {
-    //deberia buscar en las colas colecciones disponibles a cual correspodne el hecho
-    //y agregarlo.
-    //por ahora puse una coleccion de colecciones donde cada una tiene su
-    //propio criterio pero seguramente esas colecciones deberan almacenarse en algun lado
-
-    List<Coleccion> colecciones = RegistroDeColecciones.getColeccionesDisponibles();
-    for (Coleccion c : colecciones) {
-      if (c.criterioPertenencia == unHecho.getCategoria()) {
-        c.listaHechos.add(unHecho);
-      }
-    }
-    return "Hecho agregado a coleccion correspondiente";
   }
 
 

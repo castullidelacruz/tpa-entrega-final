@@ -1,28 +1,31 @@
 package ar.edu.utn.frba.dds.dominio;
 
 import java.io.BufferedReader;
+import java.io.FileInputStream;
 import java.io.FileReader;
+import java.io.InputStreamReader;
+import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
 public class CargaDataset {
+
   public List<Hecho> cargarHechosDesdeCsv(String rutaArchivo) {
     List<Hecho> hechosExtraidos = new ArrayList<>();
-    DateTimeFormatter formatter =
-        DateTimeFormatter.ofPattern("yyyy-MM-dd");
-    // Ajustá el formato según cómo venga la fecha
-    try {
-      BufferedReader br = new BufferedReader(new FileReader(rutaArchivo));
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+
+    try (BufferedReader br = new BufferedReader(
+        new InputStreamReader(new FileInputStream(rutaArchivo), StandardCharsets.UTF_8))) {
 
       String linea;
 
       while ((linea = br.readLine()) != null) {
-        String[] campos = linea.split(",", -1); // el -1 mantiene los campos vacíos
+        String[] campos = linea.split(",", -1);
 
         if (campos.length < 6) {
-          continue; // Línea inválida
+          continue;
         }
 
         String titulo = campos[0];
@@ -41,7 +44,6 @@ public class CargaDataset {
         Hecho nuevoHecho = new Hecho(titulo, descripcion, categoria, latitud,
             longitud, fechaHecho, LocalDate.now(), origen, contribuyente,
             estado, tipo);
-
 
         hechosExtraidos.add(nuevoHecho);
       }
