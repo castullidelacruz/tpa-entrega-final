@@ -2,21 +2,19 @@ package ar.edu.utn.frba.dds.dominio;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class RepositorioSolicitudes {
-  private List<SolicitudDeEliminacion> solicitudes = new ArrayList<>();
+  private final List<SolicitudDeEliminacion> solicitudes = new ArrayList<>();
 
   public void agregarSolicitud(SolicitudDeEliminacion solicitud) {
     solicitudes.add(solicitud);
   }
 
-  public List<SolicitudDeEliminacion> obtenerSolicitudes() {
-    return new ArrayList<>(solicitudes);
+  public List<SolicitudDeEliminacion> obtenerSolicitudesPendientes() {
+    return solicitudes.stream().filter(solicitud -> solicitud.esSolicitudPendiente()).collect(Collectors.toList());
   }
 
-  public void eliminarSolicitud(SolicitudDeEliminacion solicitud) {
-    solicitudes.remove(solicitud);
-  }
 
 
 
