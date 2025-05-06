@@ -51,8 +51,8 @@ public class Administrador extends Visualizador implements CargaHecho {
   public void aceptarSolicitud(SolicitudDeEliminacion solicitud) {
     solicitud.solicitudAceptada();
 
-    RegistroDeColecciones.addHechoNoDisp(solicitud.getHecho());
-    RegistroDeColecciones.removeHechoColeccionesDisp(solicitud.getHecho());
+    RepositorioDeColecciones.addHechoNoDisp(solicitud.getHecho());
+    RepositorioDeColecciones.removeHechoColeccionesDisp(solicitud.getHecho());
   }
 
   public void rechazarSolicitud(SolicitudDeEliminacion solicitud) {
