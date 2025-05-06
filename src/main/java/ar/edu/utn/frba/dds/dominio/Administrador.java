@@ -42,17 +42,18 @@ public class Administrador extends Visualizador {
 
   public void aceptarSolicitud(SolicitudDeEliminacion solicitud) {
     solicitud.solicitudAceptada();
-    // faltaria el cambio en el hecho para que no sea mas visible
-    // solicitud.hecho ?
+
+    RegistroDeColecciones.addHechoNoDisp(solicitud.getHecho());
+    RegistroDeColecciones.removeHechoColeccionesDisp(solicitud.getHecho());
   }
 
   public void rechazarSolicitud(SolicitudDeEliminacion solicitud) {
     solicitud.solicitudRechazada();
   }
 
-  public void revisarSolicitudes(RepositorioSolicitudes repositorio) {
-    //repositorio.obtenerSolicitudesPendientes()
-  }
+//  public void revisarSolicitudes(RepositorioSolicitudes repositorio) {
+//    repositorio.obtenerSolicitudesPendientes()
+//  }
 
 
 }
