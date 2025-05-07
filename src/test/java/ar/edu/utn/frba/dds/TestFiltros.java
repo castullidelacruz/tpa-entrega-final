@@ -40,7 +40,8 @@ import static org.junit.jupiter.api.Assertions.*;
 //    public void TestFiltroCategoria() {
 //      Etiqueta eti = new Etiqueta("INCENDIO_FORESTAL");
 //      FiltroCategoria filtroC = new FiltroCategoria(eti);
-//      assertEquals("Incendio en pehuen",hechosCargados(filtroC).get(0).getTitulo());
+//      hechosCargados(filtroC);
+//      //assertEquals("Incendio en pehuen",hechosCargados(filtroC).get(0).getTitulo());
 //    }
 
     @Test
@@ -85,6 +86,7 @@ import static org.junit.jupiter.api.Assertions.*;
       Administrador admin1 = this.adminPostCarga();
 
       for (Coleccion c : RepositorioDeColecciones.getColeccionesDisponibles()) {
+        System.out.println(admin1.visualizarHechos(filtro,c));
         if (!admin1.visualizarHechos(filtro, c).isEmpty()) {
           System.out.println(admin1.visualizarHechos(filtro,c));
           return admin1.visualizarHechos(filtro,c);
