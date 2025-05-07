@@ -61,18 +61,11 @@ public class TestAdministrador {
     return administrador1;
   }
 
-
   private List<Hecho> hechosCargados(Filtro filtro) {
 
     Administrador admin1 = this.adminPostCarga();
-//    ColeccionBuilder ColIncendios = new ColeccionBuilder("Inciendios forestales","estado de incendios anual", new Etiqueta("INCENDIO_forestal"));
-//    ColeccionBuilder ColRobos = new ColeccionBuilder("Robos","Robos anuales", new Etiqueta("ROBO"));
-//
-//    admin1.cargarColeccionDesdeDataSet("datos.csv", ColIncendios);
-//    admin1.cargarColeccionDesdeDataSet("datos.csv", ColRobos);
 
     for (Coleccion c : RepositorioDeColecciones.getColeccionesDisponibles()) {
-      //System.out.println(c.getListaHechos());
       if (!admin1.visualizarHechos(filtro, c).isEmpty()) {
         System.out.println(admin1.visualizarHechos(filtro,c));
         return admin1.visualizarHechos(filtro,c);
