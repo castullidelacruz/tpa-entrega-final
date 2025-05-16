@@ -5,23 +5,23 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class RepositorioSolicitudes {
-  private static List<SolicitudDeEliminacion> solicitudes = new ArrayList<>();
+  private static List<SolicitudDeEliminacion> solicitudesPrendientes =
+      new ArrayList<>();
 
   public static List<SolicitudDeEliminacion> getSolicitudes() {
-    return new ArrayList<>(solicitudes);
+    return new ArrayList<>(solicitudesPrendientes);
   }
 
 
-  /*
-  public void agregarSolicitud(SolicitudDeEliminacion solicitud) {
-    solicitudes.add(solicitud);
+  public static void agregarSolicitud(SolicitudDeEliminacion solicitud) {
+    List<SolicitudDeEliminacion> lista = new ArrayList<>(solicitudesPrendientes);
+    lista.add(solicitud);
+    solicitudesPrendientes = new ArrayList<>(lista);
   }
 
-  public List<SolicitudDeEliminacion> obtenerSolicitudesPendientes() {
-    return solicitudes.stream().filter(solicitud
-        -> solicitud.esSolicitudPendiente()).collect(Collectors.toList());
+  public static List<SolicitudDeEliminacion> obtenerSolicitudesPendientes() {
+    return new ArrayList<>(solicitudesPrendientes);
   }
 
-   */
 
 }

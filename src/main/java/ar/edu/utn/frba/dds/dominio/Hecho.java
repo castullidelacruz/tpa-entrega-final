@@ -81,4 +81,6 @@ public class Hecho {
   public void setDisponibilidad(Boolean disponibilidad) {
     this.disponibilidad = disponibilidad;
   }
+
+
 }
