@@ -29,8 +29,6 @@ public class SolicitudDeEliminacion {
     return motivo;
   }
 
-
-
   public void evaluarSolicitud(EstadoSolicitud evaluacion) {
     if (!estado.equals(EstadoSolicitud.PENDIENTE)) {
       throw new IllegalStateException("La solicitud ya fue evaluada.");
