@@ -3,7 +3,7 @@ package ar.edu.utn.frba.dds.dominio;
 import static java.util.Objects.requireNonNull;
 
 
-public class SolicitudDeEliminacion {
+public class SolicitudDeEliminacion implements Solicitud {
   private Hecho hecho;
   private String motivo;
   private EstadoSolicitud estado;
@@ -30,6 +30,8 @@ public class SolicitudDeEliminacion {
     return motivo;
   }
 
+
+  @Override
   public void evaluarSolicitud(EstadoSolicitud evaluacion) {
     if (!estado.equals(EstadoSolicitud.PENDIENTE)) {
       throw new IllegalStateException("La solicitud ya fue evaluada.");
@@ -39,5 +41,4 @@ public class SolicitudDeEliminacion {
       hecho.setDisponibilidad(Boolean.FALSE);
     }
   }
-
 }
