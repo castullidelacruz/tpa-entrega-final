@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Coleccion {
-  private String titulo;
-  private String descripcion;
-  private Fuente fuente;
-  private List<Criterio> criterioPertenencia;
-  private String handler;
+  private final String titulo;
+  private final String descripcion;
+  private final Fuente fuente;
+  private final List<Criterio> criterioPertenencia;
+  private final String handler;
 
   public Coleccion(String titulo, String descripcion, Fuente fuente,
                    List<Criterio> criterioPertenencia, String handler) {
@@ -20,7 +20,7 @@ public class Coleccion {
     this.fuente = requireNonNull(fuente);
     this.criterioPertenencia = new ArrayList<>(criterioPertenencia);
 
-    if (!handler.matches("[a-zA-Z0-9\\-]+")) {
+    if (!handler.matches("[a-zA-Z0-9]+")) {
       throw new IllegalArgumentException("El handle debe ser alfanumérico o con guiones.");
     }
     this.handler = handler;

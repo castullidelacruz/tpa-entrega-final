@@ -62,7 +62,7 @@ public class TestsColeccion {
     String handle2 = coleccion2.getHandler();
 
     Assertions.assertNotNull(handle1);
-    Assertions.assertTrue(handle1.matches("[a-z0-9\\-]+"), "El handle no tiene formato válido");
+    Assertions.assertTrue(handle1.matches("[a-z0-9]+"), "El handle no tiene formato válido");
     Assertions.assertNotEquals(handle1, handle2, "Los handles deberían ser distintos incluso con el mismo título");
   }
 }
