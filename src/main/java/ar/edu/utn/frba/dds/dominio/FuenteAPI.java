@@ -5,6 +5,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class FuenteAPI implements Fuente {
+
     private final ApiService apiService;
 
     public FuenteAPI(String baseUrl) {
@@ -18,11 +19,15 @@ public class FuenteAPI implements Fuente {
 
      @Override
     public List<Hecho> importarHechos(List<Criterio> criterios) {
+
         if (criterios.isEmpty()) {
             return apiService.getTodosLosHechos().execute().body();
         } else {
             String query = criterioConverter.toQuery(criterios); // Delegamos la conversión
             return apiService.getHechosDeUnaColeccion(query).execute().body();
         }
+
+
+         return null;
     }
 }
