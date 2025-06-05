@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class TestsColeccion {
+public class TestsFuenteDataSet {
   Fuente dataset;
   Fuente datavacio;
   Fuente dataDesogranizada;
@@ -40,8 +40,6 @@ public class TestsColeccion {
 
     List<Hecho> hechos = coleccion.obtenerTodosLosHechos();
 
-
-
     //System.out.printf(" %s \n", hechos.get(0).getTitulo());
     //System.out.printf(" %s \n", hechos.get(1).getTitulo());
 
@@ -55,9 +53,9 @@ public class TestsColeccion {
 
     List<Hecho> hechos = coleccion.obtenerTodosLosHechos();
 
-    System.out.printf(" %s \n", hechos.get(0).getTitulo());
-    System.out.printf(" %s \n", hechos.get(1).getTitulo());
-    System.out.printf(" %s \n", hechos.get(2).getTitulo());
+//    System.out.printf(" %s \n", hechos.get(0).getTitulo());
+//    System.out.printf(" %s \n", hechos.get(1).getTitulo());
+//    System.out.printf(" %s \n", hechos.get(2).getTitulo());
 
     Assertions.assertEquals(3, hechos.size());
   }

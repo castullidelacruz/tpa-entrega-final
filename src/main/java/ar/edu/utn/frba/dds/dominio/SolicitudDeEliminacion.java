@@ -18,7 +18,7 @@ public class SolicitudDeEliminacion {
     }
     this.hecho = new Hecho(hecho);
     this.motivo = requireNonNull(motivo);
-    RepositorioSolicitudes.agregarSolicitud(this);
+    RepositorioSolicitudes.agregarSolicitudDeEliminacion(this);
   }
 
   public EstadoSolicitud getEstado() {
@@ -34,7 +34,7 @@ public class SolicitudDeEliminacion {
       throw new IllegalStateException("La solicitud ya fue evaluada.");
     }
     this.estado = evaluacion;
-    if (estado.equals(EstadoSolicitud.ACETADA)) {
+    if (estado.equals(EstadoSolicitud.ACEPTADA)) {
       hecho.setDisponibilidad(Boolean.FALSE);
     }
   }
