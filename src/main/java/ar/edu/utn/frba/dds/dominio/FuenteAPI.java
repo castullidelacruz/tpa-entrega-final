@@ -43,4 +43,23 @@ public class FuenteAPI implements Fuente {
             return Collections.emptyList();
         }
     }
+
+    public List<Hecho> importarHechosDeColeccion(List<Criterio> criterios, string handler) {
+        try {
+            Response<List<Hecho>> response = criterios.isEmpty() 
+                ? apiService.getTodosLosHechosDeUnaColeccion(handler).execute()
+                : apiService.getTodosLosHechosDeUnaColeccion(CriterioConverter.toQuery(criterios), handler).execute();
+
+            if (response.isSuccessful()) {
+                System.out.println("Datos obtenidos exitosamente. Código: " + response.code());
+                return response.body();
+            } else {
+                System.err.println("Error al obtener datos. Código: " + response.code());
+                return Collections.emptyList();
+            }
+        } catch (IOException e) {
+            System.err.println("Error de red al importar hechos: " + e.getMessage());
+            return Collections.emptyList();
+        }
+    }
 }

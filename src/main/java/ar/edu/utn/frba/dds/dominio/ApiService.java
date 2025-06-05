@@ -14,8 +14,11 @@ public interface ApiService {
     @GET("hechos")
     Call<List<Hecho>> getTodosLosHechos(@Query("filtros") String filtros);
 
-    @GET("colecciones//hechos")
-    Call<List<Hecho>> getHechosDeUnaColeccion(@Query("filtros") String filtros);
+    @GET("colecciones/{identificador}/hechos")
+    Call<List<Hecho>> getHechosDeUnaColeccion(@Path("identificador") String identificador);
+
+    @GET("colecciones/{identificador}/hechos")
+    Call<List<Hecho>> getHechosDeUnaColeccion(@Query("filtros") String filtros,  @Path("identificador") String identificador);
 
     @POST("solicitudes")
     Call<Void> crearSolicitudDeEliminacion(@Body SolicitudDeEliminacion solicitud);

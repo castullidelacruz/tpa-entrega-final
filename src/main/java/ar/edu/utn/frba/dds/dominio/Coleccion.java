@@ -42,6 +42,10 @@ public class Coleccion {
     return fuente.importarHechos(criterioPertenencia);
   }
 
+  public List<Hecho> obtenerHechosDeUnaColeccion() {
+    return fuente.importarHechosDeColeccion(criterios, handler);
+  }
+
   public List<Hecho> listarHechosDisponibles() {
     return this.obtenerTodosLosHechos().stream().filter(Hecho::getDisponibilidad).toList();
   }
