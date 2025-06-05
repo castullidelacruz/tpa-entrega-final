@@ -24,6 +24,7 @@ public class TestFuenteDinamica {
   List<Hecho> hechosParaCargar;
   Hecho hechoPrimero = new Hecho("Corte de luz","Corte de luz en zona sur","cortes",21.2,12.8, LocalDate.of(2025,1,1),LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
   Hecho hechoSegundo = new Hecho("Corte de agua","Corte de agua en zona oeste","cortes",25.6,9.3, LocalDate.of(2025,1,20),LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
+  Hecho hechoModificador = new Hecho("Corte de luz modificado","Corte de agua en zona oeste","cortes",22.6,29.3, LocalDate.of(2025,1,18),LocalDate.now(),TipoFuente.DINAMICA,"http://multimediavalue",Boolean.TRUE);
 
   @BeforeEach
   public void prepImportacionDinamica() {
@@ -37,14 +38,15 @@ public class TestFuenteDinamica {
 
   @Test
   public void importarHechosSinRegistrarme() {
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,repoHechos,repoSolicitudes);
-    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,repoHechos,repoSolicitudes);
+    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos,repoSolicitudes);
+    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos,repoSolicitudes);
     solicitudDeCargaPrimera.evaluarSolicitud(EstadoSolicitud.ACEPTADA);
     solicitudDeCargaSegunda.evaluarSolicitud(EstadoSolicitud.ACEPTADA);
 
+    solicitudDeCargaPrimera.modificarHecho(hechoModificador);
+
     Coleccion coleccion = new Coleccion("Cortes",
         "Cortes en Argentina", fuenteDinamica, criterios);
-
     List<Hecho> hechos = coleccion.obtenerTodosLosHechos();
 
     System.out.printf(" %s \n", hechos.get(0).getTitulo());
@@ -55,8 +57,8 @@ public class TestFuenteDinamica {
 
   @Test
   public void importarHechosRegistrado() {
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,repoHechos,repoSolicitudes);
-    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,repoHechos,repoSolicitudes);
+    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos,repoSolicitudes);
+    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos,repoSolicitudes);
     solicitudDeCargaPrimera.evaluarSolicitud(EstadoSolicitud.ACEPTADA);
     solicitudDeCargaSegunda.evaluarSolicitud(EstadoSolicitud.ACEPTADA);
 
