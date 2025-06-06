@@ -6,6 +6,8 @@ import java.util.Map;
 
 public interface Conexion {
 
+
+
   /**
    * Devuelve un mapa con los atributos de un hecho, indexados por nombre de
    * atributo. Si el método retorna null, significa que no hay nuevos hechos

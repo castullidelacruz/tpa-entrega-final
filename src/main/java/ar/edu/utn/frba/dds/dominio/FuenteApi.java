@@ -1,20 +1,20 @@
 package ar.edu.utn.frba.dds.dominio;
 
-import java.util.List;
-import java.util.Collections;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
-import java.io.IOException;
+import com.fatboyindustrial.gsonjavatime.Converters;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.fatboyindustrial.gsonjavatime.Converters;
+import java.io.IOException;
+import java.util.Collections;
+import java.util.List;
 import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
-public class FuenteAPI implements Fuente {
+public class FuenteApi implements Fuente {
     private final ApiService apiService;
     private final String handler;
 
-    public FuenteAPI(String baseUrl, String handler) {
+    public FuenteApi(String baseUrl, String handler) {
         Gson gson = Converters.registerAll(new GsonBuilder()).create();
         
         Retrofit retrofit = new Retrofit.Builder()

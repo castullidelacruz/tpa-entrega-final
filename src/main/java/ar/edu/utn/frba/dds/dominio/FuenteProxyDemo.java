@@ -1,27 +1,28 @@
 package ar.edu.utn.frba.dds.dominio;
 
-
-import javax.naming.CannotProceedException;
 import java.net.URL;
 import java.time.LocalDate;
-import java.util.HashMap;
-import java.util.Map;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.naming.CannotProceedException;
 
 import static ar.edu.utn.frba.dds.dominio.TipoFuente.FUENTEPROXYDEMO;
+
 
 public class FuenteProxyDemo implements Fuente {
   private Conexion conexion;
   private RepositorioHechos repositorioDeHechos;
   private URL url;
-  private LocalDateTime fechaUltimaConsulta;
+  public LocalDateTime fechaUltimaConsulta;
 
-  public FuenteProxyDemo(Conexion conexion, URL url,RepositorioHechos repositorio){
+  public FuenteProxyDemo(Conexion conexion, URL url, RepositorioHechos repositorio,
+                         LocalDateTime fechaUltimaConsulta) {
     this.conexion = conexion;
     this.url = url;
-    this.fechaUltimaConsulta = LocalDateTime.now();
+    this.fechaUltimaConsulta = fechaUltimaConsulta;
     this.repositorioDeHechos = repositorio;
   }
 
@@ -29,37 +30,52 @@ public class FuenteProxyDemo implements Fuente {
     if (criterios == null || criterios.isEmpty()) {
       return new ArrayList<>(this.filtrarDuplicados(repositorioDeHechos.obtenerTodos()).values());
     }
+
+    return repositorioDeHechos.obtenerTodos().stream().filter(h -> criterios.stream()
+        .allMatch(c -> c.aplicarFiltro(h))).toList();
   }
 
-  public Map<String, Hecho> filtrarDuplicados(List<Hecho> duplicados) { //EVALUAR DE JUNTAR ESTA LOGICA PARA NO REPETIR CODIGO
+  public Map<String, Hecho> filtrarDuplicados(List<Hecho> duplicados) {
     Map<String, Hecho> hechosUnicos = new HashMap<>();
     for (Hecho hecho : duplicados) {
       hechosUnicos.put(hecho.getTitulo(), hecho);
     }
     return hechosUnicos;
   }
+
   public void obtenerHechos() throws Exception {
-     if (this.verificarHora()){
+     if (this.verificarHora()) {
+       this.fechaUltimaConsulta = LocalDateTime.now(); //armar el setter
        Map<String, Object> mapConexion = conexion.siguienteHecho(url,LocalDateTime.now());
-       while (mapConexion == null) {
-         this.guardarHecho(mapConexion);
-         mapConexion = conexion.siguienteHecho(url,LocalDateTime.now());
+       while (mapConexion != null) {
+         try {
+           this.guardarHecho(mapConexion);
+           mapConexion = conexion.siguienteHecho(url, LocalDateTime.now());
+
+         } catch (Exception exn) {
+           break;
+         }
        }
-    }
-     else throw new CannotProceedException("aún no pasó una hora de la última vez");
+    } else {
+       throw new CannotProceedException("aún no pasó una hora de la última vez");
+      }
      }
 
-  ///  Excepción de que no se encontró la url +
-  /// pensar como actualizar la fecha de consulta cuando se concrete correctamente la
-  /// no hay nadie del otro lado
-  public Boolean verificarHora() {
-    return this.fechaUltimaConsulta.isEqual(LocalDateTime.now()) || this.fechaUltimaConsulta.isAfter(LocalDateTime.now());
+  public boolean verificarHora() {
+    return  this.fechaUltimaConsulta.isBefore(LocalDateTime.now().minusHours(1));
   }
-  public void guardarHecho(Map<String, Object> mapConexion){
-    Hecho hecho = new Hecho((String) mapConexion.get("titulo"),(String) mapConexion.get("descripcion").toString(),(String) mapConexion.get("categoria"),(Double) mapConexion.get("latitud"),(Double) mapConexion.get("longitud"),(LocalDate) mapConexion.get("fecha acontecimiento"), (LocalDate) mapConexion.get("fecha carga"),FUENTEPROXYDEMO,(String) mapConexion.get("multimedia"),true);
+
+  public void guardarHecho(Map<String, Object> mapConexion) {
+    Hecho hecho = new Hecho((String) mapConexion.get("titulo"), (String)
+        mapConexion.get("descripcion").toString(), (String)
+        mapConexion.get("categoria"), (Double)
+        mapConexion.get("latitud"), (Double)
+        mapConexion.get("longitud"), (LocalDate)
+        mapConexion.get("fecha acontecimiento"), (LocalDate)
+        mapConexion.get("fecha carga"), FUENTEPROXYDEMO, (String)
+        mapConexion.get("multimedia"), true);
+    repositorioDeHechos.cargarHecho(hecho);
   }
 }
-/// public Hecho(String titulo, String descripcion, String categoria, Double latitud,
-///                Double longitud, LocalDate fechaAcontecimiento, LocalDate fechaDeCarga,
-///                TipoFuente origen, String multimedia, Boolean disponibilidad)
+
 
