@@ -1,0 +1,99 @@
+package ar.edu.utn.frba.dds.dominio;
+
+import okhttp3.mockwebserver.MockWebServer;
+import okhttp3.mockwebserver.MockResponse;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+import java.util.List;
+import java.util.ArrayList;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class FuenteAPITest {
+    private MockWebServer mockWebServer;
+    private FuenteAPI fuenteAPI;
+
+    @BeforeEach
+    void setUp() throws Exception {
+        mockWebServer = new MockWebServer();
+        mockWebServer.start();
+        fuenteAPI = new FuenteAPI(mockWebServer.url("/").toString(), null);
+    }
+
+    @AfterEach
+    void tearDown() throws Exception {
+        mockWebServer.shutdown();
+    }
+
+    @Test
+    void testObtenerHechos() throws Exception {
+        String jsonResponse = """
+        [
+            {
+                "titulo": "Incendio en reserva natural",
+                "descripcion": "Fuego activo en la reserva de Calamuchita",
+                "categoria": "desastre natural",
+                "latitud": -32.192,
+                "longitud": -64.3936,
+                "fechaAcontecimiento": "2023-11-05",
+                "fechaDeCarga": "2023-11-06",
+                "origen": "METAMAPA",
+                "multimedia": null,
+                "disponibilidad": true
+            },
+            {
+                "titulo": "choque entre tres autos",
+                "descripcion": "accidente vehicular termina con la vida de 10 personas",
+                "categoria": "accidente de transito",
+                "latitud": -32.192,
+                "longitud": -64.3936,
+                "fechaAcontecimiento": "2023-11-05",
+                "fechaDeCarga": "2023-11-06",
+                "origen": "METAMAPA",
+                "multimedia": null,
+                "disponibilidad": true
+            }
+        ]""";
+        
+        mockWebServer.enqueue(new MockResponse()
+            .setBody(jsonResponse)
+            .addHeader("Content-Type", "application/json"));
+        
+        List<Hecho> hechos = fuenteAPI.importarHechos(new ArrayList<>());
+        
+        assertEquals(2, hechos.size());
+        assertEquals("Incendio en reserva natural", hechos.get(0).getTitulo());
+        assertEquals("choque entre tres autos", hechos.get(1).getTitulo());
+    }
+
+    @Test
+    void testObtenerHechos2() throws Exception {
+        List<Criterio> criterios = new ArrayList<Criterio>();
+        criterios.add(new CriterioCategoria("desastre natural"));
+        Coleccion coleccion = new Coleccion("abc","abc",fuenteAPI,criterios,"1");
+        String jsonResponse = """
+        [
+            {
+                "titulo": "Incendio en reserva natural",
+                "descripcion": "Fuego activo en la reserva de Calamuchita",
+                "categoria": "desastre natural",
+                "latitud": -32.192,
+                "longitud": -64.3936,
+                "fechaAcontecimiento": "2023-11-05",
+                "fechaDeCarga": "2023-11-06",
+                "origen": "METAMAPA",
+                "multimedia": null,
+                "disponibilidad": true
+            }
+        ]""";
+        
+        mockWebServer.enqueue(new MockResponse()
+            .setBody(jsonResponse)
+            .addHeader("Content-Type", "application/json"));
+        
+        List<Hecho> hechos = coleccion.obtenerTodosLosHechos();
+        
+        assertEquals(1, hechos.size());
+        assertEquals("Incendio en reserva natural", hechos.get(0).getTitulo());
+    }
+}
