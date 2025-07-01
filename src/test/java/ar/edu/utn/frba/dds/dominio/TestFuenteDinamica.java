@@ -45,6 +45,8 @@ public class TestFuenteDinamica {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaSegunda);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -65,6 +67,8 @@ public class TestFuenteDinamica {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaSegunda);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -81,6 +85,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYRechazar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -96,6 +101,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYAceptar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -112,6 +118,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYModificar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -129,6 +136,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYModificarFailNoRegistrado() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.FALSE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -150,6 +158,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYModificarFailSolicitudNoAceptada() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
 
     RuntimeException exception = assertThrows(RuntimeException.class, () -> {
       solicitudDeCargaPrimera.modificarHecho(hechoModificador);
@@ -161,6 +170,7 @@ public class TestFuenteDinamica {
   public void importarHechosRegistradoYModificarFailFechaCargaMayorA7() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
     solicitudDeCargaPrimera = new SolicitudDeCarga(hechoCargaVieja,Boolean.TRUE,repoHechos);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
 
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
