@@ -11,7 +11,7 @@ public class Sistema {
   public static  void main(String[] args) {
 
     RepositorioFuentes repositorioFuentes = new RepositorioFuentes();
-   // Agregador agregador = new Agregador(repositorioFuentes);
+    //Agregador agregador = new Agregador(repositorioFuentes);
 
     TimerTask task = new TimerTask() {
       @Override
@@ -20,9 +20,10 @@ public class Sistema {
         //System.out.println("funciona");
       }
     };
+
     Timer timer = new Timer("Timer");
     long interval = 3600000L; //una hora
-    timer.schedule(task,0,interval);
+    timer.schedule(task, 0, interval);
 
   }
 }
