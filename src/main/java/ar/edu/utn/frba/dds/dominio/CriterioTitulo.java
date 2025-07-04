@@ -15,4 +15,4 @@ public class CriterioTitulo implements Criterio {
     return hecho.getTitulo().toLowerCase().contains(titulo);
   }
 
- }
+}

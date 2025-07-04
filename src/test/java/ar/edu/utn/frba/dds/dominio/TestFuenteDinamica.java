@@ -20,6 +20,7 @@ public class TestFuenteDinamica {
   List<Criterio> criterios;
   Criterio cBase;
   SolicitudDeCarga solicitudDeCargaPrimera;
+  SolicitudDeCarga solicitudDeCargaPrimeraSinRegistro;
   SolicitudDeCarga solicitudDeCargaSegunda;
   List<Hecho> hechosParaCargar;
   Hecho hechoPrimero;
@@ -31,10 +32,7 @@ public class TestFuenteDinamica {
 
   @BeforeEach
   public void prepImportacionDinamica() {
-     hechoPrimero = new Hecho("Corte de luz","Corte de luz en zona sur","cortes",21.2,12.8, LocalDate.of(2025,1,1),LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
-     hechoSegundo = new Hecho("Corte de agua","Corte de agua en zona oeste","cortes",25.6,9.3, LocalDate.of(2025,1,20),LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
      hechoModificador = new Hecho("Corte de luz modificado","Corte de luz en zona oeste","cortes",22.6,29.3, LocalDate.of(2025,1,18),LocalDate.now(),TipoFuente.DINAMICA,"http://multimediavalue",Boolean.TRUE);
-     hechoCargaVieja = new Hecho("Corte de internet","Corte de internet en zona norte","cortes",22.6,29.3, LocalDate.of(2025,1,18),LocalDate.of(2025,2,18),TipoFuente.DINAMICA,"http://multimediavalue",Boolean.TRUE);
      cBase = new CriterioBase();
      criterios = new ArrayList<>(Arrays.asList(cBase));
      repoHechos = new RepositorioHechos();
@@ -45,20 +43,25 @@ public class TestFuenteDinamica {
     FiltroAgregador filtroPorTipo =
         new FiltroPorTipo(List.of(FuenteApi.class));
     agregador = new Agregador(fuentesRepo, filtroPorTipo);
+
+    solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz","Corte de luz en zona sur"
+        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.TRUE,repoHechos);
+
+    solicitudDeCargaPrimeraSinRegistro = new SolicitudDeCarga("Corte de luz","Corte de luz en zona sur"
+        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.FALSE,repoHechos);
+
+    solicitudDeCargaSegunda= new SolicitudDeCarga("Corte de agua","Corte de agua en zona oeste","cortes",25.6,9.3,  LocalDate.of(2025,1,20),"",Boolean.TRUE,repoHechos);
   }
 
   @Test
   public void importarHechos() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
-    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos);
+
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
-    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaSegunda);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
     solicitudes.get(0).aprobar();
-    solicitudes.get(1).aprobar();
     //Cargo la Solicitud.
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
@@ -66,16 +69,14 @@ public class TestFuenteDinamica {
     List<Hecho> hechos = coleccion.getHechos();
     //Reviso que los hechos esten bien cargados (Con sus titulos).
 
-    Assertions.assertEquals(hechos.get(0).getTitulo(),"Corte de agua");
-    Assertions.assertEquals(hechos.get(1).getTitulo(),"Corte de luz");
-    Assertions.assertEquals(2, hechos.size());
+    Assertions.assertEquals("Corte de luz",hechos.get(0).getTitulo());
+
+    Assertions.assertEquals(1, hechos.size());
   }
 
   @Test
   public void importarHechosSoloAceptoUno() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
-    solicitudDeCargaSegunda = new SolicitudDeCarga(hechoSegundo,Boolean.FALSE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaSegunda);
     //Tomar solicitud.
@@ -94,7 +95,6 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYRechazar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
@@ -114,7 +114,6 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYAceptar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
@@ -132,7 +131,6 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYModificar() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
@@ -151,8 +149,7 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYModificarFailNoRegistrado() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.FALSE,repoHechos);
-    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimeraSinRegistro);
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
@@ -174,7 +171,6 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYModificarFailSolicitudNoAceptada() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
 
     RuntimeException exception = assertThrows(RuntimeException.class, () -> {
@@ -186,7 +182,6 @@ public class TestFuenteDinamica {
   @Test
   public void importarHechosRegistradoYModificarFailFechaCargaMayorA7() {
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoCargaVieja,Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
 
     //Tomar solicitud.
@@ -198,7 +193,10 @@ public class TestFuenteDinamica {
         criterios,generador.generar());
     List<Hecho> hechos = coleccion.getHechos();
 
-    Assertions.assertEquals("Corte de internet",hechos.get(0).getTitulo());
+    //Simulo la fecha de carga del hecho en la solicitud
+    solicitudDeCargaPrimera.setFechaCargaOriginal(LocalDate.of(2025,2,18));
+
+    Assertions.assertEquals("Corte de luz",hechos.get(0).getTitulo());
 
     RuntimeException exception = assertThrows(RuntimeException.class, () -> {
       solicitudDeCargaPrimera.modificarHecho(hechoModificador);

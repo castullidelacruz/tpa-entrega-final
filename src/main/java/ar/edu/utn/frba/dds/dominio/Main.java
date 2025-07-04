@@ -6,7 +6,9 @@ import java.time.LocalDateTime;
 
 public class Main {
     public static void main(String[] args) {
+
         System.out.println("INICIO: Ejecución iniciada a las " + LocalDateTime.now());
+
         try {
             ConexionMock conexion = new ConexionMock();
             URL url = new URL("http://mock.url");
@@ -19,6 +21,8 @@ public class Main {
         } catch (Exception e) {
             System.err.println("ERROR: " + e.getMessage());
         } 
+
             System.out.println("FIN: Ejecución finalizada a las " + LocalDateTime.now());
     }
 }
+
