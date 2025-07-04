@@ -2,11 +2,11 @@ package ar.edu.utn.frba.dds.dominio;
 
 import java.net.URL;
 
-
+/*
 public class Main {
    
     public static void main(String[] args) {
-         /* 
+
          Falta implementacion concreta de conexión.
 
         try {
@@ -27,5 +27,5 @@ public class Main {
             System.exit(1); 
         } 
          
-    } */ 
-}
+        }
+}*/

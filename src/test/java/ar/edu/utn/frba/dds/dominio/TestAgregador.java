@@ -81,13 +81,14 @@ public class TestAgregador {
     //REPOSITORIO DE FUENTES
     fuentesRepo = new RepositorioFuentes();
     //AGREGADOR
-    FiltroAgregador filtroPorTipo =
-        new FiltroPorTipo(List.of(Fuente.class));
-    agregador = new Agregador(fuentesRepo, filtroPorTipo);
+    FiltroAgregador FiltroBaseAgregador =
+        new FiltroBaseAgregador();
+    agregador = new Agregador(fuentesRepo, FiltroBaseAgregador);
 
     //CARGAR FUENTES
     //DINAMICA
-    solicitudDeCargaPrimera = new SolicitudDeCarga(hechoPrimero,Boolean.TRUE,repoHechos);
+    solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz Dinamica","Corte de luz en zona sur"
+        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.TRUE,repoHechos);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     solicitudes.get(0).aprobar();
@@ -275,9 +276,6 @@ public class TestAgregador {
   @AfterEach
   void limpiarValores() throws IOException {
     Hecho hechoPrimero = null;
-    Hecho hechoSegundo = null;
-    Hecho hechoModificador = null;
-    Hecho hechoCargaVieja = null;
     repoHechos.limpiarBaseDeHechos();
     repositorioDeProxy.limpiarBaseDeHechos();
     repoSolicitudes.limpiarListas();
