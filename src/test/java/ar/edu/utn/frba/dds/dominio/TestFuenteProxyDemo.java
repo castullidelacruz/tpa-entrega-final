@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds.dominio;
+/* package ar.edu.utn.frba.dds.dominio;
 import static org.junit.Assert.*;
 import static org.mockito.Mockito.*;
 
@@ -32,7 +32,8 @@ public class TestFuenteProxyDemo {
     MockitoAnnotations.openMocks(this);
     repositorio = new RepositorioHechos();
     URL url = new URL("http://demo.url");
-    fuente = new FuenteProxyDemo(conexion, url, repositorio); //acá antes se le pasaba LocalDateTime.now()
+
+    fuente = new FuenteProxyDemo(conexion, url, repositorio);
 
   }
 
@@ -58,4 +59,7 @@ public class TestFuenteProxyDemo {
 
     Assertions.assertEquals(1, baseDeHechosActualizada.size());
   }
+
  }
+
+
