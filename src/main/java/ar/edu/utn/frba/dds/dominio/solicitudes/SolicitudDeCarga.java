@@ -126,16 +126,8 @@ public class SolicitudDeCarga implements Solicitud {
   public Hecho encontrarHecho() {
     if (puedeModificar()) {
       for (Hecho h : repositorioH.obtenerTodos()) {
-        if (h.getTitulo().equals(this.titulo)
-            && h.getDescripcion().equals(this.descripcion)
-            && h.getCategoria().equals(this.categoria)
-            && h.getLatitud().equals(this.latitud)
-            && h.getLongitud().equals(this.longitud)
-            && h.getFechaAcontecimiento().equals(this.fechaAcontecimiento)
-            && h.getFechaDeCarga().equals(this.fechaCargaOriginal)
-            && h.getOrigen().equals(this.origen)
-            && h.getMultimedia().equals(this.multimedia)
-            && h.getDisponibilidad().equals(this.disponibilidad)
+        if (
+            h.equals(this.hechoCreado)
         ) {
           return h;
         }

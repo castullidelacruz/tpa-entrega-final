@@ -4,6 +4,8 @@ import static java.util.Objects.requireNonNull;
 
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
 import java.time.LocalDate;
+import java.util.Objects;
+
 
 public class Hecho {
   private String titulo;
@@ -59,6 +61,21 @@ public class Hecho {
     this.disponibilidad = otro.disponibilidad;
   }
 
+  public Boolean equals(Hecho otro) {
+    if (Objects.equals(this.getTitulo(), otro.getTitulo())
+            && Objects.equals(this.getDescripcion(), otro.getDescripcion())
+            && Objects.equals(this.getCategoria(), otro.getCategoria())
+            && Objects.equals(this.getLatitud(), otro.getLatitud())
+            && Objects.equals(this.getLongitud(), otro.getLongitud())
+            && Objects.equals(this.getFechaAcontecimiento(), otro.getFechaAcontecimiento())
+            && Objects.equals(this.getFechaDeCarga(), otro.getFechaDeCarga())
+            && Objects.equals(this.getMultimedia(), otro.getMultimedia())
+            && Objects.equals(this.getDisponibilidad(), otro.getDisponibilidad())) {
+      return true;
+    } else {
+      return false;
+    }
+  }
 
   public String getTitulo() {
     return titulo;
