@@ -4,11 +4,17 @@ import static java.util.Objects.requireNonNull;
 
 import ar.edu.utn.frba.dds.dominio.Hecho;
 
-public class SolicitudDeEliminacion implements Solicitud {
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("ELIMINACION")
+public class SolicitudDeEliminacion extends Solicitud {
+  @OneToOne
   private Hecho hecho;
+  @Column
   private String motivo;
+  @Enumerated(EnumType.STRING)
   private EstadoSolicitud estado;
-  private String evaluador;
 
   public SolicitudDeEliminacion(Hecho hecho, String motivo, EstadoSolicitud estado) {
     if (motivo.length() > 500) {
@@ -17,6 +23,9 @@ public class SolicitudDeEliminacion implements Solicitud {
     this.hecho = new Hecho(hecho);
     this.motivo = requireNonNull(motivo);
     this.estado = requireNonNull(estado);
+  }
+
+  public SolicitudDeEliminacion() {
   }
 
   public EstadoSolicitud getEstado() {
@@ -31,21 +40,17 @@ public class SolicitudDeEliminacion implements Solicitud {
     return motivo;
   }
 
-  public String getEvaluador() {
-    return evaluador;
-  }
 
   public Hecho getHecho() {
     return new Hecho(hecho);
   }
 
   @Override
-  public void cambiarEstado(EstadoSolicitud evaluacion, String evaluador) {
+  public void cambiarEstado(EstadoSolicitud evaluacion) {
     if (!estado.equals(EstadoSolicitud.PENDIENTE)) {
       throw new IllegalStateException("La solicitud ya fue evaluada.");
     }
     this.estado = evaluacion;
-    this.evaluador = evaluador;
     if (estado.equals(EstadoSolicitud.ACEPTADA)) {
       hecho.setDisponibilidad(Boolean.FALSE);
     }

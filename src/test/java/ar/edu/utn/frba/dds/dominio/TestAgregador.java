@@ -91,11 +91,20 @@ public class TestAgregador {
 
     //CARGAR FUENTES
     //DINAMICA
-    solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz Dinamica","Corte de luz en zona sur"
-        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.TRUE,repoHechos);
+
+    Hecho h1 = new Hecho("Corte de luz",
+        "Corte de luz en zona sur",
+        "cortes",
+        21.2,
+        12.8,
+        LocalDate.of(2025, 1, 1),
+        LocalDate.of(2025, 1, 1),
+        TipoFuente.DINAMICA,
+        "", Boolean.TRUE);
+    SolicitudDeCarga solicitudDeCargaPrimera = new SolicitudDeCarga(h1, Boolean.TRUE);
     repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     //PROXYDEMO
     Map<String, Object> hecho1 = new HashMap<>();
     hecho1.put("titulo", "Hecho 1 Proxy");

@@ -3,51 +3,35 @@ package ar.edu.utn.frba.dds.dominio.solicitudes;
 import static java.util.Objects.requireNonNull;
 
 import ar.edu.utn.frba.dds.dominio.Hecho;
-import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
-import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioHechos;
+
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Enumerated;
+import javax.persistence.EnumType;
+import javax.persistence.Entity;
+import javax.persistence.Transient;
 
-public class SolicitudDeCarga implements Solicitud {
-  //ATRIBUTOS DE UN HECHO A CREAR
-  private String titulo;
-  private String descripcion;
-  private String categoria;
-  private Double latitud;
-  private Double longitud;
-  private LocalDate fechaAcontecimiento;
-  private LocalDate fechaCargaOriginal;
-  private TipoFuente origen;
-  private String multimedia;
-  private Boolean disponibilidad = Boolean.TRUE;
-  //FIN Atributos de un hecho
 
+@Entity
+@DiscriminatorValue("CARGA")
+public class SolicitudDeCarga extends Solicitud {
+  @Transient
+  private Hecho hecho;
+  @Column
   private boolean registrado;
+  @Column
   private String sugerencia = "";
+  @Enumerated(EnumType.STRING)
   private EstadoSolicitud estado = EstadoSolicitud.PENDIENTE;
-  private RepositorioHechos repositorioH;
-  private String evaluador;
 
-
-  public SolicitudDeCarga(String titulo,
-                          String descripcion,
-                          String categoria,
-                          Double latitud,
-                          Double longitud,
-                          LocalDate fechaAcontecimiento,
-                          String multimedia,
-                          boolean registerBoolean,
-                          RepositorioHechos rh) {
-    this.titulo = titulo;
-    this.descripcion = descripcion;
-    this.categoria = categoria;
-    this.latitud = latitud;
-    this.longitud = longitud;
-    this.fechaAcontecimiento = fechaAcontecimiento;
-    this.origen = TipoFuente.DINAMICA;
-    this.multimedia = multimedia;
+  public SolicitudDeCarga(Hecho hecho, boolean registerBoolean) {
+    this.hecho = requireNonNull(hecho);
     this.registrado = registerBoolean;
-    this.repositorioH = rh;
+  }
+
+  public SolicitudDeCarga() {
   }
 
   public EstadoSolicitud getEstado() {
@@ -66,62 +50,45 @@ public class SolicitudDeCarga implements Solicitud {
     this.sugerencia = s;
   }
 
-  public String getEvaluador() {
-    return evaluador;
-  }
-
   //unicamente para test
   public void setFechaCargaOriginal(LocalDate fechaCargaMock) {
-    this.fechaCargaOriginal = fechaCargaMock;
+    this.hecho.setFechaDeCarga(fechaCargaMock);
   }
 
-  public void aprobar(String evaluador) {
+  public void aprobar() {
     if (estado.equals(EstadoSolicitud.ACEPTADA)) {
 
       throw new IllegalStateException("La solicitud ya fue evaluada.");
     } else {
 
-      this.fechaCargaOriginal = LocalDate.now();
+      this.hecho.setFechaDeCarga(LocalDate.now());
       this.estado = EstadoSolicitud.ACEPTADA;
-      this.evaluador = requireNonNull(evaluador);
       //cuando pensemos en la persistencia de hechos modificados
       //por trazabilidad aca podria ser guardado el hecho original
-      repositorioH.cargarHecho(
-          new Hecho(this.titulo,
-              this.descripcion,
-              this.categoria,
-              this.latitud,
-              this.longitud,
-              this.fechaAcontecimiento,
-              fechaCargaOriginal,
-              this.origen,
-              this.multimedia,
-              this.disponibilidad));
-
+      //borre la carga al repo, deberiamos pensar como funcionaria ahora
     }
   }
 
-  public void rechazar(String evaluador) {
+  public void rechazar() {
     this.estado = EstadoSolicitud.RECHAZADA;
-    this.evaluador = requireNonNull(evaluador);
   }
 
   public void sugerir(String sugerencia) {
     this.sugerencia = sugerencia;
   }
 
-  public void cambiarEstado(EstadoSolicitud evaluacion, String evaluador) {
+  public void cambiarEstado(EstadoSolicitud evaluacion) {
   }
 
   public boolean puedeModificar() {
     if (estado.equals(EstadoSolicitud.ACEPTADA) && registrado
-        && (ChronoUnit.DAYS.between(fechaCargaOriginal, LocalDate.now())) <= 7) {
+        && (ChronoUnit.DAYS.between(hecho.getFechaDeCarga(), LocalDate.now())) <= 7) {
       return true;
     } else {
       throw new RuntimeException("No se puede modificar este hecho");
     }
   }
-
+  /*
   public Hecho encontrarHecho() {
     if (puedeModificar()) {
       for (Hecho h : repositorioH.obtenerTodos()) {
@@ -143,9 +110,12 @@ public class SolicitudDeCarga implements Solicitud {
     throw new RuntimeException("No se puede modificar este hecho");
   }
 
+   */
+
   public void modificarHecho(Hecho h) {
-    Hecho original = encontrarHecho();
-    original.modificar(h);
+    //repensar este metodo
+    //Hecho original = encontrarHecho();
+    //original.modificar(h);
   }
 
 

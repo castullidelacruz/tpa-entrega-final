@@ -52,13 +52,20 @@ public class TestFuenteDinamica {
     fuentesAgregador.add(fuenteDinamica);
     agregador = new Agregador(fuentesAgregador);
 
-    solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz","Corte de luz en zona sur"
-        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.TRUE,repoHechos);
+    Hecho h1 = new Hecho("Corte de luz",
+        "Corte de luz en zona sur",
+        "cortes",
+        21.2,
+        12.8,
+        LocalDate.of(2025, 1, 1),
+        LocalDate.of(2025, 1, 1),
+        TipoFuente.DINAMICA,
+        "", Boolean.TRUE);
+    SolicitudDeCarga solicitudDeCargaPrimera = new SolicitudDeCarga(h1, Boolean.TRUE);
 
-    solicitudDeCargaPrimeraSinRegistro = new SolicitudDeCarga("Corte de luz","Corte de luz en zona sur"
-        ,"cortes",21.2,12.8, LocalDate.of(2025,1,1),"",Boolean.FALSE,repoHechos);
+    solicitudDeCargaPrimeraSinRegistro = new SolicitudDeCarga(h1, Boolean.FALSE);
 
-    solicitudDeCargaSegunda= new SolicitudDeCarga("Corte de agua","Corte de agua en zona oeste","cortes",25.6,9.3,  LocalDate.of(2025,1,20),"",Boolean.TRUE,repoHechos);
+    solicitudDeCargaSegunda= new SolicitudDeCarga(h1, Boolean.TRUE);
   }
 
   @Test
@@ -69,7 +76,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     //Cargo la Solicitud.
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
@@ -90,7 +97,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(1).aprobar("unEvaluador");
+    solicitudes.get(1).aprobar();
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
         criterios,generador.generar(),null);
@@ -107,7 +114,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).rechazar("unEvaluador");
+    solicitudes.get(0).rechazar();
     solicitudes.get(0).sugerir("Cambia el titulo");
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
@@ -126,7 +133,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
         criterios,generador.generar(),null);
@@ -143,7 +150,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
         criterios,generador.generar(),null);
@@ -161,7 +168,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
         criterios,generador.generar(),null);
@@ -195,7 +202,7 @@ public class TestFuenteDinamica {
     //Tomar solicitud.
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
     //Admin toma y aprueba solicitudes.
-    solicitudes.get(0).aprobar("unEvaluador");
+    solicitudes.get(0).aprobar();
     Coleccion coleccion = new Coleccion("cortes",
         "cortes en Argentina", fuenteDinamica,
         criterios,generador.generar(),null);

@@ -1,12 +1,7 @@
 package ar.edu.utn.frba.dds.dominio;
 
 import ar.edu.utn.frba.dds.dominio.algoritmosconcenso.AmayoriaSimple;
-import ar.edu.utn.frba.dds.dominio.fuentes.Agregador;
-import ar.edu.utn.frba.dds.dominio.fuentes.ConexionMock;
-import ar.edu.utn.frba.dds.dominio.fuentes.Fuente;
-import ar.edu.utn.frba.dds.dominio.fuentes.FuenteDataSet;
-import ar.edu.utn.frba.dds.dominio.fuentes.FuenteDinamica;
-import ar.edu.utn.frba.dds.dominio.fuentes.FuenteProxyDemo;
+import ar.edu.utn.frba.dds.dominio.fuentes.*;
 import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioHechos;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeCarga;
 import java.net.URL;
@@ -22,16 +17,17 @@ public class Main {
 
       List<Hecho> repositorioDeHechos = new ArrayList<>();
       RepositorioHechos repositorioDeHechos2 = new RepositorioHechos();
-      SolicitudDeCarga solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz",
+      Hecho h1 = new Hecho("Corte de luz",
           "Corte de luz en zona sur",
           "cortes",
           21.2,
           12.8,
           LocalDate.of(2025, 1, 1),
-          "",
-          Boolean.TRUE,
-          repositorioDeHechos2);
-      solicitudDeCargaPrimera.aprobar("unEvaluador");
+          LocalDate.of(2025, 1, 1),
+          TipoFuente.DINAMICA,
+          "", Boolean.TRUE);
+      SolicitudDeCarga solicitudDeCargaPrimera = new SolicitudDeCarga(h1, Boolean.TRUE);
+      solicitudDeCargaPrimera.aprobar();
       FuenteDinamica fuenteDinamica = new FuenteDinamica();
       ConexionMock conexion = new ConexionMock();
       //URL url = new URL("http://mock.url");
