@@ -7,10 +7,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RepositorioHechos {
-
   private List<Hecho> baseDeHechos;
+  static RepositorioHechos INSTANCE = new RepositorioHechos();
+  public static RepositorioHechos getInstance() {
+      return INSTANCE;
+  }
 
-  public RepositorioHechos() {
+
+
+  private RepositorioHechos() {
     this.baseDeHechos = new ArrayList<>();
   }
 

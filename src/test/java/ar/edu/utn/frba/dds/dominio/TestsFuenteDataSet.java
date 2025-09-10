@@ -52,7 +52,7 @@ public class TestsFuenteDataSet {
     CCategoria = new CriterioCategoria("Ruta Provincial");
     criterios = new ArrayList<>(Arrays.asList(titulo,rango));
     criterios2 = new ArrayList<>(Arrays.asList(CCategoria));
-    fuentesRepo = new RepositorioFuentes();
+    fuentesRepo = RepositorioFuentes.getInstance();
     listaAgregador = new ArrayList<>();
     listaAgregador.add(dataset);
     listaAgregador.add(dataset);

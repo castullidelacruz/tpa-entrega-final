@@ -44,10 +44,10 @@ public class TestFuenteDinamica {
      hechoModificador = new Hecho("Corte de luz modificado","Corte de luz en zona oeste","cortes",22.6,29.3, LocalDate.of(2025,1,18),LocalDate.now(), TipoFuente.DINAMICA,"http://multimediavalue",Boolean.TRUE);
      cBase = new CriterioBase();
      criterios = new ArrayList<>(Arrays.asList(cBase));
-     repoHechos = new RepositorioHechos();
-     repoSolicitudes = new RepositorioSolicitudes();
+     repoHechos = RepositorioHechos.getInstance();
+     repoSolicitudes = RepositorioSolicitudes.getInstance();
      fuenteDinamica = new FuenteDinamica(repoHechos);
-    fuentesRepo = new RepositorioFuentes();
+    fuentesRepo = RepositorioFuentes.getInstance();
     fuentesAgregador = new ArrayList<>();
     fuentesAgregador.add(fuenteDinamica);
     agregador = new Agregador(fuentesAgregador);

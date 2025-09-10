@@ -6,6 +6,10 @@ import java.util.List;
 
 public class RepositorioFuentes {
   private final List<Fuente> fuentes = new ArrayList<>();
+  static RepositorioFuentes INSTANCE = new RepositorioFuentes();
+  public static RepositorioFuentes getInstance() {
+    return INSTANCE;
+  }
 
   public void registrarFuente(Fuente fuente) {
     fuentes.add(fuente);
@@ -22,5 +26,7 @@ public class RepositorioFuentes {
   public void actualizarHechos() {
       fuentes.forEach(Fuente::actualizarHechos);
   }
+
+  private RepositorioFuentes(){}
 
 }

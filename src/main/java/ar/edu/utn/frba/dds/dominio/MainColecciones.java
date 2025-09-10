@@ -4,7 +4,7 @@ import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioColecciones;
 
 public class MainColecciones {
     public static void main(String[] args) {
-        RepositorioColecciones repositorioColecciones = new RepositorioColecciones();
+        RepositorioColecciones repositorioColecciones = RepositorioColecciones.getInstance();
         repositorioColecciones.consesuareEchos();
     }
 }
