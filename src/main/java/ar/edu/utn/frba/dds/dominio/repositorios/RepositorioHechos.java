@@ -6,6 +6,7 @@ import java.util.List;
 
 public class RepositorioHechos implements WithSimplePersistenceUnit {
 
+
   public RepositorioHechos() {
   }
 

@@ -5,19 +5,17 @@ import static java.util.Objects.requireNonNull;
 import ar.edu.utn.frba.dds.dominio.solicitudes.EstadoSolicitud;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeCarga;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeEliminacion;
+import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
+
 import java.util.ArrayList;
 import java.util.List;
 
 
-public class RepositorioSolicitudes {
+public class RepositorioSolicitudes implements WithSimplePersistenceUnit {
 
   private final List<SolicitudDeEliminacion> solicitudesEliminacion = new ArrayList<>();
   private final List<SolicitudDeCarga> solicitudesCarga = new ArrayList<>();
 
-  static RepositorioSolicitudes INSTANCE = new RepositorioSolicitudes();
-  public static RepositorioSolicitudes getInstance() {
-    return INSTANCE;
-  }
 
 
     public void agregarSolicitudDeEliminacion(SolicitudDeEliminacion solicitud) {
@@ -68,6 +66,6 @@ public class RepositorioSolicitudes {
     solicitudesCarga.clear();
   }
 
-  private RepositorioSolicitudes() {
+  public RepositorioSolicitudes() {
   }
 }

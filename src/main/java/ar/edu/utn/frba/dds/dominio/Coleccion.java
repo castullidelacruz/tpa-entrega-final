@@ -72,7 +72,12 @@ public class Coleccion {
     return handler;
   }
 
-  public List<Hecho> obtnerHechos() {
+  public Long getId() {
+        return id;
+    }
+
+
+    public List<Hecho> obtnerHechos() {
     List<Hecho> hechosAgregados = new ArrayList<>();
 
     hechosAgregados.addAll(fuente.getHechos());

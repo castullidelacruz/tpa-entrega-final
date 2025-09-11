@@ -67,8 +67,8 @@ public class TestAgregador {
         12.8, LocalDate.of(2025,1,1),
         LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
     //REPO PARA FUENTE DINAMICA
-    repoHechos = RepositorioHechos.getInstance();
-    repoSolicitudes = RepositorioSolicitudes.getInstance();
+    repoHechos = new RepositorioHechos();
+    repoSolicitudes = new RepositorioSolicitudes();
     //PARA FUENTE API
     mockWebServer = new MockWebServer();
     mockWebServer.start();
