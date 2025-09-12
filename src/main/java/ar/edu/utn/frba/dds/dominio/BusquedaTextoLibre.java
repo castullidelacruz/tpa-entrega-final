@@ -1,4 +1,4 @@
-package ar.edu.utn.frba.dds.dominio;
+/* package ar.edu.utn.frba.dds.dominio;
 
 import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioHechos;
 import java.util.List;
@@ -20,3 +20,5 @@ public class BusquedaTextoLibre {
         return hechoRepositorio.buscarPorTextoLibre(textoLibre.trim());
     }
 }
+
+*/
