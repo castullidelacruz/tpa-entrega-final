@@ -85,10 +85,9 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
     Hecho hechoAprobado = solicitudDeCargaPrimera.aprobar();
 
     repoHechos.cargarHecho(hechoAprobado);
+    fuenteDinamica.actualiza(repoHechos);
 
     repoSolicitudes.registrar(solicitudDeCargaPrimera);
-
-    fuenteDinamica.actualiza(repoHechos);
 
     List<Hecho> hechos = fuenteDinamica.getHechos();
 
@@ -108,6 +107,7 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
 
     repoHechos.cargarHecho(hechoAprobado);
     fuenteDinamica.actualiza(repoHechos);
+
 
     List<Hecho> hechos = fuenteDinamica.getHechos();
 

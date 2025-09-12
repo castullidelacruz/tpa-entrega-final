@@ -80,6 +80,8 @@ public class ContextTest implements SimplePersistenceTest {
 
   @Test
   public void testEstadisticaCantidadSpam() {
+    RepositorioHechos repositorioH = new RepositorioHechos();
+
     FactorySolicitudDeEliminacion factory;
     DetectorDeSpam inter = mock(DetectorDeSpam.class);
     when(inter.esSpam("Motivo válido")).thenReturn(false);
@@ -96,6 +98,8 @@ public class ContextTest implements SimplePersistenceTest {
         "http://multimediavalue",
         Boolean.TRUE
     );
+
+    repositorioH.cargarHecho(hecho); //Se necesita cargar el hecho para poder cargar la solicitud
 
     factory = new FactorySolicitudDeEliminacion(inter);
 
