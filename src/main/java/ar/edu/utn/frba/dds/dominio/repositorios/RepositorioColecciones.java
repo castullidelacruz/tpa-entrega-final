@@ -1,26 +1,39 @@
 package ar.edu.utn.frba.dds.dominio.repositorios;
 
 import ar.edu.utn.frba.dds.dominio.Coleccion;
+import ar.edu.utn.frba.dds.dominio.Hecho;
+import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioColecciones {
-  private final List<Coleccion> colecciones = new ArrayList<>();
+public class RepositorioColecciones implements WithSimplePersistenceUnit  {
   static RepositorioColecciones INSTANCE = new RepositorioColecciones();
   public static RepositorioColecciones getInstance() {
     return INSTANCE;
   }
-  public void registrarFuente(Coleccion coleccion) {
-    colecciones.add(coleccion);
+
+  public void cargarColeccion(Coleccion coleccion) {
+    entityManager().persist(coleccion);
   }
-  public void eliminarFuente(Coleccion coleccion) {
-    colecciones.remove(coleccion);
+
+  public void borrarColeccion(Coleccion coleccion) {
+    Coleccion coleccion2 = entityManager().getReference(Coleccion.class, coleccion.getId());
+    entityManager().remove(coleccion2);
   }
+
+
   public List<Coleccion> getColecciones() {
-    return new ArrayList<>(colecciones);
+    return entityManager()
+            .createQuery("from Coleccion", Coleccion.class).getResultList();
   }
-  public void consesuareEchos() {
+
+  public Coleccion getColeccion(Coleccion coleccion) {
+    Coleccion c = entityManager().getReference(Coleccion.class, coleccion.getId());
+    return c;
+  }
+    public void consesuareEchos() {
+    List<Coleccion> colecciones = getColecciones();
     colecciones.forEach(Coleccion::actualizarHechosConsensuados);
   }
   private RepositorioColecciones() {

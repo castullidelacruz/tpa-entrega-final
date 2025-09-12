@@ -10,6 +10,7 @@ import org.apache.lucene.search.Query;
 
 public class RepositorioHechos implements WithSimplePersistenceUnit {
 
+
   public RepositorioHechos() {
   }
 

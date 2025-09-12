@@ -1,29 +1,48 @@
 package ar.edu.utn.frba.dds.dominio.repositorios;
 
+import ar.edu.utn.frba.dds.dominio.Coleccion;
+import ar.edu.utn.frba.dds.dominio.Hecho;
 import ar.edu.utn.frba.dds.dominio.fuentes.Fuente;
+import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class RepositorioFuentes {
+public class RepositorioFuentes implements WithSimplePersistenceUnit {
+  static RepositorioFuentes INSTANCE = new RepositorioFuentes();
 
-  private List<Fuente> fuentes = new ArrayList<>();
+  public static RepositorioFuentes getInstance() {
+    return INSTANCE;
+  }
+
 
   public void registrarFuente(Fuente fuente) {
-    fuentes.add(fuente);
+      entityManager().persist(fuente);
   }
 
   public void eliminarFuente(Fuente fuente) {
-    fuentes.remove(fuente);
+    Fuente fuente2 = entityManager().getReference(Fuente.class, fuente.getId());
+    entityManager().remove(fuente2);
   }
 
   public List<Fuente> getFuentes() {
-    return new ArrayList<>(fuentes);
+    return entityManager()
+            .createQuery("from Fuente", Fuente.class).getResultList();
   }
 
+  public Fuente getFuente(Fuente fuente) {
+    Fuente f = entityManager().getReference(Fuente.class, fuente.getId());
+    return f;
+  }
+
+
+
   public void actualizarHechos() {
+      List<Fuente> fuentes = getFuentes();
       fuentes.forEach(Fuente::actualizarHechos);
   }
 
-  public RepositorioFuentes(){}
+
+  private RepositorioFuentes(){}
 
 }

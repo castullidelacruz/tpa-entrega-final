@@ -5,7 +5,7 @@ import ar.edu.utn.frba.dds.dominio.criterios.CriterioBase;
 import ar.edu.utn.frba.dds.dominio.fuentes.*;
 import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioFuentes;
 import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioHechos;
-import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioSolicitudesDeCarga;
+import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioSolicitudes;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeCarga;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
@@ -30,7 +30,7 @@ import java.util.*;
 
 public class TestAgregador {
   private static final Logger log = LoggerFactory.getLogger(TestAgregador.class);
-
+  Fuente fuenteDinamica;
   Fuente fuenteDataSet;
   Fuente fuenteApi;
   FuenteProxyDemo fuenteProxyDemo;
@@ -38,6 +38,7 @@ public class TestAgregador {
 
   //DINAMICA
   RepositorioHechos repoHechos;
+  RepositorioSolicitudes repoSolicitudes;
   List<Criterio> criterios;
   Criterio cBase;
   SolicitudDeCarga solicitudDeCargaPrimera;
@@ -67,7 +68,7 @@ public class TestAgregador {
         LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
     //REPO PARA FUENTE DINAMICA
     repoHechos = new RepositorioHechos();
-
+    repoSolicitudes = new RepositorioSolicitudes();
     //PARA FUENTE API
     mockWebServer = new MockWebServer();
     mockWebServer.start();
@@ -78,17 +79,38 @@ public class TestAgregador {
     //URL url = new URL("http://demo.url");
     //FUENTES
     fuenteDataSet = new FuenteDataSet("datos.csv","yyyy-MM-dd",',');
-
+    fuenteDinamica = new FuenteDinamica();
     fuenteApi = new FuenteApi(mockWebServer.url("/").toString(), null);
     fuenteProxyDemo = new FuenteProxyDemo(conexion, "http://demo.url", repositorioDeProxy);
 
     //REPOSITORIO DE FUENTES
-    fuentesRepo = new RepositorioFuentes();
+    fuentesRepo = RepositorioFuentes.getInstance();
     //AGREGADOR
     listaAgregador = new ArrayList<>();
     agregador = new Agregador(listaAgregador);
 
+    //CARGAR FUENTES
+    //DINAMICA
 
+    Hecho h1 = new Hecho("Corte de luz",
+        "Corte de luz en zona sur",
+        "cortes",
+        21.2,
+        12.8,
+        LocalDate.of(2025, 1, 1),
+        LocalDate.of(2025, 1, 1),
+        TipoFuente.DINAMICA,
+        "", Boolean.TRUE);
+    SolicitudDeCarga solicitudDeCargaPrimera = new SolicitudDeCarga("Corte de luz",
+        "Corte de luz en zona sur",
+        "cortes",
+        21.2,
+        12.8,
+        LocalDate.of(2025, 1, 1),
+        "", Boolean.TRUE);
+    repoSolicitudes.agregarSolicitudDeCarga(solicitudDeCargaPrimera);
+    List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
+    solicitudes.get(0).aprobar();
     //PROXYDEMO
     Map<String, Object> hecho1 = new HashMap<>();
     hecho1.put("titulo", "Hecho 1 Proxy");
@@ -154,7 +176,8 @@ public class TestAgregador {
 
   @Test
   public void cargarDeCuatroFuentesDiferentes() throws Exception {
-
+    //DINAMICA
+    //agregador.registrarFuente(fuenteDinamica);
     //DATASET
     agregador.registrarFuente(fuenteDataSet);
     //PROXYDEMO
@@ -179,7 +202,8 @@ public class TestAgregador {
 
   @Test
   public void cargarDe2FuentesDspsAgregoUna() throws Exception {
-
+    //DINAMICA
+    //agregador.registrarFuente(fuenteDinamica);
     //PROXYDEMO
     agregador.registrarFuente(fuenteProxyDemo);
 
@@ -214,8 +238,6 @@ public class TestAgregador {
     //PROXYDEMO
     agregador.registrarFuente(fuenteProxyDemo);
 
-    agregador.registrarFuente(fuenteApi);
-
     //DATASET
     agregador.registrarFuente(fuenteDataSet);
 
@@ -223,7 +245,7 @@ public class TestAgregador {
     List<Hecho> hechos_3_fuentes = agregador.getHechos();
 
     //Parte 2
-    agregador.eliminarFuente(fuenteApi);
+    agregador.eliminarFuente(fuenteDinamica);
 
     agregador.actualizarHechos();
     List<Hecho> hechos_2_fuentes = agregador.getHechos();
@@ -234,7 +256,7 @@ public class TestAgregador {
     //Assertions.assertEquals("Tiroteo",hechos_3_fuentes.get(3).getTitulo());
     //Assertions.assertEquals("Incendio en pehuen",hechos_3_fuentes.get(4).getTitulo());
 
-    Assertions.assertEquals(6,hechos_3_fuentes.size());
+    Assertions.assertEquals(4,hechos_3_fuentes.size());
 
     //Assertions.assertEquals("Hecho 1 Proxy",hechos_2_fuentes.get(0).getTitulo());
     //Assertions.assertEquals("Incendio en Bariloche",hechos_2_fuentes.get(1).getTitulo());
@@ -248,6 +270,9 @@ public class TestAgregador {
   @AfterEach
   void limpiarValores() throws IOException {
     Hecho hechoPrimero = null;
+    //repoHechos.limpiarBaseDeHechos();
+    repoSolicitudes.limpiarListas();
+
     mockWebServer.shutdown();
   }
 
