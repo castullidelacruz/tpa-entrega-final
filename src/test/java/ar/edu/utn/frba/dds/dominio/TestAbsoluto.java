@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.dds.dominio;
 import ar.edu.utn.frba.dds.dominio.algoritmosconcenso.Aabsoluta;
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +13,7 @@ public class TestAbsoluto{
 
   private Hecho hecho(String titulo, TipoFuente fuente) {
     return new Hecho(titulo, "desc", "cat", 0.0, 0.0,
-        LocalDate.now(), LocalDate.now(), fuente, null, true);
+        LocalDateTime.now(), LocalDateTime.now(), fuente, null, true);
   }
 
   @Test

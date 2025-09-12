@@ -1,8 +1,13 @@
 package ar.edu.utn.frba.dds.dominio.estadistica;
 
 
-public interface Estadistica{
+import java.io.IOException;
+
+public interface Estadistica {
   public void calcularEstadistica();
 
-  public void exportarEstadistica();
+  public void exportarEstadistica(String path) throws IOException;
+
 }
+
+

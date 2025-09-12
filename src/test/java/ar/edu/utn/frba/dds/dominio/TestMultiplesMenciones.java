@@ -1,6 +1,7 @@
 package ar.edu.utn.frba.dds.dominio;
 import ar.edu.utn.frba.dds.dominio.algoritmosconcenso.AmultiplesMeciones;
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.Test;
 import java.time.LocalDate;
 import java.util.List;
@@ -12,7 +13,7 @@ public class TestMultiplesMenciones {
 
   private Hecho crearHecho(String titulo, String descripcion, TipoFuente fuente) {
     return new Hecho(titulo, descripcion, "Categoria", 1.0, 1.0,
-        LocalDate.now(), LocalDate.now(), fuente, null, true);
+        LocalDateTime.now(), LocalDateTime.now(), fuente, null, true);
   }
   LocalDate hace3dias = LocalDate.now().minusDays(3);
 

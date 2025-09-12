@@ -19,6 +19,9 @@ import ar.edu.utn.frba.dds.dominio.solicitudes.DetectorDeSpam;
 import ar.edu.utn.frba.dds.dominio.solicitudes.FactorySolicitudDeEliminacion;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeEliminacion;
 import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -46,8 +49,8 @@ public class ContextTest implements SimplePersistenceTest {
       "Corte de luz modificado",
       "Corte de luz en zona oeste",
       "cortes", -27.782412, -63.252387,
-      LocalDate.of(2025, 1, 18),
-      LocalDate.now(),
+      LocalDateTime.of(2025, 1, 18,12,00),
+      LocalDateTime.now(),
       TipoFuente.DINAMICA,
       "http://multimediavalue",
       Boolean.TRUE
@@ -56,9 +59,9 @@ public class ContextTest implements SimplePersistenceTest {
   hecho2 = new Hecho(
       "Corte de luz modificado",
       "Corte de luz en zona oeste",
-      "cortes", -40.7344,-66.6617,
-      LocalDate.of(2025, 1, 18),
-      LocalDate.now(),
+      "cortes", -43.6844,-69.2717,
+      LocalDateTime.of(2025, 1, 18,12,00),
+      LocalDateTime.now(),
       TipoFuente.DINAMICA,
       "http://multimediavalue",
       Boolean.TRUE
@@ -67,9 +70,9 @@ public class ContextTest implements SimplePersistenceTest {
   hecho3 = new Hecho(
       "incendio en new York",
       "Corte de luz en zona oeste",
-      "incedio", -40.7334,-66.6613,
-      LocalDate.of(2025, 1, 18),
-      LocalDate.now(),
+      "incedio", -43.6834,-69.2713,
+      LocalDateTime.of(2025, 1, 18,14,00),
+      LocalDateTime.now(),
       TipoFuente.DINAMICA,
       "http://multimediavalue",
       Boolean.TRUE
@@ -135,8 +138,8 @@ public class ContextTest implements SimplePersistenceTest {
         "Corte de luz modificado",
         "Corte de luz en zona oeste",
         "cortes", -27.782412, -63.252387,
-        LocalDate.of(2025, 1, 18),
-        LocalDate.now(),
+        LocalDateTime.of(2025, 1, 18,12,00),
+        LocalDateTime.now(),
         TipoFuente.DINAMICA,
         "http://multimediavalue",
         Boolean.TRUE
@@ -171,7 +174,96 @@ public class ContextTest implements SimplePersistenceTest {
     EstadisticaProvMaxHechosColeccion estadisticaPMHC = new EstadisticaProvMaxHechosColeccion(coleccion);
     estadisticaPMHC.calcularEstadistica();
 
-    Assertions.assertEquals("Río Negro", estadisticaPMHC.getProvinciaMax());
+    Assertions.assertEquals("Chubut", estadisticaPMHC.getProvinciaMax());
+  }
+
+  //CSV
+  @Test
+  public void testExportarEstadisticaCategoriaMaxima() throws Exception {
+    RepositorioHechos repositorio = new RepositorioHechos();
+    repositorio.cargarHecho(hecho);
+    repositorio.cargarHecho(hecho2);
+    repositorio.cargarHecho(hecho3);
+
+    EstadisticaCategoriaMaxima estadistica = new EstadisticaCategoriaMaxima();
+    estadistica.calcularEstadistica();
+
+    String path = "estadisticas_categoria_maxima.csv";
+    estadistica.exportarEstadistica(path);
+
+    List<String> lineas = Files.readAllLines(Paths.get(path));
+    Assertions.assertTrue(lineas.get(0).contains("Fecha") && lineas.get(0).contains("CategoriaMasFrecuente"));
+    Assertions.assertTrue(lineas.stream().anyMatch(l -> l.contains("cortes")));
+  }
+
+  @Test
+  public void testExportarEstadisticaCantidadSpam() throws Exception {
+    RepositorioHechos repositorioH = new RepositorioHechos();
+    DetectorDeSpam inter = mock(DetectorDeSpam.class);
+    when(inter.esSpam("spam")).thenReturn(true);
+    when(inter.esSpam("ok")).thenReturn(false);
+
+    RepositorioSolicitudesEliminacion repositorio = new RepositorioSolicitudesEliminacion();
+    repositorioH.cargarHecho(hecho);
+
+    FactorySolicitudDeEliminacion factory = new FactorySolicitudDeEliminacion(inter);
+    SolicitudDeEliminacion solicitudSpam = factory.crear(hecho, "spam");
+    repositorio.cargarSolicitudEliminacion(solicitudSpam);
+
+    EstadisticaCantidadSpam estadistica = new EstadisticaCantidadSpam();
+    estadistica.calcularEstadistica();
+
+    String path = "estadisticas_cantidad_spam.csv";
+    estadistica.exportarEstadistica(path);
+
+    List<String> lineas = Files.readAllLines(Paths.get(path));
+    Assertions.assertTrue(lineas.get(0).contains("Fecha") && lineas.get(0).contains("CantidadSpam"));
+    Assertions.assertTrue(lineas.stream().anyMatch(l -> l.contains("1")));
+  }
+
+  @Test
+  public void testExportarEstadisticaProvMaxHechosCategoria() throws Exception {
+    RepositorioHechos repositorio = new RepositorioHechos();
+    repositorio.cargarHecho(hecho); // está en Santiago del Estero
+
+    EstadisticaProvMaxHechosCategoria estadistica = new EstadisticaProvMaxHechosCategoria("cortes");
+    estadistica.calcularEstadistica();
+
+    String path = "estadisticas_categoria_hechosmaximos.csv";
+    estadistica.exportarEstadistica(path);
+
+    List<String> lineas = Files.readAllLines(Paths.get(path));
+    Assertions.assertTrue(lineas.get(0).contains("Fecha") && lineas.get(0).contains("Provincia") && lineas.get(0).contains("Categoria"));
+    Assertions.assertTrue(lineas.stream().anyMatch(l -> l.contains("Santiago del Estero")));
+  }
+
+  @Test
+  public void testExportarEstadisticaProvMaxHechosColeccion() throws Exception {
+    GeneradorHandleUuid generador = new GeneradorHandleUuid();
+    RepositorioHechos repositorioHechos = new RepositorioHechos();
+    FuenteDinamica dinamica = new FuenteDinamica();
+    CriterioBase criterio = new CriterioBase();
+    List<Criterio> criterios = new ArrayList<>(Arrays.asList(criterio));
+
+    repositorioHechos.cargarHecho(hecho);
+    repositorioHechos.cargarHecho(hecho2);
+    repositorioHechos.cargarHecho(hecho3);
+
+    dinamica.actualiza(repositorioHechos);
+
+    Coleccion coleccion = new Coleccion("incendios forestales",
+        "incendios en la patagonia",
+        dinamica, criterios, generador.generar(), null);
+
+    EstadisticaProvMaxHechosColeccion estadistica = new EstadisticaProvMaxHechosColeccion(coleccion);
+    estadistica.calcularEstadistica();
+
+    String path = "estadisticas_hechosmaximos_coleccion.csv";
+    estadistica.exportarEstadistica(path);
+
+    List<String> lineas = Files.readAllLines(Paths.get(path));
+    Assertions.assertTrue(lineas.get(0).contains("Fecha") && lineas.get(0).contains("Provincia") && lineas.get(0).contains("Coleccion"));
+    Assertions.assertTrue(lineas.stream().anyMatch(l -> l.contains("Chubut")));
   }
 }
 

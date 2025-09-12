@@ -3,6 +3,7 @@ package ar.edu.utn.frba.dds.dominio.solicitudes;
 import ar.edu.utn.frba.dds.dominio.Hecho;
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -30,9 +31,9 @@ public class SolicitudDeCarga extends Solicitud {
   @Column
   private Double longitud;
   @Column
-  private LocalDate fechaAcontecimiento;
+  private LocalDateTime fechaAcontecimiento;
   @Column
-  private LocalDate fechaCargaOriginal;
+  private LocalDateTime fechaCargaOriginal;
   @Enumerated(EnumType.STRING)
   private TipoFuente origen;
   @Column
@@ -52,7 +53,7 @@ public class SolicitudDeCarga extends Solicitud {
                           String categoria,
                           Double latitud,
                           Double longitud,
-                          LocalDate fechaAcontecimiento,
+                          LocalDateTime fechaAcontecimiento,
                           String multimedia,
                           boolean registerBoolean) {
     this.hechoCreado = null;
@@ -91,7 +92,7 @@ public class SolicitudDeCarga extends Solicitud {
       throw new IllegalStateException("La solicitud ya fue evaluada.");
     }
 
-    this.fechaCargaOriginal = LocalDate.now();
+    this.fechaCargaOriginal = LocalDateTime.now();
     this.estado = EstadoSolicitud.ACEPTADA;
 
     this.hechoCreado = new Hecho(
@@ -107,7 +108,6 @@ public class SolicitudDeCarga extends Solicitud {
         this.disponibilidad
     );
 
-    // 👇 devuelvo una copia con id también
     return new Hecho(hechoCreado);
   }
 
@@ -124,7 +124,7 @@ public class SolicitudDeCarga extends Solicitud {
 
   public boolean puedeModificar(Hecho h) {
     if (estado.equals(EstadoSolicitud.ACEPTADA) && registrado
-        && (ChronoUnit.DAYS.between(hechoCreado.getFechaDeCarga(), LocalDate.now())) <= 7) {
+        && (ChronoUnit.DAYS.between(hechoCreado.getFechaDeCarga(), LocalDateTime.now())) <= 7) {
       return true;
     } else {
       return false;
@@ -149,7 +149,7 @@ public class SolicitudDeCarga extends Solicitud {
   }
 
 
-  public void setFechaCargaOriginal(LocalDate fechaCargaOriginal) {
+  public void setFechaCargaOriginal(LocalDateTime fechaCargaOriginal) {
     this.fechaCargaOriginal = fechaCargaOriginal;
   }
 

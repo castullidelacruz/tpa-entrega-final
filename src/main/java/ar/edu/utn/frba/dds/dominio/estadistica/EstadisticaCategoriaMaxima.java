@@ -1,5 +1,9 @@
 package ar.edu.utn.frba.dds.dominio.estadistica;
 
+import com.opencsv.CSVWriter;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.*;
 import java.util.stream.Collectors;
 import ar.edu.utn.frba.dds.dominio.Hecho;
@@ -28,7 +32,21 @@ public class EstadisticaCategoriaMaxima implements Estadistica, WithSimplePersis
         .orElse(null);
   }
 
-  @Override public void exportarEstadistica() {}
+  @Override
+  public void exportarEstadistica(String path) throws IOException {
+    java.io.File file = new java.io.File(path);
+
+    try (CSVWriter writer = new CSVWriter(new FileWriter(file, true))) {
+      String[] header = {"Fecha", "CategoriaMasFrecuente"};
+      String[] data = {LocalDateTime.now().toString(), categoriaMax != null ? categoriaMax : "N/A"};
+
+      // Escribir encabezado solo si el archivo está vacío
+      if (file.length() == 0) {
+        writer.writeNext(header);
+      }
+      writer.writeNext(data);
+    }
+  }
 
   public String getCategoriaMax() {
     return categoriaMax;

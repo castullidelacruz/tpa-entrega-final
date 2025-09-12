@@ -10,6 +10,7 @@ import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioSolicitudesDeCarga;
 import ar.edu.utn.frba.dds.dominio.solicitudes.EstadoSolicitud;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeCarga;
 import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
+import java.time.LocalDateTime;
 import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
@@ -49,8 +50,8 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
         "Corte de luz modificado",
         "Corte de luz en zona oeste",
         "cortes", 22.6, 29.3,
-        LocalDate.of(2025, 1, 18),
-        LocalDate.now(),
+        LocalDateTime.of(2025, 1, 18,00,00),
+        LocalDateTime.now(),
         TipoFuente.DINAMICA,
         "http://multimediavalue",
         Boolean.TRUE
@@ -60,21 +61,21 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
     solicitudDeCargaPrimera = new SolicitudDeCarga(
         "Corte de luz", "Corte de luz en zona sur",
         "cortes", 21.2, 12.8,
-        LocalDate.of(2025, 1, 1),
+        LocalDateTime.of(2025, 1, 1,12,00),
         "", true
     );
 
     solicitudDeCargaPrimeraSinRegistro = new SolicitudDeCarga(
         "Corte de luz", "Corte de luz en zona sur",
         "cortes", 21.2, 12.8,
-        LocalDate.of(2025, 1, 1),
+        LocalDateTime.of(2025, 1, 1,12,00),
         "", false
     );
 
     solicitudDeCargaSegunda = new SolicitudDeCarga(
         "Corte de agua", "Corte de agua en zona oeste",
         "cortes", 25.6, 9.3,
-        LocalDate.of(2025, 1, 20),
+        LocalDateTime.of(2025, 1, 20,12,00),
         "", true
     );
 

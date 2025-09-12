@@ -7,6 +7,7 @@ import ar.edu.utn.frba.dds.dominio.criterios.CriterioTitulo;
 import ar.edu.utn.frba.dds.dominio.fuentes.Agregador;
 import ar.edu.utn.frba.dds.dominio.fuentes.Fuente;
 import ar.edu.utn.frba.dds.dominio.fuentes.FuenteDataSet;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -34,12 +35,12 @@ public class TestsFuenteDataSet {
 
   @BeforeEach
   public void fixtureColeccion() {
-    rango = new CriterioRangoFechas(LocalDate.of(2023, 1, 1),
-        LocalDate.of(2025,12,30));
+    rango = new CriterioRangoFechas(LocalDateTime.of(2023, 1, 1,00,00),
+        LocalDateTime.of(2025,12,30,23,59));
     titulo = new CriterioTitulo("incendio");
-    dataset = new FuenteDataSet("datos.csv","yyyy-MM-dd",',');
-    datavacio = new FuenteDataSet("vacio.csv","yyyy-MM-dd",',');
-    dataDesogranizada = new FuenteDataSet("EjHechos.csv","d/M/yyyy",';');
+    dataset = new FuenteDataSet("datos.csv","yyyy-MM-dd HH:mm",',');
+    datavacio = new FuenteDataSet("vacio.csv","yyyy-MM-dd HH:mm",',');
+    dataDesogranizada = new FuenteDataSet("EjHechos.csv","d/M/yyyy HH:mm",';');
     dataFaltanColumnas = new FuenteDataSet("EjHechosColumnaMandatoriaFaltante.csv","d/M/yyyy",';');
     dataColumnasRotas = new FuenteDataSet("EjHechosConColumnaRota.csv","d/M/yyyy",';');
     dataColumnaVacia = new FuenteDataSet("EjHechosConColumnaVaciaTitulo.csv","d/M/yyyy",';');

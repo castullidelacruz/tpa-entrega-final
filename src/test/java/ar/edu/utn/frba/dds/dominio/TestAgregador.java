@@ -63,8 +63,8 @@ public class TestAgregador {
 
     hechoPrimero = new Hecho("Corte de luz Dinamica",
         "Corte de luz en zona sur","cortes",21.2,
-        12.8, LocalDate.of(2025,1,1),
-        LocalDate.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
+        12.8, LocalDateTime.of(2025,1,1,00,00),
+        LocalDateTime.now(),TipoFuente.DINAMICA,"",Boolean.TRUE);
     //REPO PARA FUENTE DINAMICA
     repoHechos = new RepositorioHechos();
 
@@ -96,8 +96,8 @@ public class TestAgregador {
     hecho1.put("categoria", "Categoría X");
     hecho1.put("latitud", 1.1);
     hecho1.put("longitud", 2.2);
-    hecho1.put("fecha acontecimiento", LocalDate.of(2024, 1, 1));
-    hecho1.put("fecha carga", LocalDate.of(2024, 1, 2));
+    hecho1.put("fecha acontecimiento", LocalDateTime.of(2024, 1, 1,00,00));
+    hecho1.put("fecha carga", LocalDateTime.of(2024, 1, 2,00,00));
     hecho1.put("multimedia", "http://imagen.jpg");
 
     when(conexion.siguienteHecho(any(URL.class), any(LocalDateTime.class)))
@@ -114,8 +114,8 @@ public class TestAgregador {
                 "categoria": "desastre natural",
                 "latitud": -32.192,
                 "longitud": -64.3936,
-                "fechaAcontecimiento": "2023-11-05",
-                "fechaDeCarga": "2023-11-06",
+                "fechaAcontecimiento": "2023-11-05T00:00",
+                "fechaDeCarga": "2023-11-06T00:00",
                 "origen": "METAMAPA",
                 "multimedia": null,
                 "disponibilidad": true
@@ -126,8 +126,8 @@ public class TestAgregador {
                 "categoria": "accidente de transito",
                 "latitud": -32.192,
                 "longitud": -64.3936,
-                "fechaAcontecimiento": "2023-11-05",
-                "fechaDeCarga": "2023-11-06",
+                "fechaAcontecimiento": "2023-11-05T00:00",
+                "fechaDeCarga": "2023-11-06T00:00",
                 "origen": "METAMAPA",
                 "multimedia": null,
                 "disponibilidad": true

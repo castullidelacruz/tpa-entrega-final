@@ -5,6 +5,7 @@ import ar.edu.utn.frba.dds.dominio.solicitudes.DetectorDeSpam;
 import ar.edu.utn.frba.dds.dominio.solicitudes.EstadoSolicitud;
 import ar.edu.utn.frba.dds.dominio.solicitudes.FactorySolicitudDeEliminacion;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeEliminacion;
+import java.time.LocalDateTime;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -27,8 +28,8 @@ public class TestSolicituDeEliminacion {
         "Categoría ejemplo",
         -34.6037,  // latitud (Buenos Aires)
         -58.3816,  // longitud
-        LocalDate.of(2023, 1, 1),
-        LocalDate.now(),
+        LocalDateTime.of(2023, 1, 1,00,00),
+        LocalDateTime.now(),
         TipoFuente.DATASET,
         null,
         true
