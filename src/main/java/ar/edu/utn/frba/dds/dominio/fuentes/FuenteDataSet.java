@@ -17,6 +17,7 @@ import java.io.InputStreamReader;
 import java.io.Reader;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
@@ -96,8 +97,8 @@ public class FuenteDataSet extends Fuente {
               hechodto.getCategoria(),
               hechodto.getLatitud(),
               hechodto.getLongitud(),
-              LocalDate.parse(hechodto.getFechaAcontecimiento(), formatter),
-              LocalDate.now(),
+              LocalDateTime.parse(hechodto.getFechaAcontecimiento(), formatter),
+              LocalDateTime.now(),
               TipoFuente.DATASET,
               hechodto.getMultimedia(),
               Boolean.TRUE

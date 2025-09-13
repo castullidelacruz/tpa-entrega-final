@@ -45,8 +45,8 @@ public class TestFuenteProxyDemo {
     hecho1.put("categoria", "Categoría X");
     hecho1.put("latitud", 1.1);
     hecho1.put("longitud", 2.2);
-    hecho1.put("fecha acontecimiento", LocalDate.of(2024, 1, 1));
-    hecho1.put("fecha carga", LocalDate.of(2024, 1, 2));
+    hecho1.put("fecha acontecimiento", LocalDateTime.of(2024, 1, 1,00,00));
+    hecho1.put("fecha carga", LocalDateTime.of(2024, 1, 2,00,00));
     hecho1.put("multimedia", "http://imagen.jpg");
 
     when(conexion.siguienteHecho(any(URL.class), any(LocalDateTime.class)))

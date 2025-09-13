@@ -5,6 +5,7 @@ import static java.util.Objects.requireNonNull;
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
 import java.time.LocalDate;
 
+import java.time.LocalDateTime;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -39,9 +40,9 @@ public class Hecho {
   @Column
   private Double longitud;
   @Column
-  private LocalDate fechaAcontecimiento;
+  private LocalDateTime fechaAcontecimiento;
   @Column
-  private LocalDate fechaDeCarga;
+  private LocalDateTime fechaDeCarga;
   @Enumerated(EnumType.STRING)
   private TipoFuente origen;
   @Column
@@ -50,7 +51,7 @@ public class Hecho {
   private Boolean disponibilidad = Boolean.TRUE;
 
   public Hecho(String titulo, String descripcion, String categoria, Double latitud,
-               Double longitud, LocalDate fechaAcontecimiento, LocalDate fechaDeCarga,
+               Double longitud, LocalDateTime fechaAcontecimiento, LocalDateTime fechaDeCarga,
                TipoFuente origen, String multimedia, Boolean disponibilidad) {
     this.titulo = requireNonNull(titulo);
     this.descripcion = requireNonNull(descripcion);
@@ -131,7 +132,7 @@ public class Hecho {
     return latitud;
   }
 
-  public LocalDate getFechaAcontecimiento() {
+  public LocalDateTime getFechaAcontecimiento() {
     return fechaAcontecimiento;
   }
 
@@ -139,7 +140,7 @@ public class Hecho {
     return longitud;
   }
 
-  public LocalDate getFechaDeCarga() {
+  public LocalDateTime getFechaDeCarga() {
     return fechaDeCarga;
   }
 
@@ -188,11 +189,11 @@ public class Hecho {
     this.id = id;
   }
 
-  public void setFechaAcontecimiento(LocalDate fechaAcontecimiento) {
+  public void setFechaAcontecimiento(LocalDateTime fechaAcontecimiento) {
     this.fechaAcontecimiento = fechaAcontecimiento;
   }
 
-  public void setFechaDeCarga(LocalDate fechaDeCarga) {
+  public void setFechaDeCarga(LocalDateTime fechaDeCarga) {
     this.fechaDeCarga = fechaDeCarga;
   }
 

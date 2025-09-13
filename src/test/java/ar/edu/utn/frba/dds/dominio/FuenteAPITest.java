@@ -44,8 +44,8 @@ public class FuenteAPITest {
                     "categoria": "desastre natural",
                     "latitud": -32.192,
                     "longitud": -64.3936,
-                    "fechaAcontecimiento": "2023-11-05",
-                    "fechaDeCarga": "2023-11-06",
+                    "fechaAcontecimiento": "2023-11-05T00:00",
+                    "fechaDeCarga": "2023-11-06T00:00",
                     "origen": "METAMAPA",
                     "multimedia": null,
                     "disponibilidad": true
@@ -56,8 +56,8 @@ public class FuenteAPITest {
                     "categoria": "accidente de transito",
                     "latitud": -32.192,
                     "longitud": -64.3936,
-                    "fechaAcontecimiento": "2023-11-05",
-                    "fechaDeCarga": "2023-11-06",
+                    "fechaAcontecimiento": "2023-11-05T00:00",
+                    "fechaDeCarga": "2023-11-06T00:00",
                     "origen": "METAMAPA",
                     "multimedia": null,
                     "disponibilidad": true
@@ -89,8 +89,8 @@ public class FuenteAPITest {
                 "categoria": "desastre natural",
                 "latitud": -32.192,
                 "longitud": -64.3936,
-                "fechaAcontecimiento": "2023-11-05",
-                "fechaDeCarga": "2023-11-06",
+                "fechaAcontecimiento": "2023-11-05T00:00",
+                "fechaDeCarga": "2023-11-06T00:00",
                 "origen": "METAMAPA",
                 "multimedia": null,
                 "disponibilidad": true

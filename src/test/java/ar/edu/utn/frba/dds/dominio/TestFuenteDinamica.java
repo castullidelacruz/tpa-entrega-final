@@ -10,6 +10,8 @@ import ar.edu.utn.frba.dds.dominio.repositorios.RepositorioSolicitudesDeCarga;
 import ar.edu.utn.frba.dds.dominio.solicitudes.EstadoSolicitud;
 import ar.edu.utn.frba.dds.dominio.solicitudes.SolicitudDeCarga;
 import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
+import java.time.LocalDateTime;
+import org.junit.Before;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -48,8 +50,8 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
         "Corte de luz modificado",
         "Corte de luz en zona oeste",
         "cortes", 22.6, 29.3,
-        LocalDate.of(2025, 1, 18),
-        LocalDate.now(),
+        LocalDateTime.of(2025, 1, 18,00,00),
+        LocalDateTime.now(),
         TipoFuente.DINAMICA,
         "http://multimediavalue",
         Boolean.TRUE
@@ -59,21 +61,21 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
     solicitudDeCargaPrimera = new SolicitudDeCarga(
         "Corte de luz", "Corte de luz en zona sur",
         "cortes", 21.2, 12.8,
-        LocalDate.of(2025, 1, 1),
+        LocalDateTime.of(2025, 1, 1,12,00),
         "", true
     );
 
     solicitudDeCargaPrimeraSinRegistro = new SolicitudDeCarga(
         "Corte de luz", "Corte de luz en zona sur",
         "cortes", 21.2, 12.8,
-        LocalDate.of(2025, 1, 1),
+        LocalDateTime.of(2025, 1, 1,12,00),
         "", false
     );
 
     solicitudDeCargaSegunda = new SolicitudDeCarga(
         "Corte de agua", "Corte de agua en zona oeste",
         "cortes", 25.6, 9.3,
-        LocalDate.of(2025, 1, 20),
+        LocalDateTime.of(2025, 1, 20,12,00),
         "", true
     );
 
@@ -81,20 +83,13 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
 
   @Test
   public void importarHechos() {
-    // 1. Aprobar la solicitud (esto crea el Hecho)
     Hecho hechoAprobado = solicitudDeCargaPrimera.aprobar();
 
-    // 2. Persistir el Hecho primero
     repoHechos.cargarHecho(hechoAprobado);
-
-    // 3. Luego persistir la solicitud (que ya tiene el Hecho asociado)
-    repoSolicitudes.registrar(solicitudDeCargaPrimera);
-
-
-    // 4. Actualizar la fuente dinámica con los hechos persistidos
     fuenteDinamica.actualiza(repoHechos);
 
-    // 5. Verificar resultados
+    repoSolicitudes.registrar(solicitudDeCargaPrimera);
+
     List<Hecho> hechos = fuenteDinamica.getHechos();
 
     Assertions.assertEquals(EstadoSolicitud.ACEPTADA, solicitudDeCargaPrimera.getEstado());
@@ -109,12 +104,14 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
     repoSolicitudes.registrar(solicitudDeCargaSegunda);
 
     List<SolicitudDeCarga> solicitudes = repoSolicitudes.obtenerPendientesDeCarga();
-    Hecho hechoAprobado = solicitudes.get(1).aprobar();
 
-    repoHechos.cargarHecho(hechoAprobado);
+    repoHechos.cargarHecho(solicitudes.get(1).aprobar());
     fuenteDinamica.actualiza(repoHechos);
 
     List<Hecho> hechos = fuenteDinamica.getHechos();
+
+    System.out.printf("%s %n", hechos.get(0).getTitulo());
+    System.out.printf("%s %n", hechos.get(1).getTitulo());
 
     Assertions.assertEquals("Corte de agua", hechos.get(0).getTitulo());
     Assertions.assertEquals(1, hechos.size());
