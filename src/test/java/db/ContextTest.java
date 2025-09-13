@@ -20,6 +20,7 @@ import io.github.flbulgarelli.jpa.extras.test.SimplePersistenceTest;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -39,6 +40,7 @@ public class ContextTest implements SimplePersistenceTest {
   Hecho hecho;
   Hecho hecho2;
   Hecho hecho3;
+  Hecho hecho4;
 
   @BeforeEach
   public void fixtureBeforeEach() {
@@ -57,7 +59,7 @@ public class ContextTest implements SimplePersistenceTest {
       "Corte de luz modificado",
       "Corte de luz en zona oeste",
       "cortes", -43.6844,-69.2717,
-      LocalDateTime.of(2025, 1, 18,12,00),
+      LocalDateTime.of(2025, 1, 14,12,00),
       LocalDateTime.now(),
       TipoFuente.DINAMICA,
       "http://multimediavalue",
@@ -68,12 +70,24 @@ public class ContextTest implements SimplePersistenceTest {
       "incendio en new York",
       "Corte de luz en zona oeste",
       "incedio", -43.6834,-69.2713,
-      LocalDateTime.of(2025, 1, 18,14,00),
+      LocalDateTime.of(2025, 1, 12,14,00),
       LocalDateTime.now(),
       TipoFuente.DINAMICA,
       "http://multimediavalue",
       Boolean.TRUE
   );
+
+    hecho4 = new Hecho(
+        "Corte de luz modificado",
+        "Corte de luz en zona oeste",
+        "cortes", -43.6844,-69.2717,
+        LocalDateTime.of(2025, 1, 30,23,00),
+        LocalDateTime.now(),
+        TipoFuente.DINAMICA,
+        "http://multimediavalue",
+        Boolean.TRUE
+    );
+
   }
 
   @Test
@@ -131,17 +145,6 @@ public class ContextTest implements SimplePersistenceTest {
   public void testEstadisticaProvMaxHechosCategoria() {
     RepositorioHechos repositorioH = new RepositorioHechos();
 
-    Hecho hecho = new Hecho(
-        "Corte de luz modificado",
-        "Corte de luz en zona oeste",
-        "cortes", -27.782412, -63.252387,
-        LocalDateTime.of(2025, 1, 18,12,00),
-        LocalDateTime.now(),
-        TipoFuente.DINAMICA,
-        "http://multimediavalue",
-        Boolean.TRUE
-    );
-
     repositorioH.cargarHecho(hecho);
 
     EstadisticaProvMaxHechosCategoria estadisticaPMHC = new EstadisticaProvMaxHechosCategoria("cortes");
@@ -174,7 +177,22 @@ public class ContextTest implements SimplePersistenceTest {
     Assertions.assertEquals("Chubut", estadisticaPMHC.getProvinciaMax());
   }
 
-  //CSV
+  @Test
+  public void testEstadisticaHoraHechosCategoria() {
+    RepositorioHechos repositorioHechos = new RepositorioHechos();
+
+    repositorioHechos.cargarHecho(hecho);
+    repositorioHechos.cargarHecho(hecho2);
+    repositorioHechos.cargarHecho(hecho3);
+    repositorioHechos.cargarHecho(hecho4);
+
+    EstadisticaHoraHechosCategoria estadisticaHHC = new EstadisticaHoraHechosCategoria("cortes");
+    estadisticaHHC.calcularEstadistica();
+
+    Assertions.assertEquals(LocalTime.of(12,00), estadisticaHHC.gethoraPicoCategoria());
+  }
+
+  //CSV &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   @Test
   public void testExportarEstadisticaCategoriaMaxima() throws Exception {
     RepositorioHechos repositorio = new RepositorioHechos();
