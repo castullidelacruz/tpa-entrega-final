@@ -5,7 +5,6 @@ import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.util.List;
 
 public class RepositorioColecciones implements WithSimplePersistenceUnit  {
-
   static RepositorioColecciones INSTANCE = new RepositorioColecciones();
 
   public static RepositorioColecciones getInstance() {

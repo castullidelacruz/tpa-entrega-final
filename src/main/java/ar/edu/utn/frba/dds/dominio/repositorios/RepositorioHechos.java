@@ -10,6 +10,11 @@ import org.hibernate.search.query.dsl.QueryBuilder;
 
 
 public class RepositorioHechos implements WithSimplePersistenceUnit {
+  static RepositorioHechos instance = new RepositorioHechos();
+
+  public static RepositorioHechos getInstance() {
+    return instance;
+  }
 
   public RepositorioHechos() {
   }

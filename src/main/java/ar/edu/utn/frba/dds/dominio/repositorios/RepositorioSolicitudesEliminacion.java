@@ -6,6 +6,12 @@ import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.util.List;
 
 public class RepositorioSolicitudesEliminacion implements WithSimplePersistenceUnit {
+  static RepositorioSolicitudesEliminacion instance = new RepositorioSolicitudesEliminacion();
+
+  public static RepositorioSolicitudesEliminacion getInstance() {
+    return instance;
+  }
+
   public RepositorioSolicitudesEliminacion() {
   }
 

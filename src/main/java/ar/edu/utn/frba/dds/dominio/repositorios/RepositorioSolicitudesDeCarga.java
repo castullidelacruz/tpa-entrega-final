@@ -6,6 +6,12 @@ import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.util.List;
 
 public class RepositorioSolicitudesDeCarga implements WithSimplePersistenceUnit {
+  static RepositorioSolicitudesDeCarga instance = new RepositorioSolicitudesDeCarga();
+
+  public static RepositorioSolicitudesDeCarga getInstance() {
+    return instance;
+  }
+
   public void registrar(SolicitudDeCarga solicitud) {
     entityManager().persist(solicitud);
   }
@@ -29,4 +35,5 @@ public class RepositorioSolicitudesDeCarga implements WithSimplePersistenceUnit 
         .createQuery("from SolicitudDeCarga s", SolicitudDeCarga.class)
         .getResultList();
   }
+
 }

@@ -5,7 +5,15 @@ import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.util.List;
 
 public class RepoAlgoritmos implements WithSimplePersistenceUnit {
-  public RepoAlgoritmos() {}
+  static RepoAlgoritmos INSTANCE = new RepoAlgoritmos();
+
+  public static RepoAlgoritmos getInstance() {
+    return INSTANCE;
+  }
+
+  public RepoAlgoritmos() {
+
+  }
 
   public void registrar(AlgoritmoDeConsenso algoritmo) {
     entityManager().persist(algoritmo);
