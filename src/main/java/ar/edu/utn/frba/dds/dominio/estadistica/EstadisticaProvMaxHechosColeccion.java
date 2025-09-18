@@ -43,21 +43,6 @@ public class EstadisticaProvMaxHechosColeccion implements Estadistica, WithSimpl
         .map(Map.Entry::getKey)
         .orElse(null);
 
-    /*
-    this.provincia = hechosDeLaColeccion.stream()
-        .map(h -> getProvincia(h.getLatitud(), h.getLongitud())) // llamar a la API para cada hecho
-        .collect(Collectors.toMap(
-            p -> p,
-            p -> 1L,
-            Long::sum
-        ))
-        .entrySet().stream()
-        .max(Map.Entry.comparingByValue()) // buscar la provincia más frecuente
-        .map(Map.Entry::getKey)
-        .orElse(null); // si no hay hechos, devuelve null
-
-     */
-
   }
 
   @Override public void exportarEstadistica(String path) throws IOException {

@@ -1,6 +1,9 @@
 package ar.edu.utn.frba.dds.dominio.estadistica;
 
 import static ar.edu.utn.frba.dds.dominio.estadistica.LocalizadorDeProvincias.getProvincia;
+import static java.util.function.Function.identity;
+import static java.util.stream.Collectors.counting;
+import static java.util.stream.Collectors.groupingBy;
 
 import ar.edu.utn.frba.dds.dominio.Hecho;
 import com.opencsv.CSVWriter;
@@ -31,17 +34,13 @@ public class EstadisticaProvMaxHechosCategoria implements Estadistica, WithSimpl
         .setParameter("categoria", this.categoria)
         .getResultList();
 
-    this.provincia = hechos.stream()
-        .map(h -> getProvincia(h.getLatitud(), h.getLongitud())) //llamar a la API para cada hecho
-        .collect(Collectors.toMap(
-            p -> p,
-            p -> 1L,
-            Long::sum))
-        .entrySet().stream()
-        .max(Map.Entry.comparingByValue()) //buscar la provincia más frecuente
-        .map(Map.Entry::getKey)
-        .orElse(null); //si no hay hechos, devuelve null
+    List<String> provincias = hechos.stream().map(Hecho::obtenerProvincia).toList();
 
+    this.provincia = provincias.stream()
+        .collect(groupingBy(identity(), counting()))
+        .entrySet().stream()
+        .max(Map.Entry.comparingByValue())
+        .map(Map.Entry::getKey).orElse(null);
 
   }
 

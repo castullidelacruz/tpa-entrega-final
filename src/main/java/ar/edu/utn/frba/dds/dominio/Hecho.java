@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.dds.dominio;
 
+import static ar.edu.utn.frba.dds.dominio.estadistica.LocalizadorDeProvincias.getProvincia;
 import static java.util.Objects.requireNonNull;
 
 import ar.edu.utn.frba.dds.dominio.fuentes.TipoFuente;
@@ -40,6 +41,11 @@ public class Hecho {
   private String multimedia;
   @Column
   private Boolean disponibilidad = Boolean.TRUE;
+
+  public String obtenerProvincia() {
+    return getProvincia(this.latitud, this.longitud);
+  }
+
 
   public Hecho(String titulo, String descripcion, String categoria, Double latitud,
                Double longitud, LocalDateTime fechaAcontecimiento, LocalDateTime fechaDeCarga,
