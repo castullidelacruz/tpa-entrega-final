@@ -10,14 +10,14 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 @Entity
-@Table(name = "fuentes_api")
+@DiscriminatorValue("FUENTE_API")
 public class FuenteApi extends Fuente {
   @Column
   private String handler;
