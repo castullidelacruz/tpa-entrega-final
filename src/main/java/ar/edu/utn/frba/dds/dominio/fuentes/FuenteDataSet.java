@@ -21,11 +21,11 @@ import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import javax.persistence.Column;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
-import javax.persistence.Table;
 
 @Entity
-@Table(name = "fuentes_data_set")
+@DiscriminatorValue("FUENTE_DATASET")
 public class FuenteDataSet extends Fuente {
   @Column
   private String ruta; //Agrego final para que no pueda ser modificada post inicializacion.
