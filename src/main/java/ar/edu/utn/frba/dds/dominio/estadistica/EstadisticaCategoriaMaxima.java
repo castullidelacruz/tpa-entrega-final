@@ -63,8 +63,8 @@ public class EstadisticaCategoriaMaxima implements Estadistica, WithSimplePersis
     }
   }
 
-  public String getCategoriaMax() {
-    return "Nada...";//categoriaMax;
+  public List<categoriaMaxDTO> getReporte() {
+    return reporte;
   }
 
 }

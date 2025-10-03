@@ -15,43 +15,53 @@ import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class EstadisticaHoraHechosCategoria implements Estadistica, WithSimplePersistenceUnit {
-  public String categoria;
-  public LocalTime horaPicoCategoria;
 
-  public EstadisticaHoraHechosCategoria(String categoria) {
-    this.categoria = categoria;
-  }
+  List<EstadisticaHoraHechosCategoria.categoriaHoraPicoDTO> reporte = new ArrayList<EstadisticaHoraHechosCategoria.categoriaHoraPicoDTO>();
+
+  public record categoriaHoraPicoDTO(String categoria, String hora_pico) {}
 
   @Override
   public void calcularEstadistica() {
 
-    List<Hecho> hechos = entityManager()
-        .createQuery("from Hecho h where h.categoria  = :categoria", Hecho.class)
-        .setParameter("categoria", this.categoria)
+    List<Object[]> listaDTO = entityManager()
+        .createNativeQuery("SELECT subq.categoria, DATE_FORMAT(subq.fechaAcontecimiento, '%H:%i:%s') as hora_pico\n" +
+            "FROM (\n" +
+            "  SELECT\n" +
+            "    h.categoria,\n" +
+            "    h.fechaAcontecimiento,\n" +
+            "    COUNT(*) AS cantidad,\n" +
+            "    ROW_NUMBER() OVER (\n" +
+            "      PARTITION BY categoria\n" +
+            "      ORDER BY COUNT(*) DESC, h.fechaAcontecimiento\n" +
+            "    ) AS rn\n" +
+            "  FROM Hecho h\n" +
+            "  GROUP BY h.categoria, h.fechaAcontecimiento\n" +
+            ") subq\n" +
+            "WHERE subq.rn = 1", Object[].class)
         .getResultList();
 
-    List<LocalTime> horas = hechos.stream()
-        .map(h -> LocalTime.from(h.getFechaAcontecimiento()))
-        .toList();
+    List<EstadisticaHoraHechosCategoria.categoriaHoraPicoDTO> lista = new ArrayList<>();
 
-    this.horaPicoCategoria = horas.stream()
-        .collect(groupingBy(identity(), counting()))
-        .entrySet().stream()
-        .max(Map.Entry.comparingByValue())
-        .map(Map.Entry::getKey).orElse(null);
+    for (Object[] r : listaDTO) {
+      String categoria = (String) r[0];
+      String hora_pico  = (String) r[1];
+      reporte.add(new EstadisticaHoraHechosCategoria.categoriaHoraPicoDTO(categoria, hora_pico));
+    }
 
+    reporte.forEach(dto -> System.out.printf("Nombre: %s | Cantidad: %d%n", dto.categoria(), dto.hora_pico()));
   }
 
 
   @Override
   public void exportarEstadistica(String path) throws IOException {
-    File file = new File(path);
+    /*File file = new File(path);
 
     if (file.exists()) {
       boolean eliminado = file.delete();
@@ -75,10 +85,12 @@ public class EstadisticaHoraHechosCategoria implements Estadistica, WithSimplePe
       }
       writer.writeNext(data);
     }
+
+
   }
 
   public LocalTime gethoraPicoCategoria() {
-    return horaPicoCategoria;
+    return horaPicoCategoria;*/
   }
 
 
