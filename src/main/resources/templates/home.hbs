@@ -9,17 +9,27 @@
 <div class="container">
     <h1 class="page-title">{{titulo}}</h1>
     <p class="page-message">{{mensaje}}</p>
+  <div class="container">
+    <header style="display:flex;justify-content:space-between;align-items:center;">
+      <h1>{{titulo}}</h1>
+      <nav>
+        {{#if esRegistrado}}
+          <span>👤 {{username}}</span>
+          <a href="/logout">Cerrar sesión</a>
+        {{else}}
+          <a href="/login">Iniciar sesión</a> |
+          <a href="/register">Registrarse</a>
+        {{/if}}
+      </nav>
+    </header>
+
+    <p>{{mensaje}}</p>
 
     <hr>
 
     <div class="user-section">
         <a href="/hechos/buscar" class="btn">🔍 Buscar Hechos</a>
         <a href="/hechos/nuevo" class="btn">📝 Cargar Nuevo Hecho</a>
-        {{#if esRegistrado}}
-            <span class="user-registered">(Usuario registrado)</span>
-        {{else}}
-            <span class="user-anonymous">(Usuario anónimo)</span>
-        {{/if}}
     </div>
 
     <hr>
