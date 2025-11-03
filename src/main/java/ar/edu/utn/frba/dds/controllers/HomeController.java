@@ -31,7 +31,6 @@ public class HomeController {
     return Map.of(
         "titulo", "MetaMapa: Gestión de Mapeos Colaborativos",
         "mensaje", "Explorá los hechos disponibles o contribuí agregando nuevos.",
-        "hechos", hechosDisponibles,
         "esRegistrado", esRegistrado
     );
   }

@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.dds.server;
 
+
 import ar.edu.utn.frba.dds.controllers.HechoController;
 import ar.edu.utn.frba.dds.controllers.HomeController;
 import ar.edu.utn.frba.dds.controllers.SolicitudController;
@@ -13,6 +14,10 @@ public class Router {
 
     app.get("/home", ctx -> ctx.render("home.hbs", controller.index(ctx)));
     app.get("/", ctx -> ctx.redirect("/home"));
+
+    //BUSQUEDA DE HECHOS
+    app.get("/hechos/buscar", ctx -> ctx.render("busqueda-hechos.hbs",
+        hechoController.showBusquedaForm(ctx)));
 
     //CREACION DE HECHOS
     app.get("/hechos/nuevo", ctx -> ctx.render("creacion.hbs",

@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Búsqueda de Hechos</title>
+    <link rel="stylesheet" href="/assets/main.css">
+    <style>
+        .search-form {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .search-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .btn-search {
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-search:hover {
+            background: #0056b3;
+        }
+        .btn-clear {
+            background: #6c757d;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .btn-clear:hover {
+            background: #545b62;
+        }
+        .results-section {
+            margin-top: 30px;
+        }
+        .result-item {
+            background: white;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .result-item h3 {
+            margin-top: 0;
+            color: #007bff;
+        }
+        .result-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #666;
+        }
+        .result-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .result-meta-item strong {
+            color: #333;
+        }
+        .no-results {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1 class="page-title">🔍 Búsqueda de Hechos</h1>
+
+    <div class="search-form">
+        <form action="/hechos/buscar" method="GET">
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="titulo">Título:</label>
+                    <input type="text" id="titulo" name="titulo" value="{{filtros.titulo}}" placeholder="Buscar por título">
+                </div>
+
+                <div class="form-group">
+                    <label for="categoria">Categoría:</label>
+                    <input type="text" id="categoria" name="categoria" value="{{filtros.categoria}}" placeholder="Ej: Accidente, Evento">
+                </div>
+
+                <div class="form-group">
+                    <label for="descripcion">Descripción:</label>
+                    <input type="text" id="descripcion" name="descripcion" value="{{filtros.descripcion}}" placeholder="Buscar en descripción">
+                </div>
+
+                <div class="form-group">
+                    <label for="ubicacion">Ubicación (Provincia):</label>
+                    <input type="text" id="ubicacion" name="ubicacion" value="{{filtros.ubicacion}}" placeholder="Ej: Buenos Aires">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaAcontecimiento">Fecha de Acontecimiento:</label>
+                    <input type="date" id="fechaAcontecimiento" name="fechaAcontecimiento" value="{{filtros.fechaAcontecimiento}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaCarga">Fecha de Carga:</label>
+                    <input type="date" id="fechaCarga" name="fechaCarga" value="{{filtros.fechaCarga}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaDesde">Rango desde:</label>
+                    <input type="date" id="fechaDesde" name="fechaDesde" value="{{filtros.fechaDesde}}">
+                </div>
+
+                <div class="form-group">
+                    <label for="fechaHasta">Rango hasta:</label>
+                    <input type="date" id="fechaHasta" name="fechaHasta" value="{{filtros.fechaHasta}}">
+                </div>
+            </div>
+
+            <div class="search-buttons">
+                <button type="submit" class="btn-search">🔍 Buscar</button>
+                <button type="button" class="btn-clear" onclick="window.location.href='/hechos/buscar'">🗑️ Limpiar filtros</button>
+            </div>
+        </form>
+    </div>
+
+    {{#if resultadosBusqueda}}
+        <div class="results-section">
+            <h2>📋 Resultados de la búsqueda ({{cantidadResultados}} hechos encontrados)</h2>
+
+            {{#if hechos}}
+                {{#each hechos}}
+                    <div class="result-item">
+                        <h3>{{this.titulo}}</h3>
+                        <p>{{this.descripcion}}</p>
+                        <div class="result-meta">
+                            <div class="result-meta-item">
+                                <strong>Categoría:</strong>
+                                <span>{{this.categoria}}</span>
+                            </div>
+                            <div class="result-meta-item">
+                                <strong>Fecha de acontecimiento:</strong>
+                                <span>{{this.fechaAcontecimiento}}</span>
+                            </div>
+                            <div class="result-meta-item">
+                                <strong>Fecha de carga:</strong>
+                                <span>{{this.fechaDeCarga}}</span>
+                            </div>
+                            <div class="result-meta-item">
+                                <strong>Ubicación:</strong>
+                                <span>{{this.latitud}}, {{this.longitud}}</span>
+                            </div>
+                        </div>
+                    </div>
+                {{/each}}
+            {{else}}
+                <div class="no-results">
+                    <p>😔 No se encontraron hechos con los filtros especificados.</p>
+                    <p>Intenta modificar los criterios de búsqueda.</p>
+                </div>
+            {{/if}}
+        </div>
+    {{/if}}
+
+    <hr>
+    <p><a href="/home" class="btn">🏠 Volver al inicio</a></p>
+</div>
+</body>
+</html>
+

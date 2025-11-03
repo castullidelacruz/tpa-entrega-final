@@ -119,4 +119,53 @@ public class HechoController implements WithSimplePersistenceUnit {
     ctx.render("confirmacion-solicitudCarga.hbs", model);
     ctx.sessionAttribute("flash_message", null);
   }
+
+
+  public Map<String, Object> showBusquedaForm(@NotNull Context ctx) {
+    Map<String, Object> modelo = new HashMap<>();
+
+    // Obtener los parámetros de búsqueda
+    String titulo = ctx.queryParam("titulo");
+    String categoria = ctx.queryParam("categoria");
+    String descripcion = ctx.queryParam("descripcion");
+    String ubicacion = ctx.queryParam("ubicacion");
+    String fechaAcontecimiento = ctx.queryParam("fechaAcontecimiento");
+    String fechaCarga = ctx.queryParam("fechaCarga");
+    String fechaDesde = ctx.queryParam("fechaDesde");
+    String fechaHasta = ctx.queryParam("fechaHasta");
+
+    // Guardar los filtros para mostrarlos en el formulario
+    Map<String, Criterio> filtros = new HashMap<>();
+    if (titulo != null) filtros.put("titulo", titulo);
+    if (categoria != null) filtros.put("categoria", categoria);
+    if (descripcion != null) filtros.put("descripcion", descripcion);
+    if (ubicacion != null) filtros.put("ubicacion", ubicacion);
+    if (fechaAcontecimiento != null) filtros.put("fechaAcontecimiento", fechaAcontecimiento);
+    if (fechaCarga != null) filtros.put("fechaCarga", fechaCarga);
+    if (fechaDesde != null) filtros.put("fechaDesde", fechaDesde);
+    if (fechaHasta != null) filtros.put("fechaHasta", fechaHasta);
+
+    modelo.put("filtros", filtros);
+
+    // Si hay algún filtro, realizar la búsqueda
+    boolean hayFiltros = !filtros.isEmpty();
+
+    if (hayFiltros) {
+      List<Hecho> resultados = repoHechos.buscarConFiltros(
+          titulo, categoria, descripcion, ubicacion,
+          fechaAcontecimiento, fechaCarga, fechaDesde, fechaHasta
+      );
+
+      // Convertir los hechos a un formato más amigable para la vista
+      List<Map<String, String>> hechosFormateados = resultados.stream()
+          .map(this::formatearHecho)
+          .collect(Collectors.toList());
+
+      modelo.put("resultadosBusqueda", true);
+      modelo.put("hechos", hechosFormateados);
+      modelo.put("cantidadResultados", resultados.size());
+    }
+
+    return modelo;
+  }
 }
