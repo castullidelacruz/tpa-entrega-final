@@ -1,0 +1,26 @@
+titulo,descripcion,categoria,latitud,longitud,fechaAcontecimiento,multimedia
+Corte de luz centro,Corte de luz en zona centro,cortes,-34.6037,-58.3816,2025-01-18T12:00,http://example.com/1
+Accidente vial,Choque de autos en Av. Libertador,accidente,-34.5875,-58.3817,2025-01-19T08:30,http://example.com/2
+Feria artesanal,Feria en Plaza San Martín,evento,-34.5997,-58.3819,2025-01-20T10:00,http://example.com/3
+Corte de agua,Baja presión de agua en barrio norte,cortes,-34.6075,-58.3821,2025-01-21T09:15,http://example.com/4
+Manifestación,Marcha pacífica en Av. 9 de Julio,evento,-34.6088,-58.3712,2025-01-22T14:00,http://example.com/5
+Accidente ferroviario,Descarrilamiento tren suburbano,accidente,-34.6112,-58.3734,2025-01-23T16:45,http://example.com/6
+Corte de luz zona sur,Corte programado por mantenimiento,cortes,-34.6150,-58.3770,2025-01-24T18:30,http://example.com/7
+Feria tecnológica,Expo en centro cultural,evento,-34.6175,-58.3795,2025-01-25T11:00,http://example.com/8
+Accidente de tránsito,Colisión múltiple en autopista,accidente,-34.6190,-58.3810,2025-01-26T13:20,http://example.com/9
+Corte de luz barrio oeste,Corte no programado,cortes,-34.6210,-58.3830,2025-01-27T15:00,http://example.com/10
+Inundación leve,Desborde de arroyo en barrio sur,evento,-34.6225,-58.3845,2025-01-28T07:30,http://example.com/11
+Accidente doméstico,Caída en vivienda particular,accidente,-34.6240,-58.3860,2025-01-29T09:45,http://example.com/12
+Corte de luz zona norte,Corte preventivo por mantenimiento,cortes,-34.6255,-58.3875,2025-01-30T12:15,http://example.com/13
+Feria gastronómica,Feria de comidas regionales,evento,-34.6270,-58.3890,2025-02-01T10:00,http://example.com/14
+Accidente laboral,Incidente en construcción,accidente,-34.6285,-58.3905,2025-02-02T11:30,http://example.com/15
+Corte de agua programado,Mantenimiento en red principal,cortes,-34.6300,-58.3920,2025-02-03T08:00,http://example.com/16
+Feria deportiva,Competencia de atletismo,evento,-34.6315,-58.3935,2025-02-04T09:00,http://example.com/17
+Accidente vehicular,Choque moto-auto,accidente,-34.6330,-58.3950,2025-02-05T17:30,http://example.com/18
+Corte de luz barrio centro,Corte inesperado,cortes,-34.6345,-58.3965,2025-02-06T14:20,http://example.com/19
+Feria cultural,Exposición de arte local,evento,-34.6360,-58.3980,2025-02-07T13:00,http://example.com/20
+Accidente ferroviario leve,Tren descarrila parcialmente,accidente,-34.6375,-58.3995,2025-02-08T15:45,http://example.com/21
+Corte de agua emergencia,Rotura de cañería principal,cortes,-34.6390,-58.4010,2025-02-09T16:10,http://example.com/22
+Feria musical,Concierto en plaza principal,evento,-34.6405,-58.4025,2025-02-10T20:00,http://example.com/23
+Accidente vial leve,Choque lateral,accidente,-34.6420,-58.4040,2025-02-11T07:20,http://example.com/24
+Corte de luz prolongado,Barrio norte sin electricidad,cortes,-34.6435,-58.4055,2025-02-12T19:00,http://example.com/25
