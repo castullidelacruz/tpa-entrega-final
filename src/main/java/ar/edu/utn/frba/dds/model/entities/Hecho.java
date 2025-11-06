@@ -1,9 +1,12 @@
 package ar.edu.utn.frba.dds.model.entities;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 0a69c7d777dd7d9538d179d364c91d50bbaf5ad9
 import static ar.edu.utn.frba.dds.model.estadistica.LocalizadorDeProvincias.getProvincia;
 import static java.util.Objects.requireNonNull;
 
-import ar.edu.utn.frba.dds.model.entities.fuentes.Fuente;
 import ar.edu.utn.frba.dds.model.entities.fuentes.TipoFuente;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -14,8 +17,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import org.hibernate.search.annotations.Analyze;
 import org.hibernate.search.annotations.Field;
@@ -53,18 +54,13 @@ public class Hecho {
   private String multimedia;
   @Column
   private Boolean disponibilidad = Boolean.TRUE;
-  @ManyToOne
-  @JoinColumn(name = "fuente_origen_id")
-  private Fuente fuenteOrigen;
-
-  public String obtenerProvincia() {
-    return getProvincia(this.latitud, this.longitud);
-  }
+  @Column
+  private String provincia;
 
 
   public Hecho(String titulo, String descripcion, String categoria, Double latitud,
                Double longitud, LocalDateTime fechaAcontecimiento, LocalDateTime fechaDeCarga,
-               TipoFuente origen, String multimedia, Boolean disponibilidad, Fuente fuenteOrigen) {
+               TipoFuente origen, String multimedia, Boolean disponibilidad) {
     this.titulo = requireNonNull(titulo);
     this.descripcion = requireNonNull(descripcion);
     this.categoria = requireNonNull(categoria);
@@ -75,7 +71,7 @@ public class Hecho {
     this.origen = requireNonNull(origen);
     this.multimedia = multimedia;
     this.disponibilidad = requireNonNull(disponibilidad);
-    this.fuenteOrigen = requireNonNull(fuenteOrigen);
+    this.provincia = getProvincia(this.latitud, this.longitud);
   }
 
   public Hecho() {
@@ -94,7 +90,7 @@ public class Hecho {
     this.origen = otro.origen;
     this.multimedia = otro.multimedia;
     this.disponibilidad = otro.disponibilidad;
-    this.fuenteOrigen = otro.fuenteOrigen;
+    this.provincia = getProvincia(otro.latitud, otro.longitud);
   }
 
   public Long getId() {
@@ -107,17 +103,10 @@ public class Hecho {
         && Objects.equals(this.categoria, otro.categoria)
         && Objects.equals(this.latitud, otro.latitud)
         && Objects.equals(this.longitud, otro.longitud)
-        && Objects.equals(this.fechaAcontecimiento, otro.fechaAcontecimiento)
-        && Objects.equals(this.fuenteOrigen, otro.fuenteOrigen);
+        && Objects.equals(this.provincia, otro.provincia)
+        && Objects.equals(this.fechaAcontecimiento, otro.fechaAcontecimiento);
   }
 
-  public Fuente getFuenteOrigen() {
-    return fuenteOrigen;
-  }
-
-  public void setFuenteOrigen(Fuente fuenteOrigen) {
-    this.fuenteOrigen = fuenteOrigen;
-  }
 
   public String getTitulo() {
     return titulo;

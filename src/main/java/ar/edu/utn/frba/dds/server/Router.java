@@ -14,6 +14,8 @@ public class Router {
     SolicitudController solicitudController = new SolicitudController();
     LoginController loginController = new LoginController();
     RegistroController registroController = new RegistroController();
+    GestionSolicitudesController gestionSolicitudesController = new GestionSolicitudesController();
+    ColeccionController coleccionController = new ColeccionController();
 
     // HOME
     app.get("/", ctx -> ctx.redirect("/home"));
@@ -44,7 +46,29 @@ public class Router {
     app.post("/solicitudes", solicitudController::createSolicitudEliminacion);
     app.get("/solicitudes/resultado/{solicitudId}",
         ctx -> ctx.render("resultado_eliminacion.hbs", solicitudController.showResultado(ctx)));
-    app.get("/dashboard",ctx -> ctx.render("dashboard.hbs"));
+
+    // DASHBOARD
+    app.get("/dashboard",ctx -> ctx.render("/dashboard/dashboard.hbs"));
+    app.get("/dashboard/solicitudes", gestionSolicitudesController::mostrarSolicitudes);
+    app.post("solicitud/carga/{id}/aceptar", gestionSolicitudesController::aceptarSolicitudCarga);
+    app.post("solicitud/carga/{id}/rechazar", gestionSolicitudesController::rechazarSolicitudCarga);
+    app.post("solicitud/eliminacion/{id}/aceptar", gestionSolicitudesController::aceptarSolicitudEliminacion);
+    app.post("solicitud/eliminacion/{id}/rechazar", gestionSolicitudesController::rechazarSolicitudEliminacion);
+    app.get("/dashboard/colecciones/crear", coleccionController::mostrarFormularioCreacion);
+    app.post("/dashboard/colecciones/crear", coleccionController::crearColeccion);
+    app.get("/dashboard/colecciones/modificar", coleccionController::mostrarColecciones);
+    app.post("/dashboard/colecciones/modificar/{id}", coleccionController::editarColeccion);
+    app.get("/dashboard/colecciones/modificar/{id}", coleccionController::mostrarFormularioEdicion);
+
+
+
+    //Estadisticas
+    app.get("/dashboard/estadisticas/cantidadSpam",ctx -> ctx.render("dashboard/estadisticaSpam.hbs",EstadisticasController.mostrarSpam(ctx)));
+    app.get("/dashboard/estadisticas/horaPicoCategoria",ctx -> ctx.render("dashboard/estadisticaHoraPico.hbs",EstadisticasController.mostrarHoraPico(ctx)));
+    app.get("/dashboard/estadisticas/categoriaMaxima",ctx -> ctx.render("dashboard/estadisticaCategoriaMaxima.hbs",EstadisticasController.mostrarCategoriaMaxima(ctx)));
+    app.get("/dashboard/estadisticas/categoriaProvinciaMax",ctx -> ctx.render("dashboard/estadisticaCategoriaProvinciaMax.hbs",EstadisticasController.mostrarCategoriaProvinciaMaxHechos(ctx)));
+    app.get("/dashboard/estadisticas/coleccionProvinciaMax",ctx -> ctx.render("dashboard/estadisticaColeccionProvinciaMax.hbs",EstadisticasController.mostrarColeccionProvinciaMaxHechos(ctx)));
+
   }
 }
 

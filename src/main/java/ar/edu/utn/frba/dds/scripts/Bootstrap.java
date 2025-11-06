@@ -4,6 +4,9 @@ import ar.edu.utn.frba.dds.model.entities.Hecho;
 import ar.edu.utn.frba.dds.model.entities.fuentes.Fuente;
 import ar.edu.utn.frba.dds.model.entities.fuentes.FuenteDinamica;
 import ar.edu.utn.frba.dds.model.entities.fuentes.TipoFuente;
+import ar.edu.utn.frba.dds.model.entities.solicitudes.EstadoSolicitud;
+import ar.edu.utn.frba.dds.model.entities.solicitudes.SolicitudDeCarga;
+import ar.edu.utn.frba.dds.model.entities.solicitudes.SolicitudDeEliminacion;
 import ar.edu.utn.frba.dds.repositories.RepositorioFuentes;
 import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.time.LocalDateTime;
@@ -45,8 +48,12 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           LocalDateTime.now(),
           TipoFuente.DINAMICA,
           "url_imagen_incendio.jpg",
-          Boolean.TRUE,
-          fuenteAsociada
+<<<<<<< HEAD
+          Boolean.TRUE//,
+=======
+          Boolean.TRUE
+>>>>>>> 0a69c7d777dd7d9538d179d364c91d50bbaf5ad9
+          //fuenteAsociada
       );
 
       Hecho hecho2 = new Hecho(
@@ -59,8 +66,12 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           LocalDateTime.now(),
           TipoFuente.DINAMICA,
           "url_video_accidente.mp4",
-          Boolean.TRUE,
-          fuenteAsociada
+<<<<<<< HEAD
+          Boolean.TRUE//,
+=======
+          Boolean.TRUE
+>>>>>>> 0a69c7d777dd7d9538d179d364c91d50bbaf5ad9
+          //fuenteAsociada
       );
 
       Hecho hecho3 = new Hecho(
@@ -73,13 +84,21 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           LocalDateTime.now(),
           TipoFuente.DINAMICA,
           null,
-          Boolean.TRUE,
-          fuenteAsociada
+<<<<<<< HEAD
+          Boolean.TRUE//,
+=======
+          Boolean.TRUE
+>>>>>>> 0a69c7d777dd7d9538d179d364c91d50bbaf5ad9
+          //fuenteAsociada
       );
+
+      // SolicitudDeEliminacion soli = new SolicitudDeEliminacion(hecho1, "abc", EstadoSolicitud.PENDIENTE, true);
+      SolicitudDeCarga solicitudDeCarga = new SolicitudDeCarga("abc","abc","abc", 27.0, 26.0, LocalDateTime.now(), null, false, fuenteDinamica);
 
       entityManager().persist(hecho1);
       entityManager().persist(hecho2);
       entityManager().persist(hecho3);
+      entityManager().persist(solicitudDeCarga);
 
       System.out.println("--- Seeder: 3 Hechos de prueba creados para eliminación.");
     });

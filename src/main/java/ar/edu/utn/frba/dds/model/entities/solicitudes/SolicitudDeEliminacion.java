@@ -76,6 +76,20 @@ public class SolicitudDeEliminacion {
     }
   }
 
+  public void rechazar() {
+    this.estado = EstadoSolicitud.RECHAZADA;
+  }
+
+  public void aprobar() {
+    if (estado.equals(EstadoSolicitud.ACEPTADA)) {
+      throw new IllegalStateException("La solicitud ya fue evaluada.");
+    }
+    this.estado = EstadoSolicitud.ACEPTADA;
+    if (this.hecho != null) {
+      this.hecho.setDisponibilidad(false);
+    }
+  }
+
 
 
 }
