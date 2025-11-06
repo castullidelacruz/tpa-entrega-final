@@ -11,7 +11,7 @@ import javax.persistence.Entity;
 @DiscriminatorValue("FECHA_CARGA")
 public class CriterioFechaCarga extends Criterio {
   @Column
-  LocalDate fecha;
+  LocalDate fechaCarga;
 
   public CriterioFechaCarga() {
   }
@@ -21,11 +21,11 @@ public class CriterioFechaCarga extends Criterio {
     if (hecho.getFechaDeCarga() == null) {
       return false;
     }
-    return hecho.getFechaDeCarga().toLocalDate().equals(fecha);
+    return hecho.getFechaDeCarga().toLocalDate().equals(fechaCarga);
   }
 
   public CriterioFechaCarga(LocalDate fecha) {
-    this.fecha = fecha;
+    this.fechaCarga = fecha;
   }
 
 
