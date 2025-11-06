@@ -47,8 +47,12 @@ public class Router {
         ctx -> ctx.render("resultado_eliminacion.hbs", solicitudController.showResultado(ctx)));
 
     // DASHBOARD
-    app.get("/dashboard",ctx -> ctx.render("dashboard.hbs"));
-    app.get("/dashboard/solicitudes",ctx -> ctx.render("gestion-solicitudes.hbs", gestionSolicitudesController.mostrarSolicitudes(ctx)));
+    app.get("/dashboard",ctx -> ctx.render("dashboard/dashboard.hbs"));
+    app.get("/dashboard/solicitudes",ctx -> ctx.render("dashboard/gestion-solicitudes.hbs", gestionSolicitudesController.mostrarSolicitudes(ctx)));
+    //Estadisticas
+    app.get("/dashboard/estadisticas/cantidadSpam",ctx -> ctx.render("dashboard/estadisticaSpam.hbs",EstadisticasController.mostrarSpam(ctx)));
+    app.get("/dashboard/estadisticas/horaPicoCategoria",ctx -> ctx.render("dashboard/estadisticaHoraPico.hbs",EstadisticasController.mostrarHoraPico(ctx)));
+
   }
 }
 

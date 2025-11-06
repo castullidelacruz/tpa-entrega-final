@@ -28,7 +28,7 @@ public class GestionSolicitudesController implements WithSimplePersistenceUnit {
         "solicitudesEliminacion", pendientesEliminacion
     );
 
-    ctx.render("gestion-solicitudes.hbs", model);
+    ctx.render("dashboard/gestion-solicitudes.hbs", model);
     return model;
   }
 
