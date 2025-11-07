@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,7 +22,7 @@ public class EstadisticaProvMaxHechosCategoria implements Estadistica, WithSimpl
 
   List<EstadisticaProvMaxHechosCategoria.EstPMHCategoriaDTO> reporte = new ArrayList<EstadisticaProvMaxHechosCategoria.EstPMHCategoriaDTO>();
 
-  public record EstPMHCategoriaDTO(String categoria, String provincia) {}
+  public record EstPMHCategoriaDTO(String categoria, String provincia, BigInteger cantidad) {}
 
   public EstadisticaProvMaxHechosCategoria() {}
 
@@ -30,7 +31,7 @@ public class EstadisticaProvMaxHechosCategoria implements Estadistica, WithSimpl
 
     List<Object[]> listaDTO = entityManager()
         .createNativeQuery(
-            "SELECT a.categoria, a.provincia\n" +
+            "SELECT a.categoria, a.provincia, a.cantidad\n" +
                 "FROM (\n" +
                 "  SELECT categoria, provincia, COUNT(*) AS cantidad\n" +
                 "  FROM hechos\n" +
@@ -51,10 +52,11 @@ public class EstadisticaProvMaxHechosCategoria implements Estadistica, WithSimpl
     for (Object[] r : listaDTO) {
       String categoria = (String) r[0];
       String provincia = (String) r[1];
-      reporte.add(new EstadisticaProvMaxHechosCategoria.EstPMHCategoriaDTO(categoria,provincia));
+      BigInteger cantidad = (BigInteger) r[2];
+      reporte.add(new EstadisticaProvMaxHechosCategoria.EstPMHCategoriaDTO(categoria,provincia,cantidad));
     }
 
-    reporte.forEach(dto -> System.out.printf("Categoria: %s | Provincia: %s%n", dto.categoria(), dto.provincia()));
+    reporte.forEach(dto -> System.out.printf("Categoria: %s | Provincia: %s | Cantidad %d%n", dto.categoria(), dto.provincia(), dto.cantidad()));
 
   }
 
@@ -66,7 +68,7 @@ public class EstadisticaProvMaxHechosCategoria implements Estadistica, WithSimpl
     }
     try (CSVWriter writer = new CSVWriter(
         new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8))) {
-      String[] header = {"Fecha", "Categoria", "ProvinciaMaxima"};
+      String[] header = {"Fecha", "Categoria", "ProvinciaMaxima", "Cantidad"};
 
       if (file.length() == 0) {
         writer.writeNext(header);
