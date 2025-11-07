@@ -6,6 +6,8 @@ import ar.edu.utn.frba.dds.controllers.HomeController;
 import ar.edu.utn.frba.dds.controllers.SolicitudController;
 import ar.edu.utn.frba.dds.controllers.*;
 import io.javalin.Javalin;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Router {
   public void configure(Javalin app) {

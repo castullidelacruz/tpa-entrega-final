@@ -42,8 +42,8 @@ public class HechoController implements WithSimplePersistenceUnit {
 
   // --- Mostrar formulario de creación de hecho ---
   public Map<String, Object> showCreationForm(@NotNull Context ctx) {
-    boolean esRegistrado =
-        ctx.attribute("userRole") == AppRole.USER || ctx.attribute("userRole") == AppRole.ADMIN;
+    AppRole role = ctx.attribute("userRole");
+    boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
     String contexto = esRegistrado ? "registrado" : "anonimo";
 
 
@@ -53,8 +53,9 @@ public class HechoController implements WithSimplePersistenceUnit {
     if (fuente == null) {
       ctx.status(500);
       return Map.of(
-          "titulo", "Error interno",
-          "mensaje", "No se encontró la fuente configurada para el contexto: " + contexto
+          "titulo", "Cargar Nuevo Hecho",
+          "mensaje", "No se encontró la fuente configurada para el contexto: " + contexto,
+          "esRegistrado", esRegistrado
       );
     }
 
@@ -67,7 +68,8 @@ public class HechoController implements WithSimplePersistenceUnit {
   }
 
   public void create(@NotNull Context ctx) {
-    boolean esRegistrado = ctx.sessionAttribute("usuarioRegistrado") != null;
+    AppRole role = ctx.attribute("userRole");
+    boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
     String contexto = esRegistrado ? "registrado" : "anonimo";
     Long fuenteId = CONTEXTO_A_FUENTE.get(contexto);
 
