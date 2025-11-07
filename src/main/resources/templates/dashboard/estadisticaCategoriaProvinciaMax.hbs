@@ -25,13 +25,14 @@
 
             <h2>Categoria Provincia Maxima</h2>
             <table class="tabla">
-            <thead><tr><th>Fecha</th><th>Categoria</th><th>Provincia</th></tr></thead>
+            <thead><tr><th>Fecha</th><th>Categoria</th><th>Provincia</th><th>Cantidad de Hechos</th></tr></thead>
             <tbody>
             {{#each reporte}}
                         <tr>
                             <td>{{fecha}}</td>
                             <td>{{this.categoria}}</td>
                             <td>{{this.provincia}}</td>
+                            <td>{{this.cantidad}}</td>
                         </tr>
             {{/each}}
             </tbody>

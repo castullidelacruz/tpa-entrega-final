@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStreamWriter;
+import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -21,31 +22,41 @@ public class EstadisticaProvMaxHechosColeccion implements Estadistica, WithSimpl
 
   List<EstadisticaProvMaxHechosColeccion.EstPMHColeccionDTO> reporte = new ArrayList<EstadisticaProvMaxHechosColeccion.EstPMHColeccionDTO>();
 
-  public record EstPMHColeccionDTO(String coleccion, String provincia) {}
+  public record EstPMHColeccionDTO(String coleccion, String provincia, BigInteger cantidad) {}
 
   public EstadisticaProvMaxHechosColeccion() {}
 
   @Override public void calcularEstadistica() {
 
     List<Object[]> listaDTO = entityManager()
-        .createNativeQuery("SELECT subq.coleccion, subq.provincia \n" +
-            "FROM (\n" +
-            "  SELECT\n" +
-            "    c.titulo as coleccion,\n" +
-            "    h.provincia,\n" +
-            "    COUNT(*) AS cantidad,\n" +
-            "    ROW_NUMBER() (\n" +
-            "      PARTITION BY c.titulo\n" +
-            "      ORDER BY COUNT(*) DESC, h.provincia\n" +
-            "    ) AS rn\n" +
-            "  FROM coleccion_hechos ch \n" +
-            "  JOIN colecciones c \n" +
-            "  ON ch.coleccion_id = c.id\n" +
-            "  JOIN hechos h \n" +
-            "  ON ch.hecho_id = h.id\n" +
-            "  GROUP BY c.titulo, h.provincia\n" +
-            ") subq\n" +
-            "WHERE subq.rn = 1")
+        .createNativeQuery("SELECT subq1.coleccion, subq1.provincia, subq1.cantidad \n" +
+            "            FROM (\n" +
+            "              SELECT\n" +
+            "                c.titulo as coleccion,\n" +
+            "                h.provincia,\n" +
+            "                COUNT(*) AS cantidad\n" +
+            "              FROM coleccion_hechos ch \n" +
+            "              JOIN colecciones c \n" +
+            "              ON ch.coleccion_id = c.id\n" +
+            "              JOIN hechos h \n" +
+            "              ON ch.hecho_id = h.id\n" +
+            "              GROUP BY c.titulo, h.provincia\n" +
+            "            ) subq1\n" +
+            "            LEFT JOIN (\n" +
+            "              SELECT\n" +
+            "                c.titulo as coleccion,\n" +
+            "                h.provincia,\n" +
+            "              COUNT(*) AS cantidad\n" +
+            "              FROM coleccion_hechos ch \n" +
+            "              JOIN colecciones c \n" +
+            "              ON ch.coleccion_id = c.id\n" +
+            "              JOIN hechos h \n" +
+            "              ON ch.hecho_id = h.id\n" +
+            "              GROUP BY c.titulo, h.provincia\n" +
+            "            ) subq2\n" +
+            "            ON subq1.coleccion = subq2.coleccion\n" +
+            "            \tAND subq2.cantidad > subq1.cantidad\n" +
+            "            WHERE subq2.coleccion IS NULL;")
         .getResultList();
 
     List<EstadisticaProvMaxHechosColeccion.EstPMHColeccionDTO> lista = new ArrayList<>();
@@ -53,10 +64,11 @@ public class EstadisticaProvMaxHechosColeccion implements Estadistica, WithSimpl
     for (Object[] r : listaDTO) {
       String coleccion = (String) r[0];
       String provincia = (String) r[1];
-      reporte.add(new EstadisticaProvMaxHechosColeccion.EstPMHColeccionDTO(coleccion,provincia));
+      BigInteger cantidad = (BigInteger) r[2];
+      reporte.add(new EstadisticaProvMaxHechosColeccion.EstPMHColeccionDTO(coleccion,provincia,cantidad));
     }
 
-    reporte.forEach(dto -> System.out.printf("Coleccion: %s | Provincia: %s%n", dto.coleccion(), dto.provincia()));
+    reporte.forEach(dto -> System.out.printf("Coleccion: %s | Provincia: %s | Cantidad: %d%n", dto.coleccion(), dto.provincia(), dto.cantidad()));
 
   }
 

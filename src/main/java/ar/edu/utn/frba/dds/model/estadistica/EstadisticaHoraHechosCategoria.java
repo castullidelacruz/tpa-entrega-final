@@ -30,19 +30,19 @@ public class EstadisticaHoraHechosCategoria implements Estadistica, WithSimplePe
 
     List<Object[]> listaDTO = entityManager()
         .createNativeQuery("SELECT subq.categoria, DATE_FORMAT(subq.fechaAcontecimiento, '%H:%i:%s') as hora_pico\n" +
-            "FROM (\n" +
-            "  SELECT\n" +
-            "    h.categoria,\n" +
-            "    h.fechaAcontecimiento,\n" +
-            "    COUNT(*) AS cantidad,\n" +
-            "    ROW_NUMBER() OVER (\n" +
-            "      PARTITION BY categoria\n" +
-            "      ORDER BY COUNT(*) DESC, h.fechaAcontecimiento\n" +
-            "    ) AS rn\n" +
-            "  FROM hechos h\n" +
-            "  GROUP BY h.categoria, h.fechaAcontecimiento\n" +
-            ") subq\n" +
-            "WHERE subq.rn = 1")
+            "            FROM (\n" +
+            "              SELECT\n" +
+            "                h.categoria,\n" +
+            "                h.fechaAcontecimiento,\n" +
+            "                COUNT(*) AS cantidad,\n" +
+            "                ROW_NUMBER() OVER (\n" +
+            "                  PARTITION BY categoria\n" +
+            "                  ORDER BY COUNT(*) DESC, h.fechaAcontecimiento\n" +
+            "                ) AS rn\n" +
+            "              FROM hechos h\n" +
+            "              GROUP BY h.categoria, h.fechaAcontecimiento\n" +
+            "            ) subq\n" +
+            "            WHERE subq.rn = 1;")
         .getResultList();
 
     List<EstadisticaHoraHechosCategoria.categoriaHoraPicoDTO> lista = new ArrayList<>();
