@@ -3,7 +3,7 @@ package ar.edu.utn.frba.dds.controllers;
 import ar.edu.utn.frba.dds.model.entities.Coleccion;
 import ar.edu.utn.frba.dds.model.entities.GeneradorHandleUuid;
 import ar.edu.utn.frba.dds.model.entities.algoritmosconcenso.AlgoritmoDeConsenso;
-import ar.edu.utn.frba.dds.model.entities.criterios.Criterio;
+import ar.edu.utn.frba.dds.model.entities.criterios.*;
 import ar.edu.utn.frba.dds.model.entities.fuentes.Fuente;
 import ar.edu.utn.frba.dds.repositories.RepositorioColecciones;
 import ar.edu.utn.frba.dds.repositories.RepositorioCriterios;
@@ -11,6 +11,8 @@ import ar.edu.utn.frba.dds.repositories.RepositorioFuentes;
 import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import io.javalin.http.Context;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -60,33 +62,64 @@ public class ColeccionController implements WithSimplePersistenceUnit {
     String descripcion = ctx.formParam("descripcion");
     Long fuenteId = ctx.formParamAsClass("fuenteId", Long.class).get();
     AlgoritmoDeConsenso algoritmo = AlgoritmoDeConsenso.valueOf(ctx.formParam("algoritmo"));
-    List<String> criterioIdsComoString = ctx.formParams("criterioIds");
-    List<Long> criterioIds = criterioIdsComoString.stream()
-        .filter(idStr -> idStr != null && !idStr.isEmpty())
-        .map(Long::parseLong)
-        .toList();
 
     try {
       withTransaction(() -> {
         Fuente fuente = repoFuentes.getFuente(fuenteId);
-        List<Criterio> criterios = repoCriterios.obtenerCriteriosPorId(criterioIds);
+        List<Criterio> criterios = new ArrayList<>();
+
+        // --- Criterios de pertenencia seleccionados ---
+
+        if (ctx.formParam("criterioTitulo") != null) {
+          String valor = ctx.formParam("criterioTituloValor");
+          if (valor != null && !valor.isEmpty()) criterios.add(new CriterioTitulo(valor));
+        }
+
+        if (ctx.formParam("criterioCategoria") != null) {
+          String valor = ctx.formParam("criterioCategoriaValor");
+          if (valor != null && !valor.isEmpty()) criterios.add(new CriterioCategoria(valor));
+        }
+
+        if (ctx.formParam("criterioDescripcion") != null) {
+          String valor = ctx.formParam("criterioDescripcionValor");
+          if (valor != null && !valor.isEmpty()) criterios.add(new CriterioDescripcion(valor));
+        }
+
+        if (ctx.formParam("criterioFecha") != null) {
+          String valor = ctx.formParam("criterioFechaValor");
+          if (valor != null && !valor.isEmpty()) criterios.add(new CriterioFecha(LocalDate.parse(valor)));
+        }
+
+        if (ctx.formParam("criterioFechaCarga") != null) {
+          String valor = ctx.formParam("criterioFechaCargaValor");
+          if (valor != null && !valor.isEmpty()) criterios.add(new CriterioFechaCarga(LocalDate.parse(valor)));
+        }
+
+        if (ctx.formParam("criterioRango") != null) {
+          String desdeStr = ctx.formParam("criterioRangoDesde");
+          String hastaStr = ctx.formParam("criterioRangoHasta");
+          if (desdeStr != null && hastaStr != null && !desdeStr.isEmpty() && !hastaStr.isEmpty()) {
+            criterios.add(new CriterioRangoFechas(LocalDate.parse(desdeStr), LocalDate.parse(hastaStr)));
+          }
+        }
+
+        if (ctx.formParam("criterioUbicacion") != null) {
+          String latStr = ctx.formParam("criterioLatitudValor");
+          String lonStr = ctx.formParam("criterioLongitudValor");
+          if (latStr != null && lonStr != null && !latStr.isEmpty() && !lonStr.isEmpty()) {
+            criterios.add(new CriterioUbicacion(Double.parseDouble(latStr), Double.parseDouble(lonStr)));
+          }
+        }
+
+        // --- Crear la colección ---
         GeneradorHandleUuid generador = new GeneradorHandleUuid();
-        String handler = generador.generar();
+        Coleccion nueva = new Coleccion(titulo, descripcion, fuente, criterios, generador.generar(), algoritmo);
 
-        Coleccion nuevaColeccion = new Coleccion(
-            titulo,
-            descripcion,
-            fuente,
-            criterios,
-            handler,
-            algoritmo
-        );
 
-        repoColecciones.cargarColeccion(nuevaColeccion);
+        repoColecciones.cargarColeccion(nueva);
       });
 
       ctx.sessionAttribute("flash_message", "Colección creada exitosamente!");
-
     } catch (Exception e) {
       e.printStackTrace();
       ctx.sessionAttribute("flash_error", "Error al crear la colección: " + e.getMessage());
@@ -94,6 +127,8 @@ public class ColeccionController implements WithSimplePersistenceUnit {
 
     ctx.redirect("/dashboard/colecciones/crear");
   }
+
+
 
   public void mostrarColecciones(Context ctx) {
     var colecciones = repoColecciones.getColecciones();

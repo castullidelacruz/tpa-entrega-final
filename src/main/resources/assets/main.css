@@ -211,3 +211,16 @@
     color: #666;
 }
 
+.btn-delete {
+    background-color: #d9534f;
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #c9302c;
+}
+

@@ -1,71 +1,121 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Crear Nueva Colección</title>
-    <link rel="stylesheet" href="/assets/dashboard.css">
-    <link rel="stylesheet" href="/assets/creacion.css">
+  <meta charset="UTF-8">
+  <title>Crear Nueva Colección</title>
+  <link rel="stylesheet" href="/assets/dashboard.css">
+  <link rel="stylesheet" href="/assets/creacion.css">
+  <style>
+    .criterio-section {
+      background: #f9f9f9;
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
+    .criterio-section label {
+      font-weight: bold;
+      margin-right: 10px;
+    }
+    .criterio-section input[type="text"],
+    .criterio-section input[type="date"],
+    .criterio-section input[type="number"] {
+      margin-top: 5px;
+      margin-right: 10px;
+      padding: 4px 8px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+  </style>
 </head>
 <body class="dashboard-body">
 <div class="dashboard-container">
 
-    {{> templates/dashboard/_sidebar}}
+  {{> templates/dashboard/_sidebar}}
 
-    <main class="main-content">
-        <header class="main-header">
-            <h1>Crear Nueva Colección</h1>
-        </header>
+  <main class="main-content">
+    <header class="main-header">
+      <h1>Crear Nueva Colección</h1>
+    </header>
 
-        <div class="form-container">
+    <div class="form-container">
 
-            {{#if flash_error}}
-                <div class="flash error">{{flash_error}}</div>
-            {{/if}}
-            {{#if flash_message}}
-                <div class="flash success">{{flash_message}}</div>
-            {{/if}}
+      {{#if flash_error}}
+        <div class="flash error">{{flash_error}}</div>
+      {{/if}}
+      {{#if flash_message}}
+        <div class="flash success">{{flash_message}}</div>
+      {{/if}}
 
-            <form action="/dashboard/colecciones/crear" method="POST">
+      <form action="/dashboard/colecciones/crear" method="POST">
 
-                <label for="titulo">Título</label>
-                <input type="text" name="titulo" placeholder="Ej: Hechos de Contaminación CABA" required>
+        <label for="titulo">Título</label>
+        <input type="text" name="titulo" placeholder="Ej: Hechos de Contaminación CABA" required>
 
-                <label for="descripcion">Descripción</label>
-                <textarea name="descripcion" placeholder="Describe la colección..." required></textarea>
+        <label for="descripcion">Descripción</label>
+        <textarea name="descripcion" placeholder="Describe la colección..." required></textarea>
 
-                <label for="fuenteId">Fuente de Datos</label>
-                <select id="fuenteId" name="fuenteId" required>
-                    <option value="" disabled selected>-- Selecciona una fuente --</option>
-                    {{#each todasLasFuentes}}
-                        <option value="{{this.id}}">ID: {{this.id}} (Tipo: {{this.tipo}})</option>
-                    {{/each}}
-                </select>
+        <label for="fuenteId">Fuente de Datos</label>
+        <select id="fuenteId" name="fuenteId" required>
+          <option value="" disabled selected>-- Selecciona una fuente --</option>
+          {{#each todasLasFuentes}}
+            <option value="{{this.id}}">ID: {{this.id}} (Tipo: {{this.tipo}})</option>
+          {{/each}}
+        </select>
 
-                <label for="algoritmo">Algoritmo de Consenso</label>
-                <select id="algoritmo" name="algoritmo" required>
-                    <option value="" disabled selected>-- Selecciona un algoritmo --</option>
-                    {{#each todosLosAlgoritmos}}
-                        <option value="{{this.name}}">{{this.name}}</option>
-                    {{/each}}
-                </select>
+        <label for="algoritmo">Algoritmo de Consenso</label>
+        <select id="algoritmo" name="algoritmo" required>
+          <option value="" disabled selected>-- Selecciona un algoritmo --</option>
+          {{#each todosLosAlgoritmos}}
+            <option value="{{this.name}}">{{this.name}}</option>
+          {{/each}}
+        </select>
 
-                <label>Criterios de Pertenencia (Opcional)</label>
-                <div class="checkbox-group">
-                    {{#each todosLosCriterios}}
-                        <div class="checkbox-item">
-                            <input type="checkbox"
-                                   id="criterio-{{this.id}}"
-                                   name="criterioIds"
-                                   value="{{this.id}}">
-                            <label for="criterio-{{this.id}}">{{this.nombre}}</label>
-                        </div>
-                    {{/each}}
-                </div>
+        <h3>Criterios de Pertenencia (Opcional)</h3>
 
-                <button type="submit">Crear Colección</button>
-            </form>
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioTitulo"> Por Título</label>
+          <input type="text" name="criterioTituloValor" placeholder="Texto a buscar en título">
         </div>
-    </main>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioCategoria"> Por Categoría</label>
+          <input type="text" name="criterioCategoriaValor" placeholder="Ej: accidente, incendio...">
+        </div>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioDescripcion"> Por Descripción</label>
+          <input type="text" name="criterioDescripcionValor" placeholder="Texto contenido en descripción">
+        </div>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioFecha"> Por Fecha de Acontecimiento</label>
+          <input type="date" name="criterioFechaValor">
+        </div>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioFechaCarga"> Por Fecha de Carga</label>
+          <input type="date" name="criterioFechaCargaValor">
+        </div>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioRango"> Por Rango de Fechas</label>
+          <label>Desde:</label>
+          <input type="date" name="criterioRangoDesde">
+          <label>Hasta:</label>
+          <input type="date" name="criterioRangoHasta">
+        </div>
+
+        <div class="criterio-section">
+          <label><input type="checkbox" name="criterioUbicacion"> Por Ubicación</label>
+          <input type="number" step="any" name="criterioLatitudValor" placeholder="Latitud">
+          <input type="number" step="any" name="criterioLongitudValor" placeholder="Longitud">
+        </div>
+
+        <button type="submit">Crear Colección</button>
+      </form>
+    </div>
+  </main>
 </div>
 </body>
 </html>
