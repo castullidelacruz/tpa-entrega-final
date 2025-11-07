@@ -1,6 +1,8 @@
 package ar.edu.utn.frba.dds.scripts;
 
 import ar.edu.utn.frba.dds.model.entities.Hecho;
+import ar.edu.utn.frba.dds.model.entities.criterios.CriterioCategoria;
+import ar.edu.utn.frba.dds.model.entities.criterios.CriterioTitulo;
 import ar.edu.utn.frba.dds.model.entities.fuentes.Fuente;
 import ar.edu.utn.frba.dds.model.entities.fuentes.FuenteDinamica;
 import ar.edu.utn.frba.dds.model.entities.fuentes.TipoFuente;
@@ -82,11 +84,15 @@ public class Bootstrap implements WithSimplePersistenceUnit {
 
       // SolicitudDeEliminacion soli = new SolicitudDeEliminacion(hecho1, "abc", EstadoSolicitud.PENDIENTE, true);
       SolicitudDeCarga solicitudDeCarga = new SolicitudDeCarga("abc","abc","abc", 27.0, 26.0, LocalDateTime.now(), null, false, fuenteDinamica);
+      CriterioCategoria criterioCategoria = new CriterioCategoria();
+      CriterioTitulo criterioTitulo = new CriterioTitulo();
 
       entityManager().persist(hecho1);
       entityManager().persist(hecho2);
       entityManager().persist(hecho3);
       entityManager().persist(solicitudDeCarga);
+      entityManager().persist(criterioCategoria);
+      entityManager().persist(criterioTitulo);
 
       System.out.println("--- Seeder: 3 Hechos de prueba creados para eliminación.");
     });
