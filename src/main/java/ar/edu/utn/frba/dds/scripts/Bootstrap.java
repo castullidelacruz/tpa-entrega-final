@@ -23,6 +23,7 @@ import java.util.List;
 
 public class Bootstrap implements WithSimplePersistenceUnit {
   public static void init() {
+    FuenteDinamica.setRepositorioHechos(RepositorioHechos.getInstance());
     new Bootstrap().cargarDatosIniciales();
   }
 
