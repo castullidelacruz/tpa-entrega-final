@@ -1,13 +1,16 @@
 package ar.edu.utn.frba.dds.controllers;
 
-import ar.edu.utn.frba.dds.model.estadistica.*;
+import ar.edu.utn.frba.dds.model.estadistica.ComponenteEstadistico;
+import ar.edu.utn.frba.dds.model.estadistica.EstadisticaCantidadSpam;
+import ar.edu.utn.frba.dds.model.estadistica.EstadisticaCategoriaMaxima;
+import ar.edu.utn.frba.dds.model.estadistica.EstadisticaHoraHechosCategoria;
+import ar.edu.utn.frba.dds.model.estadistica.EstadisticaProvMaxHechosCategoria;
+import ar.edu.utn.frba.dds.model.estadistica.EstadisticaProvMaxHechosColeccion;
 import ar.edu.utn.frba.dds.repositories.RepositorioColecciones;
 import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import io.javalin.http.Context;
 import java.io.IOException;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 

@@ -1,12 +1,7 @@
 package ar.edu.utn.frba.dds.model.estadistica;
 
-import static java.util.function.Function.identity;
-import static java.util.stream.Collectors.counting;
-import static java.util.stream.Collectors.groupingBy;
-
 import ar.edu.utn.frba.dds.model.entities.Hecho;
 import com.opencsv.CSVWriter;
-import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -14,8 +9,6 @@ import java.io.OutputStreamWriter;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -24,7 +17,7 @@ import java.util.concurrent.ConcurrentHashMap;
 public class EstadisticaHoraHechosCategoria implements Estadistica {
 
   /** Mapa de conteo: categoría -> (hora -> cantidad de hechos) */
-  private final Map<String, Map<Integer, Long>> conteoPorCategoriaYHora = new ConcurrentHashMap<>();
+  private final Map<String, Map<Integer, Long>> conteoPorCategoriaYhora = new ConcurrentHashMap<>();
 
   /** Resultado precomputado: categoría -> DTO con hora pico actual */
   private final Map<String, CategoriaHoraPicoDto> horaPicoPorCategoria = new ConcurrentHashMap<>();
@@ -48,7 +41,13 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
   @Override
   public synchronized void exportarEstadistica(String path) throws IOException {
     File file = new File(path);
-    if (file.exists()) file.delete();
+
+    if (file.exists()) {
+      boolean eliminado = file.delete();
+      if (!eliminado) {
+        System.err.println("⚠️ No se pudo eliminar el archivo existente: " + path);
+      }
+    }
 
     try (CSVWriter writer = new CSVWriter(
         new OutputStreamWriter(new FileOutputStream(file, true), StandardCharsets.UTF_8))) {
@@ -79,7 +78,7 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
     String categoria = hecho.getCategoria();
     int hora = hecho.getFechaAcontecimiento().getHour();
 
-    conteoPorCategoriaYHora
+    conteoPorCategoriaYhora
         .computeIfAbsent(categoria, c -> new ConcurrentHashMap<>())
         .merge(hora, 1L, Long::sum);
 
@@ -95,12 +94,14 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
     String categoria = hecho.getCategoria();
     int hora = hecho.getFechaAcontecimiento().getHour();
 
-    Map<Integer, Long> conteoHoras = conteoPorCategoriaYHora.get(categoria);
-    if (conteoHoras == null) return;
+    Map<Integer, Long> conteoHoras = conteoPorCategoriaYhora.get(categoria);
+    if (conteoHoras == null) {
+      return;
+    }
 
     conteoHoras.computeIfPresent(hora, (h, count) -> (count > 1) ? count - 1 : null);
     if (conteoHoras.isEmpty()) {
-      conteoPorCategoriaYHora.remove(categoria);
+      conteoPorCategoriaYhora.remove(categoria);
       horaPicoPorCategoria.remove(categoria);
     } else {
       recalcularHoraPico(categoria);
@@ -117,8 +118,10 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
   // ============================
 
   private void recalcularHoraPico(String categoria) {
-    Map<Integer, Long> conteoHoras = conteoPorCategoriaYHora.get(categoria);
-    if (conteoHoras == null || conteoHoras.isEmpty()) return;
+    Map<Integer, Long> conteoHoras = conteoPorCategoriaYhora.get(categoria);
+    if (conteoHoras == null || conteoHoras.isEmpty()) {
+      return;
+    }
 
     Map.Entry<Integer, Long> max = conteoHoras.entrySet().stream()
         .max(Map.Entry.comparingByValue())

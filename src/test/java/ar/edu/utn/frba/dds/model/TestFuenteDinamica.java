@@ -7,6 +7,7 @@ import ar.edu.utn.frba.dds.model.entities.Hecho;
 import ar.edu.utn.frba.dds.model.entities.criterios.Criterio;
 import ar.edu.utn.frba.dds.model.entities.criterios.CriterioBase;
 import ar.edu.utn.frba.dds.model.entities.fuentes.*;
+import ar.edu.utn.frba.dds.model.estadistica.*;
 import ar.edu.utn.frba.dds.repositories.RepositorioHechos;
 import ar.edu.utn.frba.dds.repositories.RepositorioSolicitudesDeCarga;
 import ar.edu.utn.frba.dds.model.entities.solicitudes.EstadoSolicitud;
@@ -18,6 +19,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -37,6 +39,13 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
 
   @BeforeEach
   public void prepImportacionDinamica() {
+    List<Estadistica> estadisticas = new ArrayList<>();
+    estadisticas.add(new EstadisticaCategoriaMaxima());
+    estadisticas.add(new EstadisticaCantidadSpam());
+    estadisticas.add(new EstadisticaProvMaxHechosCategoria());
+    estadisticas.add(new EstadisticaProvMaxHechosColeccion());
+    estadisticas.add(new EstadisticaHoraHechosCategoria());
+    ComponenteEstadistico.inicializar(estadisticas);
     GeneradorHandleUuid generador = new GeneradorHandleUuid();
 
     cBase = new CriterioBase();
