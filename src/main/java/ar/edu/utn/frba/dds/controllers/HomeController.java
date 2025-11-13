@@ -26,9 +26,11 @@ public class HomeController {
     model.put("titulo", "MetaMapa: Gestión de Mapeos Colaborativos");
     model.put("mensaje", esRegistrado
         ? "Bienvenido, " + (username != null ? username : "Usuario")
-        + ". Podés registrar y gestionar tus hechos."
+        +
+        ". Podés registrar y gestionar tus hechos."
         : "Estás navegando como visitante. "
-        + "Podés ver hechos en el mapa o cargar nuevos de forma anónima.");
+        +
+        "Podés ver hechos en el mapa o cargar nuevos de forma anónima.");
     model.put("hechos", hechosDisponibles);
     model.put("esRegistrado", esRegistrado);
     model.put("esAdmin", esAdmin);
