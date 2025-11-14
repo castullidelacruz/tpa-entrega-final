@@ -27,7 +27,8 @@ public class Server {
     initializeSecurity(app);
 
     new Router().configure(app);
-    app.start(9001);
+    int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "9001"));
+    app.start(port);
   }
 
   private void initializeSecurity(Javalin app) {
