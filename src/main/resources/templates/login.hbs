@@ -1,3 +1,7 @@
+{{! ============================================
+    PÁGINA DE INICIO DE SESIÓN
+    Formulario de autenticación de usuarios
+    ============================================ }}
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -7,28 +11,41 @@
 </head>
 <body>
     <div class="container">
+        {{! --- Título --- }}
         <h1>Iniciar Sesión</h1>
 
+        {{! --- Mensaje de Error --- }}
         {{#if error}}
             <div class="alert alert-error">
                 <p><strong>Error:</strong> {{error}}</p>
             </div>
         {{/if}}
 
+        {{! ==========================================
+            FORMULARIO DE LOGIN
+            ========================================== }}
         <form method="POST" action="/login">
+
+            {{! Campo: Usuario }}
             <div>
                 <label for="username">Usuario:</label>
                 <input type="text" id="username" name="username" required>
             </div>
+
+            {{! Campo: Contraseña }}
             <div>
                 <label for="password">Contraseña:</label>
                 <input type="password" id="password" name="password" required>
             </div>
             <br>
+
+            {{! Botón de Envío }}
             <div>
                 <button type="submit">Ingresar</button>
             </div>
         </form>
+
+        {{! --- Enlaces Adicionales --- }}
         <hr>
         <a href="/register">¿No tienes una cuenta? Registrarse</a><br>
         <a href="/home">Volver al inicio</a>

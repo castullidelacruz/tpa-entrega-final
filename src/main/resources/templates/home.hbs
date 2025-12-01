@@ -1,81 +1,113 @@
+{{! ============================================
+    PÁGINA DE INICIO - HOME
+    Página principal con información y enlaces
+    ============================================ }}
+
+{{! --- Header: Navegación del Usuario --- }}
 {{#partial "contenido-header"}}
   {{#if esRegistrado}}
     <span>👤 {{username}}</span>
     {{#if esAdmin}}
-      | <a href="/dashboard" class="link-primary">Panel Admin</a>
+      <a href="/dashboard" class="link-primary">Panel Admin</a>
     {{/if}}
     <a href="/logout" class="link-danger">Cerrar sesión</a>
   {{else}}
-    <a href="/login" class="link-primary">Iniciar sesión</a> |
+    <a href="/login" class="link-primary">Iniciar sesión</a>
     <a href="/register" class="link-primary">Registrarse</a>
   {{/if}}
 {{/partial}}
 
+{{! ==========================================
+    CONTENIDO PRINCIPAL
+    ========================================== }}
 {{#partial "contenido"}}
-  <div class="text-center mb-4">
-    <p class="lead">{{mensaje}}</p>
+  <div class="container py-5">
 
-    <div class="d-flex flex-wrap justify-content-center gap-3 my-3">
-      <a href="/hechos/buscar" class="btn btn-primary">🔍 Buscar Hechos</a>
-      <a href="/hechos/nuevo" class="btn btn-success">📝 Cargar Nuevo Hecho</a>
+    {{! --- Encabezado Principal --- }}
+    <div class="text-center mb-5">
+      <h1 class="display-4 mb-3">{{mensaje}}</h1>
+      <p class="lead text-muted">Plataforma colaborativa de hechos históricos</p>
     </div>
 
+    {{! ==========================================
+        EXPLICACIÓN DEL FUNCIONAMIENTO
+        ========================================== }}
+    <div class="row mb-5">
+      <div class="col-lg-8 mx-auto">
+        <div class="card shadow-sm">
+          <div class="card-body p-4">
+            <h2 class="h4 text-primary mb-4">📚 ¿Cómo funciona nuestra plataforma?</h2>
+
+            {{! Sección: Explorar Hechos }}
+            <div class="mb-4">
+              <h3 class="h5 text-secondary mb-2">🔍 Explora hechos históricos</h3>
+              <p class="text-muted">
+                Descubrí una amplia colección de eventos históricos organizados por categorías, ubicación y fecha.
+                Utilizá nuestro buscador avanzado para encontrar hechos específicos filtrando por palabras clave,
+                categorías temáticas, ubicación geográfica o períodos temporales.
+              </p>
+            </div>
+
+            {{! Sección: Contribuir con Hechos }}
+            <div class="mb-4">
+              <h3 class="h5 text-secondary mb-2">📝 Contribuí con nuevos hechos</h3>
+              <p class="text-muted">
+                Si estás registrado, podés agregar nuevos hechos históricos a nuestra base de datos. Incluí
+                información detallada como título, descripción, categoría, ubicación geográfica (latitud y longitud),
+                fecha del acontecimiento y fuentes verificables. Todos los hechos pasan por un proceso de validación.
+              </p>
+            </div>
+
+            {{! Sección: Comunidad Colaborativa }}
+            <div class="mb-3">
+              <h3 class="h5 text-secondary mb-2">🤝 Comunidad colaborativa</h3>
+              <p class="text-muted">
+                Participá de una comunidad de entusiastas de la historia. Solicitá la eliminación de hechos que
+                consideres incorrectos o duplicados, y los administradores revisarán cada solicitud para mantener
+                la calidad de la información.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{! ==========================================
+        CALL TO ACTION PRINCIPAL
+        ========================================== }}
+    <div class="text-center mb-4">
+      <a href="/hechos/buscar" class="btn btn-primary btn-lg px-5 py-3 shadow">
+        🔍 Buscar Hechos Históricos
+      </a>
+      <p class="text-muted mt-3">Comenzá tu exploración ahora mismo</p>
+    </div>
+
+    {{! ==========================================
+        ACCIÓN SECUNDARIA: AGREGAR HECHO
+        ========================================== }}
+    <div class="row mt-5">
+      <div class="col-md-6 mx-auto mb-3">
+        <div class="card shadow-sm">
+          <div class="card-body text-center">
+            <h3 class="h5 mb-3">📝 Agregar Nuevo Hecho</h3>
+            <p class="text-muted mb-3">Compartí eventos históricos con la comunidad</p>
+            <a href="/hechos/nuevo" class="btn btn-success">Cargar Hecho</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {{! ==========================================
+        SECCIÓN DE ADMINISTRADOR
+        ========================================== }}
     {{#if esAdmin}}
-      <div class="alert alert-warning shadow-sm mt-3">
-        🛡️ <strong>Panel de Administrador:</strong> Gestioná solicitudes, estadísticas y colecciones.
-        <br><a href="/dashboard" class="btn btn-warning mt-2">Ir al Panel</a>
+      <div class="alert alert-warning shadow-sm mt-4">
+        🛡️ <strong>Panel de Administrador:</strong> Gestioná solicitudes de eliminación, consultá estadísticas y administrá colecciones.
+        <br><a href="/dashboard" class="btn btn-warning mt-2">Ir al Panel de Administración</a>
       </div>
     {{/if}}
   </div>
-
-  <section class="map-section my-4">
-    <h2 class="text-primary mb-3 text-center">🗺️ Mapa de Hechos Disponibles</h2>
-    <div id="map" class="rounded shadow" style="height:65vh;"></div>
-    <div class="mapa-leyenda mt-2 text-muted text-center">
-      📍 Haz clic en un marcador para ver detalles del hecho.
-    </div>
-  </section>
-
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const hechos = [
-        {{#each hechos}}
-        {
-          titulo: "{{this.titulo}}",
-          descripcion: "{{this.descripcion}}",
-          categoria: "{{this.categoria}}",
-          latitud: {{this.latitud}},
-          longitud: {{this.longitud}},
-          fechaAcontecimiento: "{{this.fechaAcontecimiento}}",
-          id: {{this.id}}
-        }{{#unless @last}},{{/unless}}
-        {{/each}}
-      ];
-
-      if (hechos.length === 0) return;
-
-      const latProm = hechos.reduce((sum, h) => sum + h.latitud, 0) / hechos.length;
-      const lonProm = hechos.reduce((sum, h) => sum + h.longitud, 0) / hechos.length;
-
-      const mapa = L.map('map').setView([latProm, lonProm], 10);
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-        attribution: '© OpenStreetMap contributors',
-        maxZoom: 18
-      }).addTo(mapa);
-
-      hechos.forEach(hecho => {
-        const marker = L.marker([hecho.latitud, hecho.longitud]).addTo(mapa);
-        const popup = `
-          <div style="max-width:200px;">
-            <h6>${hecho.titulo}</h6>
-            <p><strong>Categoría:</strong> ${hecho.categoria}</p>
-            <p>${hecho.descripcion}</p>
-            <a href="/hechos/${hecho.id}/solicitud" class="btn btn-sm btn-outline-danger">Eliminar</a>
-          </div>`;
-        marker.bindPopup(popup);
-      });
-    });
-  </script>
 {{/partial}}
 
+{{! --- Renderizar con el Layout --- }}
 {{>templates/layout}}

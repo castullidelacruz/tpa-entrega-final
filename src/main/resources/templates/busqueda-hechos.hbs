@@ -1,13 +1,27 @@
+{{! ============================================
+    BÚSQUEDA DE HECHOS - HEADER
+    ============================================ }}
 {{#partial "contenido-header"}}
-  <a href="/home" class="btn btn-outline-primary">⬅️ Volver al Inicio</a>
+  <a href="/home" class="btn btn-outline-primary btn-sm">⬅️ Volver al Inicio</a>
 {{/partial}}
 
+{{! ============================================
+    BÚSQUEDA DE HECHOS - CONTENIDO PRINCIPAL
+    ============================================ }}
 {{#partial "contenido"}}
+
+  {{! --- Sección de Búsqueda --- }}
   <div class="search-section mb-4">
     <h1 class="mb-3 text-center">🔍 Búsqueda de Hechos</h1>
 
+    {{! --- Formulario de Búsqueda --- }}
+    {{! --- Formulario de Búsqueda --- }}
     <form action="/hechos/buscar" method="GET" class="search-form">
+
+      {{! --- Grid de Campos de Búsqueda --- }}
       <div class="form-grid">
+
+        {{! Campo: Título }}
         <div class="form-group">
           <label for="titulo">Título</label>
           <input type="text" name="titulo" id="titulo"
@@ -15,6 +29,7 @@
                  value="{{filtros.titulo}}">
         </div>
 
+        {{! Campo: Categoría }}
         <div class="form-group">
           <label for="categoria">Categoría</label>
           <input type="text" name="categoria" id="categoria"
@@ -22,6 +37,7 @@
                  value="{{filtros.categoria}}">
         </div>
 
+        {{! Campo: Descripción }}
         <div class="form-group">
           <label for="descripcion">Descripción</label>
           <input type="text" name="descripcion" id="descripcion"
@@ -29,6 +45,7 @@
                  value="{{filtros.descripcion}}">
         </div>
 
+        {{! Campo: Latitud }}
         <div class="form-group">
           <label for="latitud">Latitud</label>
           <input type="number" step="0.0001" name="latitud" id="latitud"
@@ -36,6 +53,7 @@
                  value="{{filtros.latitud}}">
         </div>
 
+        {{! Campo: Longitud }}
         <div class="form-group">
           <label for="longitud">Longitud</label>
           <input type="number" step="0.0001" name="longitud" id="longitud"
@@ -43,24 +61,28 @@
                  value="{{filtros.longitud}}">
         </div>
 
+        {{! Campo: Fecha del Acontecimiento }}
         <div class="form-group">
           <label for="fechaAcontecimiento">Fecha del Hecho</label>
           <input type="date" name="fechaAcontecimiento" id="fechaAcontecimiento"
                  value="{{filtros.fechaAcontecimiento}}">
         </div>
 
+        {{! Campo: Fecha de Carga }}
         <div class="form-group">
           <label for="fechaCarga">Fecha de Carga</label>
           <input type="date" name="fechaCarga" id="fechaCarga"
                  value="{{filtros.fechaCarga}}">
         </div>
 
+        {{! Campo: Fecha Desde }}
         <div class="form-group">
           <label for="fechaDesde">Desde</label>
           <input type="date" name="fechaDesde" id="fechaDesde"
                  value="{{filtros.fechaDesde}}">
         </div>
 
+        {{! Campo: Fecha Hasta }}
         <div class="form-group">
           <label for="fechaHasta">Hasta</label>
           <input type="date" name="fechaHasta" id="fechaHasta"
@@ -68,6 +90,7 @@
         </div>
       </div>
 
+      {{! --- Botones de Acción --- }}
       <div class="form-actions text-center mt-3">
         <button type="submit" class="btn btn-buscar me-2">
           🔍 Buscar
@@ -79,11 +102,17 @@
     </form>
   </div>
 
+  {{! ============================================
+      SECCIÓN DE RESULTADOS
+      ============================================ }}
   {{#if resultadosBusqueda}}
     <div class="results-section">
+
+      {{! --- Encabezado de Resultados con Controles de Vista --- }}
       <div class="results-header d-flex justify-content-between align-items-center flex-wrap mb-3">
         <h2>Resultados: <span class="badge bg-primary">{{cantidadResultados}}</span></h2>
 
+        {{! --- Controles de Vista (Lista/Mapa) --- }}
         <div class="view-controls">
           <button class="btn btn-sm btn-outline-primary active" data-view="lista" onclick="cambiarVista('lista')">
             📋 Lista
@@ -94,19 +123,26 @@
         </div>
       </div>
 
+      {{! --- Vista de Lista de Hechos --- }}
       {{#if hechos}}
-        <div id="vista-lista" class="view-container active">
+        {{! Vista en Formato de Tarjetas (Grid) }}
+        <div id="vista-lista" class="view-container">
           <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-3">
             {{#each hechos}}
               <div class="col">
+                {{! Tarjeta Individual de Hecho }}
                 <div class="card shadow-sm h-100">
                   <div class="card-body">
+                    {{! Título y Categoría }}
                     <div class="d-flex justify-content-between align-items-start mb-2">
                       <h5 class="card-title">{{this.titulo}}</h5>
                       <span class="badge bg-info text-dark">{{this.categoria}}</span>
                     </div>
+
+                    {{! Descripción }}
                     <p class="card-text">{{this.descripcion}}</p>
 
+                    {{! Información Adicional }}
                     <ul class="list-unstyled small text-muted">
                       <li>📍 Lat: {{this.latitud}}, Lon: {{this.longitud}}</li>
                       <li>📅 {{this.fechaAcontecimiento}}</li>
@@ -115,6 +151,8 @@
                       {{/if}}
                     </ul>
                   </div>
+
+                  {{! Footer con Botón de Acción }}
                   <div class="card-footer text-end">
                     <small>Cargado: {{this.fechaDeCarga}}</small><br>
                     <a href="/hechos/{{this.id}}/solicitud" class="btn btn-sm btn-danger mt-1">
@@ -127,11 +165,13 @@
           </div>
         </div>
 
-        <div id="vista-mapa" class="view-container mt-4">
+        {{! Vista de Mapa Interactivo }}
+        <div id="vista-mapa" class="view-container mt-4" style="display: none;">
           <div id="map" style="height: 65vh;" class="rounded shadow"></div>
           <p class="text-muted text-center mt-2">📍 Haz clic en los marcadores para ver detalles</p>
         </div>
       {{else}}
+        {{! Mensaje cuando no hay resultados }}
         <div class="alert alert-warning text-center">
           😔 No se encontraron hechos con los criterios especificados.<br>
           <button class="btn btn-outline-secondary mt-2" onclick="limpiarFormulario()">
@@ -142,24 +182,46 @@
     </div>
   {{/if}}
 
+  {{! ============================================
+      SCRIPTS
+      ============================================ }}
+
+  {{! Librería Leaflet para Mapas }}
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
   <script>
+    {{! ==========================================
+        Función: Limpiar Formulario
+        ========================================== }}
     function limpiarFormulario() {
       document.querySelectorAll('.search-form input').forEach(input => input.value = '');
       window.location.href = '/hechos/buscar';
     }
 
+    {{! ==========================================
+        Función: Cambiar Vista (Lista/Mapa)
+        ========================================== }}
     function cambiarVista(vista) {
-      document.querySelectorAll('.btn-view').forEach(btn => btn.classList.remove('active'));
+      // Actualizar botones activos
+      document.querySelectorAll('[data-view]').forEach(btn => btn.classList.remove('active'));
       document.querySelector(`[data-view="${vista}"]`).classList.add('active');
-      document.querySelectorAll('.view-container').forEach(c => c.classList.remove('active'));
-      document.getElementById(`vista-${vista}`).classList.add('active');
+
+      // Ocultar todas las vistas y mostrar la seleccionada
+      document.querySelectorAll('.view-container').forEach(c => c.style.display = 'none');
+      document.getElementById(`vista-${vista}`).style.display = 'block';
+
+      // Inicializar mapa si se selecciona
       if (vista === 'mapa') inicializarMapa();
     }
 
+    {{! ==========================================
+        Función: Inicializar Mapa de Leaflet
+        ========================================== }}
     let mapaInicializado = false;
     function inicializarMapa() {
       if (mapaInicializado) return;
+
+      // Array de hechos desde el servidor
       const hechos = [
         {{#each hechos}}
         {
@@ -173,17 +235,21 @@
         }{{#unless @last}},{{/unless}}
         {{/each}}
       ];
+
       if (hechos.length === 0) return;
 
+      // Calcular centro promedio
       const latProm = hechos.reduce((s, h) => s + h.latitud, 0) / hechos.length;
       const lonProm = hechos.reduce((s, h) => s + h.longitud, 0) / hechos.length;
 
+      // Inicializar mapa
       const mapa = L.map('map').setView([latProm, lonProm], 10);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '© OpenStreetMap contributors',
         maxZoom: 18
       }).addTo(mapa);
 
+      // Agregar marcadores
       hechos.forEach(h => {
         L.marker([h.latitud, h.longitud])
           .addTo(mapa)
@@ -192,6 +258,7 @@
                       <small>📅 ${h.fechaAcontecimiento}</small><br>
                       <a href="/hechos/${h.id}/solicitud" class="btn btn-sm btn-outline-danger mt-1">Eliminar</a>`);
       });
+
       mapaInicializado = true;
     }
   </script>

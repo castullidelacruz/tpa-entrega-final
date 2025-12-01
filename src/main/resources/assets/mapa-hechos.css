@@ -1,19 +1,29 @@
+/* ============================================
+   ESTILOS DEL MAPA DE HECHOS
+   ============================================ */
+
+/* --- Reset Global --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
+
+/* --- Body --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: rgba(74, 181, 191, 0.85);
     min-height: 100vh;
     padding: 20px;
     color: #333;
     line-height: 1.6;
 }
 
-
+/* --- Contenedor Principal --- */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -23,8 +33,11 @@ body {
     overflow: hidden;
 }
 
+/* ============================================
+   ENCABEZADO DE PÁGINA
+   ============================================ */
 
-
+/* --- Header de Página --- */
 .page-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 30px 40px;
@@ -40,6 +53,7 @@ body {
     font-weight: 700;
 }
 
+/* --- Navegación del Header --- */
 .page-header nav a {
     color: white;
     text-decoration: none;
@@ -55,11 +69,16 @@ body {
     transform: translateY(-2px);
 }
 
+/* ============================================
+   CONTENEDOR DEL MAPA
+   ============================================ */
 
+/* --- Contenedor del Mapa --- */
 .mapa-container {
     padding: 40px;
 }
 
+/* --- Mapa --- */
 #map {
     width: 100%;
     height: 650px;
@@ -68,8 +87,11 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* ============================================
+   CONTROLES DEL MAPA
+   ============================================ */
 
-
+/* --- Controles del Mapa --- */
 .mapa-controles {
     margin-bottom: 25px;
     padding: 20px;
@@ -80,6 +102,7 @@ body {
     align-items: center;
 }
 
+/* --- Información del Mapa --- */
 .mapa-info {
     flex: 1;
 }
@@ -96,9 +119,10 @@ body {
     margin: 0;
 }
 
+/* --- Botón --- */
 .btn {
     padding: 10px 20px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #3B82F6;
     color: white;
     text-decoration: none;
     border: none;
@@ -114,8 +138,11 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
+/* ============================================
+   LEYENDA DEL MAPA
+   ============================================ */
 
-
+/* --- Leyenda del Mapa --- */
 .mapa-leyenda {
     margin-top: 25px;
     padding: 20px;
@@ -131,6 +158,7 @@ body {
     font-weight: 600;
 }
 
+/* --- Lista de Leyenda --- */
 .mapa-leyenda ul {
     list-style: none;
     padding: 0;
@@ -151,14 +179,18 @@ body {
     font-size: 16px;
 }
 
+/* ============================================
+   POPUPS DE LEAFLET
+   ============================================ */
 
-
+/* --- Wrapper del Popup --- */
 .leaflet-popup-content-wrapper {
     border-radius: 12px;
     padding: 0;
     overflow: hidden;
 }
 
+/* --- Contenido del Popup --- */
 .popup-content {
     padding: 15px;
     min-width: 250px;
@@ -187,6 +219,7 @@ body {
     font-size: 12px;
 }
 
+/* --- Botón del Popup --- */
 .popup-content .btn-small {
     display: inline-block;
     margin-top: 12px;
@@ -206,9 +239,10 @@ body {
     box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3);
 }
 
+/* --- Badge de Categoría --- */
 .categoria-badge {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #3B82F6;
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -217,10 +251,11 @@ body {
     margin-top: 5px;
 }
 
-/* ==============================================
+/* ============================================
    ESTADÍSTICAS DEL MAPA
-   ============================================== */
+   ============================================ */
 
+/* --- Contenedor de Estadísticas --- */
 .mapa-estadisticas {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -228,6 +263,7 @@ body {
     margin-bottom: 25px;
 }
 
+/* --- Tarjeta de Estadística --- */
 .stat-card {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -249,8 +285,11 @@ body {
     font-weight: 700;
 }
 
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
-
+/* --- Tablets --- */
 @media (max-width: 768px) {
     .page-header {
         flex-direction: column;
@@ -285,6 +324,7 @@ body {
     }
 }
 
+/* --- Móviles --- */
 @media (max-width: 480px) {
     .page-header h1 {
         font-size: 20px;

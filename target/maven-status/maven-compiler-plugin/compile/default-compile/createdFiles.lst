@@ -4,8 +4,8 @@ ar/edu/utn/frba/dds/model/entities/criterios/CriterioCategoria.class
 ar/edu/utn/frba/dds/model/estadistica/EstadisticaProvMaxHechosColeccion.class
 ar/edu/utn/frba/dds/model/estadistica/LocalizadorDeProvincias.class
 ar/edu/utn/frba/dds/MainPrueba.class
-ar/edu/utn/frba/dds/model/estadistica/EstadisticaProvMaxHechosCategoria.class
 ar/edu/utn/frba/dds/model/entities/algoritmosconcenso/AlgoritmoDeConsenso.class
+ar/edu/utn/frba/dds/model/estadistica/EstadisticaProvMaxHechosCategoria.class
 ar/edu/utn/frba/dds/controllers/ColeccionController.class
 ar/edu/utn/frba/dds/repositories/RepoAlgoritmos.class
 ar/edu/utn/frba/dds/model/entities/fuentes/Fuente.class
@@ -15,8 +15,8 @@ ar/edu/utn/frba/dds/repositories/RepositorioFuentes.class
 ar/edu/utn/frba/dds/repositories/RepositorioHechos.class
 ar/edu/utn/frba/dds/model/entities/solicitudes/DetectorDeSpam.class
 ar/edu/utn/frba/dds/server/Server.class
-ar/edu/utn/frba/dds/model/entities/algoritmosconcenso/AlgoritmoDeConsenso$1.class
 ar/edu/utn/frba/dds/model/entities/criterios/CriterioTitulo.class
+ar/edu/utn/frba/dds/model/entities/algoritmosconcenso/AlgoritmoDeConsenso$1.class
 ar/edu/utn/frba/dds/model/entities/fuentes/TipoFuente.class
 ar/edu/utn/frba/dds/model/estadistica/ComponenteEstadistico.class
 ar/edu/utn/frba/dds/model/estadistica/EstadisticaProvMaxHechosColeccion$Estpmhcolecciondto.class
@@ -26,11 +26,11 @@ ar/edu/utn/frba/dds/model/entities/fuentes/FuenteApi.class
 ar/edu/utn/frba/dds/model/entities/criterios/CriterioFechaCarga.class
 ar/edu/utn/frba/dds/model/entities/criterios/CriterioFecha.class
 ar/edu/utn/frba/dds/controllers/LoginController.class
-ar/edu/utn/frba/dds/repositories/RepositorioSolicitudesEliminacion.class
 ar/edu/utn/frba/dds/repositories/RepositorioCriterios.class
+ar/edu/utn/frba/dds/repositories/RepositorioSolicitudesEliminacion.class
 ar/edu/utn/frba/dds/server/GestorTokens.class
-ar/edu/utn/frba/dds/model/estadistica/EstadisticaCantidadSpam.class
 ar/edu/utn/frba/dds/model/entities/User.class
+ar/edu/utn/frba/dds/model/estadistica/EstadisticaCantidadSpam.class
 ar/edu/utn/frba/dds/server/Router.class
 ar/edu/utn/frba/dds/model/entities/solicitudes/SolicitudDeCarga.class
 ar/edu/utn/frba/dds/model/entities/algoritmosconcenso/AlgoritmoDeConsenso$3.class
@@ -75,6 +75,6 @@ ar/edu/utn/frba/dds/repositories/RepositorioUsuarios.class
 ar/edu/utn/frba/dds/model/entities/criterios/CriterioBase.class
 ar/edu/utn/frba/dds/MainEstadisticas.class
 ar/edu/utn/frba/dds/model/entities/fuentes/FuenteDataSet.class
-ar/edu/utn/frba/dds/model/entities/criterios/CriterioDescripcion.class
 ar/edu/utn/frba/dds/model/entities/criterios/Criterio.class
+ar/edu/utn/frba/dds/model/entities/criterios/CriterioDescripcion.class
 ar/edu/utn/frba/dds/model/entities/GeneradorHandleUuid.class

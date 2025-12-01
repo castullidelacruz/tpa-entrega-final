@@ -1,18 +1,29 @@
+/* ============================================
+   ESTILOS DE BÚSQUEDA DE HECHOS
+   ============================================ */
+
+/* --- Reset Global --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* ============================================
+   LAYOUT PRINCIPAL
+   ============================================ */
+
+/* --- Body --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: rgba(74, 181, 191, 0.85);
     min-height: 100vh;
     padding: 20px;
     color: #333;
     line-height: 1.6;
 }
 
+/* --- Contenedor Principal --- */
 .container {
     max-width: 1400px;
     margin: 0 auto;
@@ -22,6 +33,11 @@ body {
     overflow: hidden;
 }
 
+/* ============================================
+   ENCABEZADO DE PÁGINA
+   ============================================ */
+
+/* --- Header de Página --- */
 .page-header {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     padding: 30px 40px;
@@ -37,6 +53,7 @@ body {
     font-weight: 700;
 }
 
+/* --- Navegación del Header --- */
 .page-header nav a {
     color: white;
     text-decoration: none;
@@ -52,17 +69,23 @@ body {
     transform: translateY(-2px);
 }
 
+/* ============================================
+   SECCIÓN DE BÚSQUEDA
+   ============================================ */
 
+/* --- Sección de Búsqueda --- */
 .search-section {
     padding: 40px;
     background: #f8f9fa;
     border-bottom: 2px solid #e9ecef;
 }
 
+/* --- Formulario de Búsqueda --- */
 .search-form {
     width: 100%;
 }
 
+/* --- Grid de Formulario --- */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -70,6 +93,7 @@ body {
     margin-bottom: 25px;
 }
 
+/* --- Grupo de Campo --- */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -82,6 +106,7 @@ body {
     font-size: 14px;
 }
 
+/* --- Campos de Entrada --- */
 .form-group input {
     padding: 12px 16px;
     border: 2px solid #dee2e6;
@@ -101,13 +126,18 @@ body {
     color: #adb5bd;
 }
 
+/* ============================================
+   ACCIONES DEL FORMULARIO
+   ============================================ */
 
+/* --- Contenedor de Acciones --- */
 .form-actions {
     display: flex;
     gap: 15px;
     justify-content: flex-end;
 }
 
+/* --- Botón Base --- */
 .btn {
     padding: 12px 28px;
     border: none;
@@ -121,8 +151,9 @@ body {
     text-align: center;
 }
 
+/* --- Botón Primario --- */
 .btn-primary {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #3B82F6;
     color: white;
 }
 
@@ -131,6 +162,7 @@ body {
     box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
 }
 
+/* --- Botón Secundario --- */
 .btn-secondary {
     background: #6c757d;
     color: white;
@@ -141,11 +173,45 @@ body {
     transform: translateY(-2px);
 }
 
+/* --- Botones de Búsqueda --- */
+.btn-buscar {
+    background: #667eea;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
 
+.btn-buscar:hover {
+    background: #5a67d8;
+}
+
+/* --- Botón de Limpiar --- */
+.btn-limpiar {
+    background: #f3f4f6;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 20px;
+    font-weight: 500;
+}
+
+.btn-limpiar:hover {
+    background: #e5e7eb;
+}
+
+/* ============================================
+   SECCIÓN DE RESULTADOS
+   ============================================ */
+
+/* --- Sección de Resultados --- */
 .results-section {
     padding: 40px;
 }
 
+/* --- Encabezado de Resultados --- */
 .results-header {
     display: flex;
     justify-content: space-between;
@@ -164,6 +230,7 @@ body {
     gap: 10px;
 }
 
+/* --- Badge de Cantidad --- */
 .badge {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -173,7 +240,11 @@ body {
     font-weight: 700;
 }
 
+/* ============================================
+   CONTROLES DE VISTA
+   ============================================ */
 
+/* --- Controles de Vista --- */
 .view-controls {
     display: flex;
     gap: 10px;
@@ -182,6 +253,7 @@ body {
     border-radius: 10px;
 }
 
+/* --- Botón de Vista --- */
 .btn-view {
     padding: 10px 20px;
     background: transparent;
@@ -205,7 +277,11 @@ body {
     box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
 }
 
+/* ============================================
+   CONTENEDORES DE VISTA
+   ============================================ */
 
+/* --- Contenedor de Vista --- */
 .view-container {
     display: none;
 }
@@ -215,6 +291,7 @@ body {
     animation: fadeIn 0.4s ease-in-out;
 }
 
+/* --- Animación de Entrada --- */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -226,13 +303,18 @@ body {
     }
 }
 
+/* ============================================
+   TARJETAS DE HECHOS
+   ============================================ */
 
+/* --- Grid de Hechos --- */
 .hechos-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 25px;
 }
 
+/* --- Tarjeta de Hecho --- */
 .hecho-card {
     background: white;
     border: 2px solid #e9ecef;
@@ -248,6 +330,7 @@ body {
     border-color: #667eea;
 }
 
+/* --- Encabezado del Hecho --- */
 .hecho-header {
     display: flex;
     justify-content: space-between;
@@ -264,6 +347,7 @@ body {
     flex: 1;
 }
 
+/* --- Badge de Categoría --- */
 .categoria-badge {
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     color: white;
@@ -274,6 +358,7 @@ body {
     white-space: nowrap;
 }
 
+/* --- Descripción del Hecho --- */
 .hecho-descripcion {
     color: #4a5568;
     font-size: 14px;
@@ -285,6 +370,7 @@ body {
     overflow: hidden;
 }
 
+/* --- Detalles del Hecho --- */
 .hecho-details {
     display: flex;
     flex-direction: column;
@@ -317,6 +403,7 @@ body {
     text-decoration: underline;
 }
 
+/* --- Footer del Hecho --- */
 .hecho-footer {
     display: flex;
     justify-content: space-between;
@@ -330,6 +417,7 @@ body {
     font-size: 12px;
 }
 
+/* --- Botón Pequeño --- */
 .btn-small {
     padding: 6px 14px;
     background: #dc3545;
@@ -347,11 +435,16 @@ body {
     box-shadow: 0 3px 10px rgba(220, 53, 69, 0.3);
 }
 
+/* ============================================
+   VISTA DE MAPA
+   ============================================ */
 
+/* --- Contenedor del Mapa --- */
 #vista-mapa {
     position: relative;
 }
 
+/* --- Mapa --- */
 #map {
     width: 100%;
     height: 600px;
@@ -360,6 +453,7 @@ body {
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Leyenda del Mapa --- */
 .mapa-leyenda {
     margin-top: 20px;
     padding: 15px 20px;
@@ -380,6 +474,7 @@ body {
     margin: 0;
 }
 
+/* --- Contenido del Popup --- */
 .popup-content {
     min-width: 200px;
 }
@@ -401,8 +496,11 @@ body {
     margin-top: 10px;
 }
 
+/* ============================================
+   SIN RESULTADOS
+   ============================================ */
 
-
+/* --- Mensaje de Sin Resultados --- */
 .no-results {
     text-align: center;
     padding: 60px 20px;
@@ -417,7 +515,18 @@ body {
     margin-bottom: 20px;
 }
 
+/* ============================================
+   RESPONSIVE
+   ============================================ */
 
+/* --- Tablets Grandes --- */
+@media (max-width: 992px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* --- Tablets --- */
 @media (max-width: 768px) {
     .page-header {
         flex-direction: column;
@@ -469,6 +578,19 @@ body {
     }
 }
 
+/* --- Móviles --- */
+@media (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-buscar, .btn-limpiar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* --- Móviles Pequeños --- */
 @media (max-width: 480px) {
     .page-header h1 {
         font-size: 20px;
@@ -483,48 +605,3 @@ body {
     }
 }
 
-/* --- Botones personalizados --- */
-.btn-buscar {
-    background: #667eea;
-    color: white;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.btn-buscar:hover {
-    background: #5a67d8;
-}
-
-.btn-limpiar {
-    background: #f3f4f6;
-    color: #333;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-weight: 500;
-}
-
-.btn-limpiar:hover {
-    background: #e5e7eb;
-}
-
-/* --- Responsive --- */
-@media (max-width: 992px) {
-    .form-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 600px) {
-    .form-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .btn-buscar, .btn-limpiar {
-        width: 100%;
-        margin-bottom: 10px;
-    }
-}

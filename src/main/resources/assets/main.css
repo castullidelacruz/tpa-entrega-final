@@ -1,40 +1,60 @@
-/* --- Reset global --- */
+/* ============================================
+   ESTILOS PRINCIPALES - Home y Páginas Generales
+   ============================================ */
+
+/* --- Reset Global --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* --- Layout base --- */
+/* ============================================
+   LAYOUT BASE
+   ============================================ */
+
+/* --- Body Principal --- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: rgba(74, 181, 191, 0.85);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    margin: 0;
+    padding: 0;
     color: #333;
     line-height: 1.6;
 }
 
-/* --- Contenedor principal --- */
+/* --- Contenedor Principal --- */
 .container {
     width: 100%;
     max-width: 1300px;
     background: white;
     border-radius: 16px;
-    margin: 20px;
+    margin: 20px auto;
     padding: 30px 40px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
     animation: fadeIn 0.6s ease-in-out;
 }
 
+/* --- Animación de Entrada --- */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-25px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(-25px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
-/* --- Encabezado --- */
+/* ============================================
+   ENCABEZADO Y NAVEGACIÓN
+   ============================================ */
+
+/* --- Encabezado de Página --- */
 header.page-header {
     display: flex;
     justify-content: space-between;
@@ -49,6 +69,7 @@ header.page-header h1 {
     font-weight: 700;
 }
 
+/* --- Navegación del Header --- */
 header nav {
     display: flex;
     align-items: center;
@@ -68,17 +89,51 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* --- Texto principal --- */
+/* --- Alineación del Navbar a la Derecha --- */
+header.page-header .navbar .container-fluid {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+header.page-header .navbar .container-fluid > div:last-child {
+    margin-left: auto !important;
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+}
+
+header.page-header .navbar .ms-auto {
+    margin-left: auto !important;
+}
+
+header.page-header .d-flex.ms-auto {
+    display: flex !important;
+    justify-content: flex-end !important;
+    align-items: center !important;
+    flex: 0 0 auto !important;
+}
+
+/* ============================================
+   CONTENIDO PRINCIPAL
+   ============================================ */
+
+/* --- Mensaje de Página --- */
 .page-message {
     color: #555;
     font-size: 16px;
     margin-bottom: 20px;
 }
 
-/* --- Botones --- */
+/* ============================================
+   BOTONES
+   ============================================ */
+
+/* --- Botón Base --- */
 .btn {
     padding: 12px 24px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: #3B82F6;
     color: white;
     border-radius: 8px;
     font-size: 16px;
@@ -93,20 +148,26 @@ header nav a:hover {
     box-shadow: 0 6px 18px rgba(102, 126, 234, 0.4);
 }
 
+/* --- Botón de Administrador --- */
 .btn-admin {
-    background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+    background: #3B82F6;
 }
 
 .btn-admin:hover {
     box-shadow: 0 6px 20px rgba(245, 158, 11, 0.5);
 }
 
+/* --- Botón Pequeño --- */
 .btn-sm {
     padding: 8px 16px;
     font-size: 14px;
 }
 
-/* --- Secciones --- */
+/* ============================================
+   SECCIONES
+   ============================================ */
+
+/* --- Sección de Usuario --- */
 .user-section {
     display: flex;
     flex-wrap: wrap;
@@ -115,8 +176,9 @@ header nav a:hover {
     margin: 20px 0;
 }
 
+/* --- Sección de Administrador --- */
 .admin-section {
-    background: linear-gradient(135deg, #fff7ed 0%, #ffedd5 100%);
+    background: rgba(74, 181, 191, 0.85);
     border: 2px solid #f59e0b;
     border-radius: 12px;
     padding: 25px;
@@ -125,13 +187,18 @@ header nav a:hover {
     box-shadow: 0 5px 15px rgba(245, 158, 11, 0.2);
 }
 
-/* --- Mapa --- */
+/* ============================================
+   MAPA
+   ============================================ */
+
+/* --- Sección del Mapa --- */
 .map-section {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
 
+/* --- Contenedor del Mapa --- */
 #map {
     height: 65vh;
     width: 100%;
@@ -140,6 +207,7 @@ header nav a:hover {
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
 }
 
+/* --- Leyenda del Mapa --- */
 .mapa-leyenda {
     background: #fff;
     margin-top: 10px;
@@ -149,6 +217,10 @@ header nav a:hover {
     align-self: flex-start;
 }
 
+/* ============================================
+   UTILIDADES
+   ============================================ */
+
 /* --- Separadores --- */
 hr {
     border: none;
@@ -156,11 +228,21 @@ hr {
     margin: 25px 0;
 }
 
-/* --- Textos utilitarios --- */
-.text-center { text-align: center; }
-.mt-2 { margin-top: 20px; }
+/* --- Texto Centrado --- */
+.text-center {
+    text-align: center;
+}
 
-/* --- Mensajes --- */
+/* --- Margen Superior --- */
+.mt-2 {
+    margin-top: 20px;
+}
+
+/* ============================================
+   MENSAJES FLASH
+   ============================================ */
+
+/* --- Mensaje Base --- */
 .flash {
     padding: 15px 20px;
     border-radius: 8px;
@@ -168,78 +250,25 @@ hr {
     font-size: 14px;
 }
 
+/* --- Mensaje de Éxito --- */
 .flash.success {
-    background-color: #f0fff4;
-    color: #22543d;
-    border: 1px solid #9ae6b4;
+    background-color: #ECFDF5;
+    color: #10B981;
+    border: 1px solid #6EE7B7;
 }
 
+/* --- Mensaje de Error --- */
 .flash.error {
-    background-color: #fff5f5;
-    color: #c53030;
-    border: 1px solid #fc8181;
+    background-color: #FEF2F2;
+    color: #EF4444;
+    border: 1px solid #FCA5A5;
 }
 
-/* --- RESPONSIVE --- */
+/* ============================================
+   FORMULARIOS DE BÚSQUEDA
+   ============================================ */
 
-/* Laptops y tablets horizontales */
-@media (max-width: 1024px) {
-    .container { max-width: 90%; padding: 25px; }
-    header.page-header h1 { font-size: 26px; }
-    #map { height: 60vh; }
-    .btn { min-width: 180px; }
-}
-
-/* Tablets verticales y celulares grandes */
-@media (max-width: 768px) {
-    body { justify-content: flex-start; padding: 10px; }
-    .container {
-        width: 100%;
-        margin: 0;
-        border-radius: 0;
-        box-shadow: none;
-        padding: 20px;
-    }
-    header.page-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-    header nav {
-        flex-wrap: wrap;
-        gap: 8px;
-    }
-    .user-section {
-        flex-direction: column;
-        width: 100%;
-    }
-    .btn {
-        width: 100%;
-        max-width: 100%;
-    }
-    #map { height: 50vh; }
-}
-
-/* Celulares pequeños */
-@media (max-width: 480px) {
-    header.page-header h1 {
-        font-size: 20px;
-        text-align: center;
-        width: 100%;
-    }
-    .container { padding: 15px; }
-    .mapa-leyenda {
-        font-size: 13px;
-        text-align: center;
-    }
-    #map { height: 45vh; }
-    .btn {
-        font-size: 14px;
-        padding: 10px 16px;
-    }
-}
-
-/* --- Estilos específicos de búsqueda de hechos --- */
+/* --- Formulario de Búsqueda --- */
 .search-form {
     background: #fafafa;
     border-radius: 12px;
@@ -247,12 +276,14 @@ hr {
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* --- Grid de Formulario --- */
 .form-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 15px;
 }
 
+/* --- Grupo de Campo --- */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -271,7 +302,11 @@ hr {
     font-size: 14px;
 }
 
-/* --- Botones personalizados --- */
+/* ============================================
+   BOTONES PERSONALIZADOS
+   ============================================ */
+
+/* --- Botón de Búsqueda --- */
 .btn-buscar {
     background: #667eea;
     color: white;
@@ -286,6 +321,7 @@ hr {
     background: #5a67d8;
 }
 
+/* --- Botón de Limpiar --- */
 .btn-limpiar {
     background: #f3f4f6;
     color: #333;
@@ -299,14 +335,150 @@ hr {
     background: #e5e7eb;
 }
 
-/* --- Responsive --- */
-@media (max-width: 992px) {
+/* ============================================
+   ESTILOS DEL LAYOUT - NAVBAR Y BODY
+   ============================================ */
+
+/* --- Body con Background Forzado --- */
+body {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: rgba(74, 181, 191, 0.85) !important;
+}
+
+/* --- Header de Página --- */
+header.page-header {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+/* --- Navbar del Header --- */
+header.page-header .navbar {
+    border-radius: 0 !important;
+    margin: 0 !important;
+    padding: 0.75rem 0 !important;
+    width: 100% !important;
+}
+
+/* --- Container Fluid del Navbar --- */
+header.page-header .navbar .container-fluid {
+    max-width: 100% !important;
+    padding-left: 2rem !important;
+    padding-right: 2rem !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+/* --- Brand del Navbar --- */
+header.page-header .navbar-brand {
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+}
+
+/* --- Sección Auto del Navbar --- */
+header.page-header .navbar .ms-auto {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+/* --- Laptops y Tablets Horizontales --- */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+        padding: 25px;
+    }
+
+    header.page-header h1 {
+        font-size: 26px;
+    }
+
+    #map {
+        height: 60vh;
+    }
+
+    .btn {
+        min-width: 180px;
+    }
+}
+
+/* --- Tablets Verticales y Celulares Grandes --- */
+@media (max-width: 768px) {
+    body {
+        justify-content: flex-start;
+        padding: 10px;
+    }
+
+    .container {
+        width: 100%;
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 20px;
+    }
+
+    header.page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    header nav {
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .user-section {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #map {
+        height: 50vh;
+    }
+
     .form-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
-@media (max-width: 600px) {
+/* --- Celulares Pequeños --- */
+@media (max-width: 480px) {
+    header.page-header h1 {
+        font-size: 20px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    .mapa-leyenda {
+        font-size: 13px;
+        text-align: center;
+    }
+
+    #map {
+        height: 45vh;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
     .form-grid {
         grid-template-columns: 1fr;
     }
@@ -316,3 +488,4 @@ hr {
         margin-bottom: 10px;
     }
 }
+
