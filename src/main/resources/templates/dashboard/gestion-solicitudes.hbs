@@ -12,50 +12,72 @@
 
     <main class="main-content">
         <header class="main-header">
-            <h1>Gestionar Solicitudes</h1>
+            <h1>Solicitudes Pendientes</h1>
+            <p class="subtitle">Revisa y gestiona las solicitudes de la comunidad</p>
         </header>
 
-        <section class="solicitudes-lista">
+        <!-- Solicitudes de Carga -->
+        <section class="section">
+            <div class="section-header">
+                <h2>📥 Solicitudes de Carga</h2>
+            </div>
 
-            <h2>Solicitudes de Carga Pendientes</h2>
-            {{#each solicitudesCarga}}
-                <div class="solicitud-item">
-                    <span>Carga: {{this.titulo}} (ID: {{this.id}})</span>
-                    <div class="solicitud-botones">
-
-                        <form method="POST" action="/solicitud/carga/{{this.id}}/aceptar">
-                            <button type="submit" class="btn-aceptar">Aceptar</button>
-                        </form>
-
-                        <form method="POST" action="/solicitud/carga/{{this.id}}/rechazar">
-                            <button type="submit" class="btn-rechazar">Rechazar</button>
-                        </form>
-
-                    </div>
+            {{#if solicitudesCarga}}
+                <div class="solicitudes-grid">
+                    {{#each solicitudesCarga}}
+                        <div class="solicitud-card">
+                            <div class="solicitud-info">
+                                <h4>{{this.titulo}}</h4>
+                                <span class="solicitud-id">ID: {{this.id}}</span>
+                            </div>
+                            <div class="solicitud-acciones">
+                                <form method="POST" action="/solicitud/carga/{{this.id}}/aceptar" style="display: inline;">
+                                    <button type="submit" class="btn btn-success btn-sm">✅ Aceptar</button>
+                                </form>
+                                <form method="POST" action="/solicitud/carga/{{this.id}}/rechazar" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm">❌ Rechazar</button>
+                                </form>
+                            </div>
+                        </div>
+                    {{/each}}
                 </div>
-            {{/each}}
-            {{#unless solicitudesCarga}}
-                <p>No hay solicitudes de carga pendientes.</p>
-            {{/unless}}
-
-            <h2>Solicitudes de Eliminación Pendientes</h2>
-            {{#each solicitudesEliminacion}}
-                <div class="solicitud-item">
-                    <span>Eliminación: {{this.titulo}} (ID: {{this.id}})</span>
-                    <div class="solicitud-botones">
-                        <form method="POST" action="/solicitud/eliminacion/{{this.id}}/aceptar">
-                            <button type="submit" class="btn-aceptar">Aceptar</button>
-                        </form>
-                        <form method="POST" action="/solicitud/eliminacion/{{this.id}}/rechazar">
-                            <button type="submit" class="btn-rechazar">Rechazar</button>
-                        </form>
-                    </div>
+            {{else}}
+                <div class="empty-state">
+                    <p>📭 No hay solicitudes de carga pendientes</p>
                 </div>
-            {{/each}}
-            {{#unless solicitudesEliminacion}}
-                <p>No hay solicitudes de eliminación pendientes.</p>
-            {{/unless}}
+            {{/if}}
+        </section>
 
+        <!-- Solicitudes de Eliminación -->
+        <section class="section">
+            <div class="section-header">
+                <h2>🗑️ Solicitudes de Eliminación</h2>
+            </div>
+
+            {{#if solicitudesEliminacion}}
+                <div class="solicitudes-grid">
+                    {{#each solicitudesEliminacion}}
+                        <div class="solicitud-card solicitud-eliminacion">
+                            <div class="solicitud-info">
+                                <h4>{{this.titulo}}</h4>
+                                <span class="solicitud-id">ID: {{this.id}}</span>
+                            </div>
+                            <div class="solicitud-acciones">
+                                <form method="POST" action="/solicitud/eliminacion/{{this.id}}/aceptar" style="display: inline;">
+                                    <button type="submit" class="btn btn-success btn-sm">✅ Aceptar</button>
+                                </form>
+                                <form method="POST" action="/solicitud/eliminacion/{{this.id}}/rechazar" style="display: inline;">
+                                    <button type="submit" class="btn btn-danger btn-sm">❌ Rechazar</button>
+                                </form>
+                            </div>
+                        </div>
+                    {{/each}}
+                </div>
+            {{else}}
+                <div class="empty-state">
+                    <p>📭 No hay solicitudes de eliminación pendientes</p>
+                </div>
+            {{/if}}
         </section>
     </main>
 </div>

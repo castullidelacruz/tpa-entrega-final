@@ -64,7 +64,7 @@ header.page-header {
 }
 
 header.page-header h1 {
-    color: #667eea;
+    color: #4ab5bf;
     font-size: 28px;
     font-weight: 700;
 }
@@ -78,14 +78,14 @@ header nav {
 }
 
 header nav a {
-    color: #667eea;
+    color: #4ab5bf;
     text-decoration: none;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 header nav a:hover {
-    color: #764ba2;
+    color: #3a9ca5;
     text-decoration: underline;
 }
 
@@ -133,7 +133,7 @@ header.page-header .d-flex.ms-auto {
 /* --- Botón Base --- */
 .btn {
     padding: 12px 24px;
-    background: #3B82F6;
+    background: #4ab5bf;
     color: white;
     border-radius: 8px;
     font-size: 16px;
@@ -150,7 +150,7 @@ header.page-header .d-flex.ms-auto {
 
 /* --- Botón de Administrador --- */
 .btn-admin {
-    background: #3B82F6;
+    background: #4ab5bf;
 }
 
 .btn-admin:hover {
@@ -308,7 +308,7 @@ hr {
 
 /* --- Botón de Búsqueda --- */
 .btn-buscar {
-    background: #667eea;
+    background: #4ab5bf;
     color: white;
     border: none;
     border-radius: 6px;
@@ -318,7 +318,7 @@ hr {
 }
 
 .btn-buscar:hover {
-    background: #5a67d8;
+    background: #3a9ca5;
 }
 
 /* --- Botón de Limpiar --- */

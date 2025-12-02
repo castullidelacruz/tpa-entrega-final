@@ -39,7 +39,7 @@ body {
 
 /* --- Header de Página --- */
 .page-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     padding: 30px 40px;
     color: white;
     display: flex;
@@ -122,7 +122,7 @@ body {
 /* --- Botón --- */
 .btn {
     padding: 10px 20px;
-    background: #3B82F6;
+    background: #4ab5bf;
     color: white;
     text-decoration: none;
     border: none;
@@ -147,7 +147,7 @@ body {
     margin-top: 25px;
     padding: 20px;
     background: #f8f9fa;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #4ab5bf;
     border-radius: 8px;
 }
 
@@ -242,7 +242,7 @@ body {
 /* --- Badge de Categoría --- */
 .categoria-badge {
     display: inline-block;
-    background: #3B82F6;
+    background: #4ab5bf;
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -265,7 +265,7 @@ body {
 
 /* --- Tarjeta de Estadística --- */
 .stat-card {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     color: white;
     padding: 20px;
     border-radius: 12px;

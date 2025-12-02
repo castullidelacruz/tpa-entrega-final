@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <title>Confirmación de Hecho</title>
+{{! ============================================
+    CONFIRMACIÓN DE SOLICITUD DE CARGA
+    ============================================ }}
+
+{{! --- Header: Navegación del Usuario --- }}
+{{#partial "contenido-header"}}
+  {{#if esRegistrado}}
+    <span>👤 {{username}}</span>
+    {{#if esAdmin}}
+      <a href="/dashboard" class="link-primary">Panel Admin</a>
+    {{/if}}
+    <a href="/logout" class="link-danger">Cerrar sesión</a>
+  {{else}}
+    <a href="/login" class="link-primary">Iniciar sesión</a>
+    <a href="/register" class="link-primary">Registrarse</a>
+  {{/if}}
+{{/partial}}
+
+{{! ==========================================
+    CONTENIDO PRINCIPAL
+    ========================================== }}
+{{#partial "contenido"}}
   <link rel="stylesheet" href="/assets/style.css">
-</head>
-<body>
+
   <div class="container">
     <h1>✅ Hecho enviado con éxito</h1>
 
@@ -21,7 +37,7 @@
           <tr><td><strong>Descripción:</strong></td><td>{{solicitud.descripcion}}</td></tr>
           <tr><td><strong>Categoría:</strong></td><td>{{solicitud.categoria}}</td></tr>
           <tr><td><strong>Ubicación:</strong></td><td>Lat: {{solicitud.latitud}}, Lon: {{solicitud.longitud}}</td></tr>
-          <tr><td><strong>Fecha:</strong></td><td>{{solicitud.fechaAcontecimiento}}</td></tr>
+          <tr><td><strong>Fecha:</strong></td><td>{{formatDate solicitud.fechaAcontecimiento}}</td></tr>
         </tbody>
       </table>
 
@@ -34,8 +50,8 @@
 
     <p class="mt-3 text-center">
       <a href="/hechos/nuevo" class="btn btn-success">Cargar otro hecho</a>
-      <a href="/home" class="btn">Volver al Inicio</a>
     </p>
   </div>
-</body>
-</html>
+{{/partial}}
+
+{{> templates/layout}}

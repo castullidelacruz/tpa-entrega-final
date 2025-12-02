@@ -35,6 +35,7 @@ public class HomeController {
     model.put("esRegistrado", esRegistrado);
     model.put("esAdmin", esAdmin);
     model.put("username", username != null ? username : "Invitado");
+    model.put("esHome", true);
 
     return model;
   }

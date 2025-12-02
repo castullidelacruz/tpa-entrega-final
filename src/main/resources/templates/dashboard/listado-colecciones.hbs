@@ -12,24 +12,40 @@
 
     <main class="main-content">
         <header class="main-header">
-            <h1>Modificar Colección</h1>
-            <p>Selecciona la colección que deseas editar.</p>
+            <h1>Colecciones</h1>
+            <p class="subtitle">Gestiona las colecciones del sistema</p>
         </header>
 
-        <section class="lista-colecciones">
+        <section class="section">
             {{#if flash_message}}
-                <div class="flash success">{{flash_message}}</div>
+                <div class="alert alert-success">{{flash_message}}</div>
             {{/if}}
 
-            {{#each colecciones}}
-                <div class="coleccion-item">
-                    <strong>{{this.titulo}}</strong> ({{this.descripcion}})
-                    <a href="/dashboard/colecciones/modificar/{{this.id}}" class="btn-editar">Editar</a>
+            <div class="section-header">
+                <h2>📚 Mis Colecciones</h2>
+                <a href="/dashboard/colecciones/crear" class="btn btn-primary btn-sm">➕ Nueva Colección</a>
+            </div>
+
+            {{#if colecciones}}
+                <div class="colecciones-grid">
+                    {{#each colecciones}}
+                        <div class="coleccion-card">
+                            <div class="coleccion-info">
+                                <h4>{{this.titulo}}</h4>
+                                <p class="coleccion-desc">{{this.descripcion}}</p>
+                            </div>
+                            <div class="coleccion-acciones">
+                                <a href="/dashboard/colecciones/modificar/{{this.id}}" class="btn btn-primary btn-sm">✏️ Editar</a>
+                            </div>
+                        </div>
+                    {{/each}}
                 </div>
-            {{/each}}
-            {{#unless colecciones}}
-                <p>No hay colecciones creadas para modificar.</p>
-            {{/unless}}
+            {{else}}
+                <div class="empty-state">
+                    <p>📚 No hay colecciones creadas</p>
+                    <a href="/dashboard/colecciones/crear" class="btn btn-primary">➕ Crear Primera Colección</a>
+                </div>
+            {{/if}}
         </section>
     </main>
 </div>

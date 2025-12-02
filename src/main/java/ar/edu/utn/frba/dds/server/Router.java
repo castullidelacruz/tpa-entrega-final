@@ -21,9 +21,23 @@ public class Router {
     ColeccionController coleccionController = new ColeccionController();
 
     // HOME
-    app.get("/", ctx -> ctx.redirect("/home"));
-    app.get("/home",
-        ctx -> ctx.render("home.hbs", homeController.index(ctx)));
+    app.get("/", ctx -> {
+      AppRole rol = ctx.attribute("userRole");
+      if (rol == AppRole.ADMIN) {
+        ctx.redirect("/dashboard");
+      } else {
+        ctx.redirect("/home");
+      }
+    });
+    app.get("/home", ctx -> {
+      AppRole rol = ctx.attribute("userRole");
+      // Redirigir admins al dashboard
+      if (rol == AppRole.ADMIN) {
+        ctx.redirect("/dashboard");
+      } else {
+        ctx.render("home.hbs", homeController.index(ctx));
+      }
+    });
 
     // LOGIN / REGISTRO
     app.get("/login", loginController::renderLogin);

@@ -12,29 +12,47 @@
 
     <main class="main-content">
         <header class="main-header">
-            <h1>Hora Pico de cada Categoria</h1>
+            <h1>Hora Pico por Categoría</h1>
         </header>
 
-        <section class="solicitudes-lista">
+        <section class="section">
+            <div class="section-header">
+                <h2>⏰ Estadísticas de Horas Pico</h2>
+                {{#if reporte}}
+                    <a class="btn btn-primary btn-icon" href="/descargar/estadisticas_categoria_horaspico.csv" download>
+                        📥 Exportar
+                    </a>
+                {{/if}}
+            </div>
 
-            <h2>Horas Pico de Hechos</h2>
-            <table class="tabla tabla-bordered">
-            <thead><tr><th>Fecha</th><th>Categoria</th><th>Horario Pico</th><th>Cantidad de Hechos</th></tr></thead>
-            <tbody>
-            {{#each reporte}}
+            <div class="table-container">
+                <table class="modern-table">
+                    <thead>
                         <tr>
-                            <td class="text-center">{{fecha}}</td>
-                            <td class="text-center">{{this.categoria}}</td>
-                            <td class="text-center">{{this.horapico}}</td>
-                            <td class="text-center">{{this.cantidad}}</td>
+                            <th>Fecha</th>
+                            <th>Categoría</th>
+                            <th class="text-center">Horario Pico</th>
+                            <th class="text-center">Cantidad de Hechos</th>
                         </tr>
-            {{/each}}
-            </tbody>
-            </table>
-
-            <h3>Exportar Archivo</h3>
-                <a class="btn" href="/descargar/estadisticas_categoria_horaspico.csv" download>Exportar CSV<a/>
-
+                    </thead>
+                    <tbody>
+                    {{#if reporte}}
+                        {{#each reporte}}
+                            <tr>
+                                <td>{{formatDateOnly fecha}}</td>
+                                <td>{{this.categoria}}</td>
+                                <td class="text-center"><span class="badge badge-primary">{{this.horapico}}</span></td>
+                                <td class="text-center"><span class="badge badge-info">{{this.cantidad}}</span></td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        <tr>
+                            <td colspan="4" class="text-center empty-cell">No hay datos disponibles</td>
+                        </tr>
+                    {{/if}}
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>

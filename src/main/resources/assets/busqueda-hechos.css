@@ -39,7 +39,7 @@ body {
 
 /* --- Header de Página --- */
 .page-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     padding: 30px 40px;
     color: white;
     display: flex;
@@ -118,7 +118,7 @@ body {
 
 .form-group input:focus {
     outline: none;
-    border-color: #667eea;
+    border-color: #4ab5bf;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
@@ -153,13 +153,13 @@ body {
 
 /* --- Botón Primario --- */
 .btn-primary {
-    background: #3B82F6;
+    background: #4ab5bf;
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 5px 20px rgba(74, 181, 191, 0.4);
 }
 
 /* --- Botón Secundario --- */
@@ -175,7 +175,7 @@ body {
 
 /* --- Botones de Búsqueda --- */
 .btn-buscar {
-    background: #667eea;
+    background: #4ab5bf;
     color: white;
     border: none;
     border-radius: 6px;
@@ -188,17 +188,64 @@ body {
     background: #5a67d8;
 }
 
+/* --- Botón de Búsqueda Principal (Más Llamativo) --- */
+.btn-search-primary {
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 16px 48px;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-search-primary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+}
+
+.btn-search-primary:active {
+    transform: translateY(-1px);
+}
+
 /* --- Botón de Limpiar --- */
 .btn-limpiar {
     background: #f3f4f6;
     color: #333;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px 20px;
-    font-weight: 500;
+    border: 2px solid #d1d5db;
+    border-radius: 10px;
+    padding: 14px 32px;
+    font-weight: 600;
+    font-size: 16px;
+    transition: all 0.3s ease;
 }
 
 .btn-limpiar:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
+}
+
+/* --- Botón de Solicitar Eliminación (Rojo) --- */
+.btn-delete-request {
+    background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(239, 68, 68, 0.3);
+}
+
+.btn-delete-request:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.5);
+    background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+}
     background: #e5e7eb;
 }
 
@@ -232,7 +279,7 @@ body {
 
 /* --- Badge de Cantidad --- */
 .badge {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -268,11 +315,11 @@ body {
 
 .btn-view:hover {
     background: rgba(102, 126, 234, 0.1);
-    color: #667eea;
+    color: #4ab5bf;
 }
 
 .btn-view.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     color: white;
     box-shadow: 0 3px 10px rgba(102, 126, 234, 0.3);
 }
@@ -327,7 +374,7 @@ body {
 .hecho-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    border-color: #667eea;
+    border-color: #4ab5bf;
 }
 
 /* --- Encabezado del Hecho --- */
@@ -349,7 +396,7 @@ body {
 
 /* --- Badge de Categoría --- */
 .categoria-badge {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #4ab5bf 0%, #3a9ca5 100%);
     color: white;
     padding: 4px 12px;
     border-radius: 20px;
@@ -394,7 +441,7 @@ body {
 }
 
 .detail-item a {
-    color: #667eea;
+    color: #4ab5bf;
     text-decoration: none;
     font-weight: 600;
 }
@@ -458,7 +505,7 @@ body {
     margin-top: 20px;
     padding: 15px 20px;
     background: #f8f9fa;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid #4ab5bf;
     border-radius: 8px;
 }
 

@@ -45,10 +45,14 @@ public class HechoController implements WithSimplePersistenceUnit {
   public Map<String, Object> showCreationForm(@NotNull Context ctx) {
     AppRole role = ctx.attribute("userRole");
     boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
+    boolean esAdmin = role == AppRole.ADMIN;
+    String username = ctx.attribute("username");
 
     Map<String, Object> model = new HashMap<>();
     model.put("titulo", "Cargar Nuevo Hecho");
     model.put("esRegistrado", esRegistrado);
+    model.put("esAdmin", esAdmin);
+    model.put("username", username != null ? username : "Invitado");
     return model;
   }
 
@@ -136,10 +140,18 @@ public class HechoController implements WithSimplePersistenceUnit {
       return;
     }
 
+    AppRole role = ctx.attribute("userRole");
+    boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
+    boolean esAdmin = role == AppRole.ADMIN;
+    String username = ctx.attribute("username");
+
     Map<String, Object> model = new HashMap<>();
     model.put("flash_message", ctx.sessionAttribute("flash_message"));
     model.put("solicitud", solicitud);
     model.put("registrado", solicitud.esRegistrado());
+    model.put("esRegistrado", esRegistrado);
+    model.put("esAdmin", esAdmin);
+    model.put("username", username != null ? username : "Invitado");
 
     ctx.render("confirmacion-solicitudCarga.hbs", model);
     ctx.sessionAttribute("flash_message", null);
@@ -172,7 +184,15 @@ public class HechoController implements WithSimplePersistenceUnit {
 
   // --- Formulario de búsqueda ---
   public Map<String, Object> showBusquedaForm(@NotNull Context ctx) {
+    AppRole role = ctx.attribute("userRole");
+    boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
+    boolean esAdmin = role == AppRole.ADMIN;
+    String username = ctx.attribute("username");
+
     Map<String, Object> modelo = new HashMap<>();
+    modelo.put("esRegistrado", esRegistrado);
+    modelo.put("esAdmin", esAdmin);
+    modelo.put("username", username != null ? username : "Invitado");
 
     Map<String, String> filtros = ctx.queryParamMap().entrySet().stream()
         .filter(e ->

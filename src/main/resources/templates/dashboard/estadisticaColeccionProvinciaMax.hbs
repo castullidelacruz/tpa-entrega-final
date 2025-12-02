@@ -12,29 +12,47 @@
 
     <main class="main-content">
         <header class="main-header">
-            <h1>La provincia con mayor cantidad de Hechos</h1>
+            <h1>Provincias con Mayor Cantidad de Hechos por Colección</h1>
         </header>
 
-        <section class="solicitudes-lista">
+        <section class="section">
+            <div class="section-header">
+                <h2>🗺️ Provincia Máxima por Colección</h2>
+                {{#if reporte}}
+                    <a class="btn btn-primary btn-icon" href="/descargar/estadisticas_coleccion_hechosmaximos.csv" download>
+                        📥 Exportar
+                    </a>
+                {{/if}}
+            </div>
 
-            <h2>Coleccion Provincia Maxima</h2>
-            <table class="tabla tabla-bordered">
-            <thead><tr><th>Fecha</th><th>Coleccion</th><th>Provincia</th><th>Cantidad de hechos</th></tr></thead>
-            <tbody>
-            {{#each reporte}}
+            <div class="table-container">
+                <table class="modern-table">
+                    <thead>
                         <tr>
-                            <td class="text-center">{{fecha}}</td>
-                            <td class="text-center">{{this.coleccion}}</td>
-                            <td class="text-center">{{this.provincia}}</td>
-                            <td class="text-center">{{this.cantidad}}</td>
+                            <th>Fecha</th>
+                            <th>Colección</th>
+                            <th>Provincia</th>
+                            <th class="text-center">Cantidad de Hechos</th>
                         </tr>
-            {{/each}}
-            </tbody>
-            </table>
-
-            <h3>Exportar Archivo</h3>
-                <a class="btn" href="/descargar/estadisticas_coleccion_hechosmaximos.csv" download>Exportar CSV<a/>
-
+                    </thead>
+                    <tbody>
+                    {{#if reporte}}
+                        {{#each reporte}}
+                            <tr>
+                                <td>{{formatDateOnly fecha}}</td>
+                                <td>{{this.coleccion}}</td>
+                                <td>{{this.provincia}}</td>
+                                <td class="text-center"><span class="badge badge-warning">{{this.cantidad}}</span></td>
+                            </tr>
+                        {{/each}}
+                    {{else}}
+                        <tr>
+                            <td colspan="4" class="text-center empty-cell">No hay datos disponibles</td>
+                        </tr>
+                    {{/if}}
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>

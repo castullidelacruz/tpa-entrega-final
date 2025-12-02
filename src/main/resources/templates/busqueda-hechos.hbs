@@ -2,7 +2,16 @@
     BÚSQUEDA DE HECHOS - HEADER
     ============================================ }}
 {{#partial "contenido-header"}}
-  <a href="/home" class="btn btn-outline-primary btn-sm">⬅️ Volver al Inicio</a>
+  {{#if esRegistrado}}
+    <span>👤 {{username}}</span>
+    {{#if esAdmin}}
+      <a href="/dashboard" class="link-primary">Panel Admin</a>
+    {{/if}}
+    <a href="/logout" class="link-danger">Cerrar sesión</a>
+  {{else}}
+    <a href="/login" class="link-primary">Iniciar sesión</a>
+    <a href="/register" class="link-primary">Registrarse</a>
+  {{/if}}
 {{/partial}}
 
 {{! ============================================
@@ -13,8 +22,8 @@
   {{! --- Sección de Búsqueda --- }}
   <div class="search-section mb-4">
     <h1 class="mb-3 text-center">🔍 Búsqueda de Hechos</h1>
+    <p class="text-center text-muted mb-4">Encuentra hechos históricos por título, categoría, ubicación o fecha</p>
 
-    {{! --- Formulario de Búsqueda --- }}
     {{! --- Formulario de Búsqueda --- }}
     <form action="/hechos/buscar" method="GET" class="search-form">
 
@@ -45,9 +54,17 @@
                  value="{{filtros.descripcion}}">
         </div>
 
+        {{! Campo: Provincia }}
+        <div class="form-group">
+          <label for="provincia">Provincia</label>
+          <input type="text" name="provincia" id="provincia"
+                 placeholder="Ej: Buenos Aires, CABA..."
+                 value="{{filtros.provincia}}">
+        </div>
+
         {{! Campo: Latitud }}
         <div class="form-group">
-          <label for="latitud">Latitud</label>
+          <label for="latitud">Latitud (opcional)</label>
           <input type="number" step="0.0001" name="latitud" id="latitud"
                  placeholder="-34.6037"
                  value="{{filtros.latitud}}">
@@ -55,7 +72,7 @@
 
         {{! Campo: Longitud }}
         <div class="form-group">
-          <label for="longitud">Longitud</label>
+          <label for="longitud">Longitud (opcional)</label>
           <input type="number" step="0.0001" name="longitud" id="longitud"
                  placeholder="-58.3816"
                  value="{{filtros.longitud}}">
@@ -91,9 +108,9 @@
       </div>
 
       {{! --- Botones de Acción --- }}
-      <div class="form-actions text-center mt-3">
-        <button type="submit" class="btn btn-buscar me-2">
-          🔍 Buscar
+      <div class="form-actions text-center mt-4">
+        <button type="submit" class="btn btn-search-primary">
+          🔍 Buscar Hechos
         </button>
         <button type="button" class="btn btn-limpiar" onclick="limpiarFormulario()">
           🗑️ Limpiar
@@ -155,7 +172,7 @@
                   {{! Footer con Botón de Acción }}
                   <div class="card-footer text-end">
                     <small>Cargado: {{this.fechaDeCarga}}</small><br>
-                    <a href="/hechos/{{this.id}}/solicitud" class="btn btn-sm btn-danger mt-1">
+                    <a href="/hechos/{{this.id}}/solicitud" class="btn btn-sm btn-delete-request mt-2">
                       🗑️ Solicitar Eliminación
                     </a>
                   </div>
@@ -230,7 +247,7 @@
           categoria: "{{this.categoria}}",
           latitud: {{this.latitud}},
           longitud: {{this.longitud}},
-          fechaAcontecimiento: "{{this.fechaAcontecimiento}}",
+          fechaAcontecimiento: "{{formatDate this.fechaAcontecimiento}}",
           id: {{this.id}}
         }{{#unless @last}},{{/unless}}
         {{/each}}

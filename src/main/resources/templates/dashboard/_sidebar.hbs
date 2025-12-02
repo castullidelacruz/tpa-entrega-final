@@ -1,35 +1,39 @@
 <aside class="sidebar">
-    <h3>Panel de Control</h3>
+    <div class="sidebar-header">
+        <h3>Panel de Control</h3>
+        <div class="sidebar-actions">
+            <a href="/logout" class="sidebar-link">🚪 Cerrar Sesión</a>
+        </div>
+    </div>
+
     <nav class="sidebar-nav">
         <ul>
-            <li class="active"><a href="/dashboard">Resumen</a></li>
+            <li class="active"><a href="/dashboard">📊 Resumen</a></li>
 
             <li>
                 <details class="nav-dropdown">
-                    <summary>Consultar estadísticas</summary>
+                    <summary>📈 Estadísticas</summary>
                     <ul class="nav-submenu">
                         <li><a href="/dashboard/estadisticas/cantidadSpam">Cantidad de spam</a></li>
-                        <li><a href="/dashboard/estadisticas/horaPicoCategoria">Categoria hora pico</a></li>
-                        <li><a href="/dashboard/estadisticas/categoriaMaxima">Categoria maxima</a></li>
-                        <li><a href="/dashboard/estadisticas/categoriaProvinciaMax">Provincias con mas hechos por categorias</a></li>
-                        <li><a href="/dashboard/estadisticas/coleccionProvinciaMax">Provincias con mas hechos por colecciones</a></li>
+                        <li><a href="/dashboard/estadisticas/horaPicoCategoria">Categoría hora pico</a></li>
+                        <li><a href="/dashboard/estadisticas/categoriaMaxima">Categoría máxima</a></li>
+                        <li><a href="/dashboard/estadisticas/categoriaProvinciaMax">Provincias por categorías</a></li>
+                        <li><a href="/dashboard/estadisticas/coleccionProvinciaMax">Provincias por colecciones</a></li>
                     </ul>
                 </details>
             </li>
-            <li><a href="/dashboard/solicitudes">Gestionar solicitudes</a></li>
-            <li><details class="nav-dropdown">
-                <summary>Gestionar colecciones</summary>
-                <ul class="nav-submenu">
-                    <li><a href="/dashboard/colecciones/crear">Crear coleccion</a></li>
-                    <li><a href="/dashboard/colecciones/modificar">Modificar fuentes y algoritmos</a></li>
-                </ul>
-            </details>
+
+            <li><a href="/dashboard/solicitudes">📋 Solicitudes</a></li>
+
+            <li>
+                <details class="nav-dropdown">
+                    <summary>📚 Colecciones</summary>
+                    <ul class="nav-submenu">
+                        <li><a href="/dashboard/colecciones/crear">Crear colección</a></li>
+                        <li><a href="/dashboard/colecciones/modificar">Editar colecciones</a></li>
+                    </ul>
+                </details>
             </li>
         </ul>
     </nav>
-
-    <div class="sidebar-footer">
-        <a href="/home">Volver al Home</a>
-        <a href="/logout">Cerrar Sesión</a>
-    </div>
 </aside>

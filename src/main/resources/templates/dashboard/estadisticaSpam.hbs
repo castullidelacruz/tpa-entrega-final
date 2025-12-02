@@ -15,26 +15,42 @@
             <h1>Cantidad de Solicitudes de Spam</h1>
         </header>
 
-        <section class="solicitudes-lista">
+        <section class="section">
+            <div class="section-header">
+                <h2>Estadísticas de Spam</h2>
+                {{#if cantidadSpam}}
+                    <a class="btn btn-primary btn-icon" href="/descargar/estadisticas_cantidad_spam.csv" download>
+                        📥 Exportar
+                    </a>
+                {{/if}}
+            </div>
 
-            <h2>Cantidad de Solicitudes</h2>
-            <table class="tabla tabla-bordered">
-            <thead><tr><th>Fecha</th><th>Cantidad de Solicitudes</th></tr></thead>
-            <tbody>
-            {{#each cantidadSpam}}
-                {{#if @first}}
+            <div class="table-container">
+                <table class="modern-table">
+                    <thead>
                         <tr>
-                            <td class="text-center">{{fecha}}</td>
-                            <td class="text-center">{{cantidadSpam}}</td>
+                            <th>Fecha</th>
+                            <th class="text-center">Cantidad de Solicitudes</th>
                         </tr>
-                {{/if }}
-            {{/each}}
-            </tbody>
-            </table>
-
-            <h3> Exportar Archivo</h3>
-                <a class="btn" href="/descargar/estadisticas_cantidad_spam.csv" download>Exportar CSV<a/>
-
+                    </thead>
+                    <tbody>
+                    {{#if cantidadSpam}}
+                        {{#each cantidadSpam}}
+                            {{#if @first}}
+                                <tr>
+                                    <td>{{formatDateOnly fecha}}</td>
+                                    <td class="text-center"><span class="badge badge-info">{{cantidadSpam}}</span></td>
+                                </tr>
+                            {{/if }}
+                        {{/each}}
+                    {{else}}
+                        <tr>
+                            <td colspan="2" class="text-center empty-cell">No hay datos disponibles</td>
+                        </tr>
+                    {{/if}}
+                    </tbody>
+                </table>
+            </div>
         </section>
 
     </main>

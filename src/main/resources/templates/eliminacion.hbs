@@ -24,7 +24,7 @@
       <p><strong>Título:</strong> {{hecho.titulo}}</p>
       <p><strong>Categoría:</strong> {{hecho.categoria}}</p>
       <p><strong>Descripción:</strong> {{hecho.descripcion}}</p>
-      <p><strong>Fecha de acontecimiento:</strong> {{hecho.fechaAcontecimiento}}</p>
+      <p><strong>Fecha de acontecimiento:</strong> {{formatDate hecho.fechaAcontecimiento}}</p>
     </div>
 
     <form action="/solicitudes" method="post">

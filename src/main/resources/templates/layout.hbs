@@ -27,8 +27,13 @@
   <header class="page-header">
     <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
       <div class="container-fluid px-4">
-        {{! Logo / Marca }}
-        <a class="navbar-brand fw-bold text-primary" href="/home">MetaMapa</a>
+        {{! Logo / Marca y Botón de Inicio }}
+        <div class="d-flex align-items-center gap-3">
+          <a class="navbar-brand fw-bold text-primary mb-0" href="/home">MetaMapa</a>
+          {{#unless esHome}}
+            <a href="/home" class="btn btn-outline-primary btn-sm">⬅️ Volver al Inicio</a>
+          {{/unless}}
+        </div>
 
         {{! Contenido del Header (dinámico) }}
         <div class="ms-auto d-flex align-items-center gap-3">
