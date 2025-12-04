@@ -116,6 +116,23 @@ header.page-header .d-flex.ms-auto {
 }
 
 /* ============================================
+   FOOTER ESTILO CONSISTENTE CON HEADER
+   ============================================ */
+
+.page-footer {
+    background: #f8f9fa;                  /* igual que bg-light del header */
+    color: #4ab5bf;                       /* mismo color del brand del navbar */
+    border-top: 1px solid #e0e0e0;        /* borde sutil */
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.08); /* sombra suave hacia arriba */
+    width: 100%;
+}
+
+.page-footer p {
+    margin: 0;
+    font-weight: 500;
+}
+
+/* ============================================
    CONTENIDO PRINCIPAL
    ============================================ */
 
