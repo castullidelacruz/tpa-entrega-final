@@ -1,0 +1,79 @@
+{{! ============================================
+    DETALLE DE HECHO
+    ============================================ }}
+
+{{#partial "contenido"}}
+
+<div class="container py-5">
+
+  {{! --- Título --- }}
+  <div class="text-center mb-5">
+    <h1 class="display-5 text-primary">{{hecho.titulo}}</h1>
+    <p class="text-muted">Detalle completo del acontecimiento histórico</p>
+  </div>
+
+  {{! --- CARD PRINCIPAL --- }}
+  <div class="card shadow-sm mb-4">
+    <div class="card-body p-4">
+
+      {{! --- Descripción --- }}
+      <h3 class="h5 mb-3 text-secondary">📄 Descripción</h3>
+      <p class="text-muted">{{hecho.descripcion}}</p>
+
+      {{! --- Categoría y Fecha --- }}
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <h4 class="h6 text-secondary mb-1">🏷 Categoría</h4>
+          <p class="text-muted">{{hecho.categoria}}</p>
+        </div>
+
+        <div class="col-md-6">
+          <h4 class="h6 text-secondary mb-1">📅 Fecha del Acontecimiento</h4>
+          <p class="text-muted">{{fechaFormateada}}</p>
+        </div>
+      </div>
+
+      {{! --- Multimedia --- }}
+      {{#if hecho.multimedia}}
+        <h3 class="h6 text-secondary mb-2">🖼 Imagen</h3>
+        <div class="text-center mb-4">
+          <img src="{{hecho.multimedia}}" class="img-fluid rounded shadow-sm detalle-imagen" alt="Imagen del hecho">
+        </div>
+      {{/if}}
+
+      {{! --- Mapa --- }}
+      <h3 class="h6 text-secondary mb-3">🗺 Ubicación</h3>
+      <div id="map" class="detalle-mapa mb-4 rounded shadow-sm"></div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", function() {
+          const lat = {{hecho.latitud}};
+          const lon = {{hecho.longitud}};
+
+          const map = L.map('map').setView([lat, lon], 13);
+
+          L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+          }).addTo(map);
+
+          L.marker([lat, lon]).addTo(map);
+        });
+      </script>
+
+      {{! --- Botón de eliminar (solo admin) --- }}
+      {{#if esAdmin}}
+        <div class="text-end mt-4">
+          <a href="/hechos/{{hecho.id}}/solicitud" class="btn btn-sm btn-danger px-3 shadow-sm">
+            🗑 Eliminar Hecho
+          </a>
+        </div>
+      {{/if}}
+
+    </div>
+  </div>
+
+</div>
+
+{{/partial}}
+
+{{> templates/layout }}

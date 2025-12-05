@@ -22,8 +22,10 @@ import io.javalin.http.UploadedFile;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,7 +41,7 @@ public class HechoController implements WithSimplePersistenceUnit {
   private final RepositorioHechos repoHechos = RepositorioHechos.getInstance();
   private final DetectorDeSpam detectorDeSpam = new DetectorDeSpamInteligente();
 
-  private static final String UPLOAD_DIR = "uploads/uploads";
+  private static final String UPLOAD_DIR = "uploads";
 
   // --- Mostrar formulario de creación de hecho ---
   public Map<String, Object> showCreationForm(@NotNull Context ctx) {
@@ -179,7 +181,7 @@ public class HechoController implements WithSimplePersistenceUnit {
       file.content().transferTo(outputStream);
     }
 
-    return "/uploads/uploads/" + uniqueName;
+    return "/uploads/" + uniqueName;
   }
 
   // --- Formulario de búsqueda ---
@@ -251,4 +253,42 @@ public class HechoController implements WithSimplePersistenceUnit {
 
     return modelo;
   }
+
+  // --- Mostrar detalle de un hecho ---
+  public void showDetail(@NotNull Context ctx) {
+    Long id = ctx.pathParamAsClass("id", Long.class)
+        .check(v -> v > 0, "ID inválido")
+        .get();
+
+    Hecho hecho = repoHechos.buscarHechoPorId(id);
+
+    if (hecho == null || !hecho.getDisponibilidad()) {
+      ctx.status(404);
+      ctx.result("Hecho no encontrado");
+      return;
+    }
+
+    LocalDateTime fechaHecho = hecho.getFechaAcontecimiento(); // o LocalDate, según tengas
+    String fechaFormateada = "";
+
+    if (fechaHecho != null) {
+      DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+      fechaFormateada = fechaHecho.format(formatter);
+    }
+
+    AppRole role = ctx.attribute("userRole");
+    boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
+    boolean esAdmin = role == AppRole.ADMIN;
+    String username = ctx.attribute("username");
+
+    Map<String, Object> model = new HashMap<>();
+    model.put("hecho", hecho);
+    model.put("fechaFormateada", fechaFormateada);
+    model.put("esRegistrado", esRegistrado);
+    model.put("esAdmin", esAdmin);
+    model.put("username", username != null ? username : "Invitado");
+
+    ctx.render("hecho-detalle.hbs", model);
+  }
+
 }

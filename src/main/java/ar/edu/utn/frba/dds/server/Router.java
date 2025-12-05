@@ -69,6 +69,7 @@ public class Router {
         ctx -> ctx.render(
             "resultado_eliminacion.hbs",
             solicitudController.showResultado(ctx)));
+    app.get("/hechos/{id}", hechoController::showDetail);
 
     // DASHBOARD
     app.get("/dashboard", ctx -> ctx.render("/dashboard/dashboard.hbs"));
