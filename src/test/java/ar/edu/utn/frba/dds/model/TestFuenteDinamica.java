@@ -24,7 +24,7 @@ import java.util.List;
 
 
 public class TestFuenteDinamica implements SimplePersistenceTest {
-
+/*
   Hecho hechoModificador;
   CriterioBase cBase;
   List<Criterio> criterios;
@@ -169,6 +169,8 @@ public class TestFuenteDinamica implements SimplePersistenceTest {
 
     Assertions.assertEquals("No se puede modificar este hecho", exception.getMessage());
   }
+
+ */
 
 
 

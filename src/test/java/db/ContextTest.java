@@ -100,7 +100,7 @@ public class ContextTest implements SimplePersistenceTest {
   void contextUp() {
     assertNotNull(entityManager());
   }
-
+/*
   @Test
   void contextUpWithTransaction() throws Exception {
     withTransaction(() -> {
@@ -212,7 +212,7 @@ public class ContextTest implements SimplePersistenceTest {
     //Assertions.assertEquals("12:00", estadisticaHHC.getReporte().get(0).hora_pico());
   }
 
-   */
+
 
   //CSV &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
   @Test

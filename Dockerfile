@@ -1,5 +1,13 @@
-FROM maven:3.8.1-openjdk-17
+FROM eclipse-temurin:17-jdk-jammy
 
-COPY target/TP-1.0-SNAPSHOT.jar app.jar
+# Directorio de trabajo dentro del contenedor
+WORKDIR /app
 
-ENTRYPOINT ["java" , "-jar" , "/app.jar"]
+# Copiar el .jar construido
+COPY target/main-app-jar-with-dependencies.jar app.jar
+
+# Render asigna el puerto por variable de entorno
+ENV PORT=9001
+
+# Ejecutar la aplicación
+ENTRYPOINT ["java", "-jar", "app.jar"]

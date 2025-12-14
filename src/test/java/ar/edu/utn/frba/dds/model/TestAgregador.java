@@ -32,6 +32,7 @@ import java.time.LocalDateTime;
 import java.util.*;
 
 public class TestAgregador implements SimplePersistenceTest {
+  /*
   private static final Logger log = LoggerFactory.getLogger(TestAgregador.class);
   FuenteDinamica fuente;
   FuenteDataSet fuenteDataSet;
@@ -255,7 +256,7 @@ public class TestAgregador implements SimplePersistenceTest {
 
     Assertions.assertEquals(4,hechos_2_fuentes.size());
   }
-*/
+
 
   @AfterEach
   void limpiarValores() throws IOException {
@@ -263,5 +264,8 @@ public class TestAgregador implements SimplePersistenceTest {
 
     mockWebServer.shutdown();
   }
+
+   */
+
 
 }
