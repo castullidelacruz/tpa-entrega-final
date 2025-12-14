@@ -25,6 +25,8 @@ import ar.edu.utn.frba.dds.repositories.RepositorioSolicitudesDeCarga;
 import ar.edu.utn.frba.dds.server.AppRole;
 import ar.edu.utn.frba.dds.service.ServicioAutenticacion;
 import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
+
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -120,12 +122,12 @@ public class Bootstrap implements WithSimplePersistenceUnit {
       RepositorioCriterios repositorioCriterios = new RepositorioCriterios();
       CriterioCategoria criterioCategoria = new CriterioCategoria();
       CriterioDescripcion criterioDescripcion = new CriterioDescripcion();
-      CriterioFecha criterioFecha = new CriterioFecha();
+      CriterioFecha criterioFecha = new CriterioFecha(LocalDate.now());
       repositorioCriterios.cargarCriterio(criterioCategoria);
       repositorioCriterios.cargarCriterio(criterioDescripcion);
       repositorioCriterios.cargarCriterio(criterioFecha);
-      CriterioFechaCarga criterioFechaCarga = new CriterioFechaCarga();
-      CriterioRangoFechas criterioRangoFechas = new CriterioRangoFechas();
+      CriterioFechaCarga criterioFechaCarga = new CriterioFechaCarga(LocalDate.now());
+      CriterioRangoFechas criterioRangoFechas = new CriterioRangoFechas(LocalDate.now(), LocalDate.now());
       CriterioUbicacion criterioUbicacion = new CriterioUbicacion();
       CriterioTitulo criterioTitulo = new CriterioTitulo();
       repositorioCriterios.cargarCriterio(criterioRangoFechas);
