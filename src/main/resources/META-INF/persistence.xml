@@ -35,7 +35,7 @@
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver"/>
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
             <property name="hibernate.connection.url"
-                      value="jdbc:postgresql://dpg-d56695p5pdvs73cgskd0-a.oregon-postgres.render.com:5432/connection_tp5"/>
+                      value="jdbc:postgresql://dpg-d56695p5pdvs73cgskd0-a.oregon-postgres.render.com:5432/connection_tp5?sslmode=require"/>
             <property name="hibernate.connection.username" value="connection_tp5_user"/>
             <property name="hibernate.connection.password" value="NkIGiH0rsonqzmWdyqdJBt0SZ3UZsVzK"/>
             <!--property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver" />
