@@ -7,6 +7,7 @@ import com.auth0.jwt.interfaces.DecodedJWT;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
 import io.javalin.http.staticfiles.Location;
+import java.io.File;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +21,7 @@ public class Server {
   );
 
   public void start() {
+    ensureUploadsDirExists();
     Bootstrap.init();
     var app = Javalin.create(config -> {
       initializeStaticFiles(config);
@@ -30,6 +32,13 @@ public class Server {
     new Router().configure(app);
     int port = Integer.parseInt(System.getenv().getOrDefault("PORT", "9001"));
     app.start(port);
+  }
+
+  private static void ensureUploadsDirExists() {
+    File uploadsDir = new File("uploads");
+    if (!uploadsDir.exists()) {
+      uploadsDir.mkdirs();
+    }
   }
 
   private void initializeSecurity(Javalin app) {
