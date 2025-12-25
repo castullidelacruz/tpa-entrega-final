@@ -36,7 +36,7 @@ public class EstadisticasController implements WithSimplePersistenceUnit {
         "fecha", fechaAhora
     );
 
-    ctx.render("dashboard/estadisticaSpam.hbs", model);
+    ctx.render("estadisticaSpam.hbs", model);
     return model;
   }
 
@@ -57,7 +57,7 @@ public class EstadisticasController implements WithSimplePersistenceUnit {
         "reporte", reporte
     );
 
-    ctx.render("dashboard/estadisticaHoraPico.hbs", model);
+    ctx.render("estadisticaHoraPico.hbs", model);
     return model;
   }
 
@@ -75,7 +75,7 @@ public class EstadisticasController implements WithSimplePersistenceUnit {
         "fecha", fechaAhora,
         "reporte", reporte
     );
-    ctx.render("dashboard/estadisticaCategoriaMaxima.hbs", model);
+    ctx.render("estadisticaCategoriaMaxima.hbs", model);
     return model;
   }
 
@@ -94,7 +94,7 @@ public class EstadisticasController implements WithSimplePersistenceUnit {
         "fecha", fechaAhora,
         "reporte", reporte
     );
-    ctx.render("dashboard/estadisticaCategoriaProvinciaMax.hbs", model);
+    ctx.render("estadisticaCategoriaProvinciaMax.hbs", model);
     return model;
   }
 
@@ -113,7 +113,7 @@ public class EstadisticasController implements WithSimplePersistenceUnit {
         "fecha", fechaAhora,
         "reporte", reporte
     );
-    ctx.render("dashboard/estadisticaColeccionProvinciaMax.hbs", model);
+    ctx.render("estadisticaColeccionProvinciaMax.hbs", model);
     return model;
   }
 

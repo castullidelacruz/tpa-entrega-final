@@ -58,7 +58,7 @@ public class ColeccionController implements WithSimplePersistenceUnit {
       ctx.sessionAttribute("flash_error", null);
     }
 
-    ctx.render("/dashboard/creacion-coleccion.hbs", model);
+    ctx.render("creacion-coleccion.hbs", model);
   }
 
   public void crearColeccion(Context ctx) {
@@ -163,7 +163,7 @@ public class ColeccionController implements WithSimplePersistenceUnit {
       ctx.sessionAttribute("flash_message", null);
     }
 
-    ctx.render("/dashboard/listado-colecciones.hbs", model);
+    ctx.render("listado-colecciones.hbs", model);
   }
 
   public void mostrarFormularioEdicion(Context ctx) {
@@ -187,7 +187,7 @@ public class ColeccionController implements WithSimplePersistenceUnit {
         "todosLosAlgoritmos", todosLosAlgoritmos
     );
 
-    ctx.render("/dashboard/modificacion-coleccion.hbs", model);
+    ctx.render("modificacion-coleccion.hbs", model);
   }
 
   public void editarColeccion(Context ctx) {
