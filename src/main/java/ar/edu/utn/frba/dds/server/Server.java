@@ -6,6 +6,7 @@ import ar.edu.utn.frba.dds.server.templates.JavalinRenderer;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import io.javalin.Javalin;
 import io.javalin.config.JavalinConfig;
+import io.javalin.http.staticfiles.Location;
 import java.util.List;
 import java.util.Map;
 
@@ -81,7 +82,8 @@ public class Server {
   private static void initializeStaticFiles(JavalinConfig config) {
     config.staticFiles.add(staticFileConfig -> {
       staticFileConfig.hostedPath = "/assets";
-      staticFileConfig.directory = "/assets";
+      staticFileConfig.directory = "assets";
+      staticFileConfig.location = Location.CLASSPATH;
     });
 
     config.staticFiles.add(staticFileConfig -> {
