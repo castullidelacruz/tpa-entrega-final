@@ -72,7 +72,7 @@ public class Router {
     app.get("/hechos/{id}", hechoController::showDetail);
 
     // DASHBOARD
-    app.get("/dashboard", ctx -> ctx.render("/dashboard/dashboard.hbs"));
+    app.get("/dashboard", ctx -> ctx.render("dashboard.hbs"));
     app.get("/dashboard/solicitudes",
         gestionSolicitudesController::mostrarSolicitudes);
     app.post("solicitud/carga/{id}/aceptar",
