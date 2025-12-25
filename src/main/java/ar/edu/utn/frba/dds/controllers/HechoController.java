@@ -162,10 +162,10 @@ public class HechoController implements WithSimplePersistenceUnit {
   // --- Guardar archivo subido ---
   private String saveUploadedFile(@NotNull UploadedFile file) throws IOException {
     File uploadDir = new File(UPLOAD_DIR);
-    if (!uploadDir.exists() && !uploadDir.mkdirs()) {
-      throw new IOException(
-          "No se pudo crear el directorio de subida: " + uploadDir.getAbsolutePath()
-      );
+
+    // NO ser estricto: no lanzar excepción si no se puede crear
+    if (!uploadDir.exists()) {
+      uploadDir.mkdirs();
     }
 
     String extension = "";

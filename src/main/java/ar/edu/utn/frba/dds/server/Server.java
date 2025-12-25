@@ -89,7 +89,7 @@ public class Server {
     config.staticFiles.add(staticFileConfig -> {
       staticFileConfig.hostedPath = "/uploads";
       staticFileConfig.directory = "uploads"; // carpeta fuera de src/main/resources
-      staticFileConfig.location = io.javalin.http.staticfiles.Location.EXTERNAL;
+      staticFileConfig.location = Location.EXTERNAL;
       staticFileConfig.headers = Map.of("Cache-Control", "max-age=0");
     });
   }
