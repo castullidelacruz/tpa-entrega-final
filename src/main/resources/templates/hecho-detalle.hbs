@@ -35,10 +35,26 @@
 
       {{! --- Multimedia --- }}
       {{#if hecho.multimedia}}
-        <h3 class="h6 text-secondary mb-2">🖼 Imagen</h3>
-        <div class="text-center mb-4">
-          <img src="{{hecho.multimedia}}" class="img-fluid rounded shadow-sm detalle-imagen" alt="Imagen del hecho">
-        </div>
+
+        {{#if esImagen}}
+          <h3 class="h6 text-secondary mb-2">🖼 Imagen</h3>
+          <div class="text-center mb-4">
+            <img src="{{hecho.multimedia}}"
+                 class="img-fluid rounded shadow-sm detalle-imagen"
+                 alt="Imagen del hecho">
+          </div>
+        {{/if}}
+
+        {{#if esVideo}}
+          <h3 class="h6 text-secondary mb-2">🎥 Video</h3>
+          <div class="text-center mb-4">
+            <video controls class="img-fluid rounded shadow-sm detalle-imagen">
+              <source src="{{hecho.multimedia}}" type="video/mp4">
+              Tu navegador no soporta videos HTML5.
+            </video>
+          </div>
+        {{/if}}
+
       {{/if}}
 
       {{! --- Mapa --- }}

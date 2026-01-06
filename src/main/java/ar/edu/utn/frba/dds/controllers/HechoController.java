@@ -276,6 +276,11 @@ public class HechoController implements WithSimplePersistenceUnit {
       fechaFormateada = fechaHecho.format(formatter);
     }
 
+    String multimedia = hecho.getMultimedia();
+
+    boolean esVideo = multimedia != null &&
+        (multimedia.endsWith(".mp4") || multimedia.endsWith(".webm") || multimedia.endsWith(".ogg"));
+
     AppRole role = ctx.attribute("userRole");
     boolean esRegistrado = role == AppRole.USER || role == AppRole.ADMIN;
     boolean esAdmin = role == AppRole.ADMIN;
@@ -284,6 +289,8 @@ public class HechoController implements WithSimplePersistenceUnit {
     Map<String, Object> model = new HashMap<>();
     model.put("hecho", hecho);
     model.put("fechaFormateada", fechaFormateada);
+    model.put("esVideo", esVideo);
+    model.put("esImagen", !esVideo);
     model.put("esRegistrado", esRegistrado);
     model.put("esAdmin", esAdmin);
     model.put("username", username != null ? username : "Invitado");
