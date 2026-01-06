@@ -42,6 +42,16 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
   public synchronized void exportarEstadistica(String path) throws IOException {
     File file = new File(path);
 
+    // 🔹 Crear directorios si no existen
+    File parentDir = file.getParentFile();
+    if (parentDir != null && !parentDir.exists()) {
+      boolean creado = parentDir.mkdirs();
+      if (!creado) {
+        throw new IOException("No se pudo crear el directorio: " + parentDir.getAbsolutePath());
+      }
+    }
+
+    // 🔹 Borrar archivo previo
     if (file.exists()) {
       boolean eliminado = file.delete();
       if (!eliminado) {
@@ -64,6 +74,7 @@ public class EstadisticaHoraHechosCategoria implements Estadistica {
       }
     }
   }
+
 
   // ============================
   // Métodos adicionales para integración

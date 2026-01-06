@@ -48,8 +48,20 @@ public class EstadisticaCategoriaMaxima implements Estadistica, WithSimplePersis
   public void exportarEstadistica(String path) throws IOException {
     File file = new File(path);
 
+    File parentDir = file.getParentFile();
+    if (parentDir != null && !parentDir.exists()) {
+      boolean creado = parentDir.mkdirs();
+      if (!creado) {
+        throw new IOException("No se pudo crear el directorio: " + parentDir.getAbsolutePath());
+      }
+    }
+
+    // 🔹 Borrar archivo previo
     if (file.exists()) {
       boolean eliminado = file.delete();
+      if (!eliminado) {
+        System.err.println("⚠️ No se pudo eliminar el archivo existente: " + path);
+      }
     }
 
     try (CSVWriter writer = new CSVWriter(
