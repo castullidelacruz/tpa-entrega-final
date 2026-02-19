@@ -139,7 +139,7 @@ public class Router {
           "./descargar/estadisticas_coleccion_hechosmaximos.csv"))); });
 
     //Hechos Consensuados
-    app.post("./jobs/hechosConsensuados", ctx -> {
+    app.post("/jobs/hechosConsensuados", ctx -> {
       coleccion.actualizarHechosConsensuados();
       ctx.result("Hechos consensuados");
     } );
