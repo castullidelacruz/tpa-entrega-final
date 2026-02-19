@@ -38,6 +38,16 @@ body {
     animation: fadeIn 0.6s ease-in-out;
 }
 
+.tarjeta-gigante {
+    background: white;
+    width: 96%;
+    max-width: none;
+    margin: 20px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+}
+
 /* --- Animación de Entrada --- */
 @keyframes fadeIn {
     from {
