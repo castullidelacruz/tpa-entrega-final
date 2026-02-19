@@ -8,6 +8,7 @@ import ar.edu.utn.frba.dds.controllers.HomeController;
 import ar.edu.utn.frba.dds.controllers.LoginController;
 import ar.edu.utn.frba.dds.controllers.RegistroController;
 import ar.edu.utn.frba.dds.controllers.SolicitudController;
+import ar.edu.utn.frba.dds.model.entities.Coleccion;
 import ar.edu.utn.frba.dds.service.ServicioEstadisticas;
 import io.javalin.Javalin;
 
@@ -21,6 +22,7 @@ public class Router {
     GestionSolicitudesController gestionSolicitudesController = new GestionSolicitudesController();
     ColeccionController coleccionController = new ColeccionController();
     ServicioEstadisticas service = new ServicioEstadisticas();
+    Coleccion coleccion = new Coleccion();
 
     // HOME
     app.get("/", ctx -> {
@@ -136,7 +138,11 @@ public class Router {
       ctx.result(java.nio.file.Files.newInputStream(java.nio.file.Paths.get(
           "./descargar/estadisticas_coleccion_hechosmaximos.csv"))); });
 
-
+    //Hechos Consensuados
+    app.get("./jobs/hechosConsensuados", ctx -> {
+      coleccion.actualizarHechosConsensuados();
+      ctx.result("Hechos consensuados");
+    } );
 
   }
 }
