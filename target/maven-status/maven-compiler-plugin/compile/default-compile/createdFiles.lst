@@ -63,6 +63,7 @@ ar/edu/utn/frba/dds/controllers/EstadisticasController.class
 ar/edu/utn/frba/dds/model/entities/fuentes/Conexion.class
 ar/edu/utn/frba/dds/model/entities/solicitudes/PostSolicitud.class
 ar/edu/utn/frba/dds/server/AppRole.class
+ar/edu/utn/frba/dds/service/ServicioEstadisticas.class
 ar/edu/utn/frba/dds/MainFuentes.class
 ar/edu/utn/frba/dds/controllers/GestionSolicitudesController.class
 ar/edu/utn/frba/dds/model/entities/solicitudes/FactorySolicitudDeEliminacion.class

@@ -42,6 +42,7 @@
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/model/estadistica/Estadistica.java
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/service/ServicioAutenticacion.java
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/repositories/RepositorioSolicitudesDeCarga.java
+/Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/service/ServicioEstadisticas.java
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/repositories/RepositorioSolicitudesEliminacion.java
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/model/entities/fuentes/FuenteDataSet.java
 /Users/cristianastullidelacruz/Desktop/tpa-entrega-final/src/main/java/ar/edu/utn/frba/dds/model/entities/algoritmosconcenso/AlgoritmoDeConsenso.java
