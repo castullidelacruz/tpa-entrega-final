@@ -9,6 +9,7 @@ import ar.edu.utn.frba.dds.controllers.LoginController;
 import ar.edu.utn.frba.dds.controllers.RegistroController;
 import ar.edu.utn.frba.dds.controllers.SolicitudController;
 import ar.edu.utn.frba.dds.model.entities.Coleccion;
+import ar.edu.utn.frba.dds.repositories.RepositorioColecciones;
 import ar.edu.utn.frba.dds.service.ServicioEstadisticas;
 import io.javalin.Javalin;
 
@@ -22,7 +23,7 @@ public class Router {
     GestionSolicitudesController gestionSolicitudesController = new GestionSolicitudesController();
     ColeccionController coleccionController = new ColeccionController();
     ServicioEstadisticas service = new ServicioEstadisticas();
-    Coleccion coleccion = new Coleccion();
+    RepositorioColecciones repositorioColecciones = RepositorioColecciones.getInstance();
 
     // HOME
     app.get("/", ctx -> {
@@ -140,7 +141,7 @@ public class Router {
 
     //Hechos Consensuados
     app.post("./jobs/hechosConsensuados", ctx -> {
-      coleccion.actualizarHechosConsensuados();
+      repositorioColecciones.consesuareEchos();;
       ctx.result("Hechos consensuados");
     } );
 
