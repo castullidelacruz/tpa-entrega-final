@@ -51,14 +51,20 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           .getResultList();
 
       FuenteDinamica fuenteAsociada;
-      Fuente dataset = new FuenteDataSet("/uploads/hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
+      Fuente dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
       repositorioFuentes.registrarFuente(dataset);
       List<Hecho> hechosDataset = dataset.getHechos();
 
-      repositorioHechos.cargarHecho(hechosDataset.get(0));
-
+      //repositorioHechos.cargarHecho(hechosDataset.get(0));
+      /*
       while (!hechosDataset.isEmpty()) {
         repositorioHechos.cargarHecho(hechosDataset.remove(0));
+      }
+
+       */
+
+      for (Hecho h : hechosDataset) {
+        repositorioHechos.cargarHecho(h);
       }
 
       if (fuentesDinamicas.isEmpty()) {

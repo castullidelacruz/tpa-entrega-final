@@ -11,10 +11,8 @@ import com.opencsv.CSVReaderBuilder;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 import com.opencsv.bean.HeaderColumnNameMappingStrategy;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
+
+import java.io.*;
 import java.nio.charset.StandardCharsets;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -71,9 +69,15 @@ public class FuenteDataSet extends Fuente {
         .build();
 
     try (
-         Reader inputReader = new InputStreamReader(new FileInputStream(ruta),
-             StandardCharsets.UTF_8);
-         CSVReader csvReader = new CSVReaderBuilder(inputReader)
+        InputStream inputStream =
+            Thread.currentThread()
+                .getContextClassLoader()
+                .getResourceAsStream(ruta);
+
+        Reader inputReader =
+            new InputStreamReader(inputStream, StandardCharsets.UTF_8);
+
+        CSVReader csvReader = new CSVReaderBuilder(inputReader)
              .withCSVParser(parser)
              .build()
     ) {
