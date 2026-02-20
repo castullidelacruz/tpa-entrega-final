@@ -50,7 +50,7 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           .getResultList();
 
       FuenteDinamica fuenteAsociada;
-      FuenteDataSet dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd'T'HH:mm",',');
+      FuenteDataSet dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
       repositorioFuentes.registrarFuente(dataset);
       List<Hecho> hechosDataset = dataset.getHechos();
 
@@ -58,6 +58,7 @@ public class Bootstrap implements WithSimplePersistenceUnit {
         repositorioHechos.cargarHecho(hechosDataset.get(0));
         hechosDataset.remove(0);
       }
+
       if (fuentesDinamicas.isEmpty()) {
         // Si NO existe, la creamos y persistimos.
         fuenteAsociada = new FuenteDinamica();

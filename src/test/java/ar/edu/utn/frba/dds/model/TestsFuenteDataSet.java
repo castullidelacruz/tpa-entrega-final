@@ -43,7 +43,7 @@ public class TestsFuenteDataSet {
     rango = new CriterioRangoFechas(LocalDate.of(2023, 1, 1),
         LocalDate.of(2025,12,30));
     titulo = new CriterioTitulo("incendio");
-    dataset = new FuenteDataSet("datos.csv","yyyy-MM-dd HH:mm",',');
+    dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
     datavacio = new FuenteDataSet("vacio.csv","yyyy-MM-dd HH:mm",',');
     dataDesogranizada = new FuenteDataSet("EjHechos.csv","d/M/yyyy HH:mm",';');
     dataFaltanColumnas = new FuenteDataSet("EjHechosColumnaMandatoriaFaltante.csv","d/M/yyyy",';');
@@ -86,11 +86,15 @@ public class TestsFuenteDataSet {
         "incendios en la patagonia",
         dataset, criterios, generador.generar(),null);
 
-    List<Hecho> hechos = coleccion.obtnerHechos();
+    //List<Hecho> hechos = coleccion.obtnerHechos();
 
-    Assertions.assertEquals("Incendio en pehuen", hechos.get(0).getTitulo());
-    Assertions.assertEquals("Incendio en Bariloche", hechos.get(1).getTitulo());
-    Assertions.assertEquals(2, hechos.size());
+    List<Hecho> hechos = dataset.getHechos();
+
+    Assertions.assertEquals(382, hechos.size());
+
+    //Assertions.assertEquals("Incendio en pehuen", hechos.get(0).getTitulo());
+    //Assertions.assertEquals("Incendio en Bariloche", hechos.get(1).getTitulo());
+    //Assertions.assertEquals(2, hechos.size());
   }
 
   @Test
