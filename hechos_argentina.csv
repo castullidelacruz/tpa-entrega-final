@@ -1,0 +1,426 @@
+titulo,descripcion,categoria,latitud,longitud,fechaAcontecimiento,multimedia
+Corte de luz centro,Corte de luz en zona centro,cortes,-34.6037,-58.3816,2025-01-18T12:00,http://example.com/1
+Accidente vial,Choque de autos en Av. Libertador,accidente,-34.5875,-58.3817,2025-01-19T08:30,http://example.com/2
+Feria artesanal,Feria en Plaza San Martín,evento,-34.5997,-58.3819,2025-01-20T10:00,http://example.com/3
+Corte de agua,Baja presión de agua en barrio norte,cortes,-34.6075,-58.3821,2025-01-21T09:15,http://example.com/4
+Manifestación,Marcha pacífica en Av. 9 de Julio,evento,-34.6088,-58.3712,2025-01-22T14:00,http://example.com/5
+Accidente ferroviario,Descarrilamiento tren suburbano,accidente,-34.6112,-58.3734,2025-01-23T16:45,http://example.com/6
+Corte de luz zona sur,Corte programado por mantenimiento,cortes,-34.6150,-58.3770,2025-01-24T18:30,http://example.com/7
+Feria tecnológica,Expo en centro cultural,evento,-34.6175,-58.3795,2025-01-25T11:00,http://example.com/8
+Accidente de tránsito,Colisión múltiple en autopista,accidente,-34.6190,-58.3810,2025-01-26T13:20,http://example.com/9
+Corte de luz barrio oeste,Corte no programado,cortes,-34.6210,-58.3830,2025-01-27T15:00,http://example.com/10
+Inundación leve,Desborde de arroyo en barrio sur,evento,-34.6225,-58.3845,2025-01-28T07:30,http://example.com/11
+Accidente doméstico,Caída en vivienda particular,accidente,-34.6240,-58.3860,2025-01-29T09:45,http://example.com/12
+Corte de luz zona norte,Corte preventivo por mantenimiento,cortes,-34.6255,-58.3875,2025-01-30T12:15,http://example.com/13
+Feria gastronómica,Feria de comidas regionales,evento,-34.6270,-58.3890,2025-02-01T10:00,http://example.com/14
+Accidente laboral,Incidente en construcción,accidente,-34.6285,-58.3905,2025-02-02T11:30,http://example.com/15
+Corte de agua programado,Mantenimiento en red principal,cortes,-34.6300,-58.3920,2025-02-03T08:00,http://example.com/16
+Feria deportiva,Competencia de atletismo,evento,-34.6315,-58.3935,2025-02-04T09:00,http://example.com/17
+Accidente vehicular,Choque moto-auto,accidente,-34.6330,-58.3950,2025-02-05T17:30,http://example.com/18
+Corte de luz barrio centro,Corte inesperado,cortes,-34.6345,-58.3965,2025-02-06T14:20,http://example.com/19
+Feria cultural,Exposición de arte local,evento,-34.6360,-58.3980,2025-02-07T13:00,http://example.com/20
+Accidente ferroviario leve,Tren descarrila parcialmente,accidente,-34.6375,-58.3995,2025-02-08T15:45,http://example.com/21
+Corte de agua emergencia,Rotura de cañería principal,cortes,-34.6390,-58.4010,2025-02-09T16:10,http://example.com/22
+Feria musical,Concierto en plaza principal,evento,-34.6405,-58.4025,2025-02-10T20:00,http://example.com/23
+Accidente vial leve,Choque lateral,accidente,-34.6420,-58.4040,2025-02-11T07:20,http://example.com/24
+Corte de luz prolongado,Barrio norte sin electricidad,cortes,-34.6435,-58.4055,2025-02-12T19:00,http://example.com/25
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-51.5402,-71.9769,2025-06-12T13:55,http://example.com/26
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-39.4499,-60.0465,2025-08-27T05:41,http://example.com/27
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-36.237,-60.5656,2025-06-08T19:24,http://example.com/28
+Choque tren-camión,Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-35.7424,-57.844,2025-09-25T15:12,http://example.com/29
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-50.4701,-69.7734,2025-03-18T14:07,http://example.com/30
+Vuelco de colectivo,Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-29.0141,-55.2551,2025-04-21T06:35,http://example.com/31
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-26.8102,-56.3488,2025-09-08T08:39,http://example.com/32
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-48.0447,-53.7438,2025-09-23T09:59,http://example.com/33
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-26.1264,-70.7176,2025-08-16T02:48,http://example.com/34
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-51.127,-65.35,2025-07-19T00:55,http://example.com/35
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-48.6685,-70.1134,2025-02-14T14:39,http://example.com/36
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-40.7322,-62.4776,2025-03-22T08:31,http://example.com/37
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-54.4071,-63.5817,2025-12-10T08:11,http://example.com/38
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-44.3465,-53.7145,2025-06-02T17:03,http://example.com/39
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-26.9458,-57.3401,2025-04-16T05:05,http://example.com/40
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-35.3695,-55.0594,2025-06-11T04:40,http://example.com/41
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-37.2599,-61.4511,2025-06-23T11:11,http://example.com/42
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-43.7048,-66.8061,2025-04-26T08:41,http://example.com/43
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-42.1936,-69.3884,2025-11-30T14:00,http://example.com/44
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-38.8033,-72.4395,2025-12-17T02:27,http://example.com/45
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-28.3551,-60.0326,2025-08-21T10:06,http://example.com/46
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-36.735,-60.8214,2025-05-18T12:16,http://example.com/47
+Accidente de tránsito nocturno,Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-35.9926,-54.1811,2025-09-21T11:47,http://example.com/48
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-36.7838,-72.5622,2025-06-27T16:37,http://example.com/49
+Interrupción de servicio eléctrico,Falla en subestación eléctrica cortó el suministro por horas,cortes,-40.9353,-59.6193,2025-07-09T03:59,http://example.com/50
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-26.351,-67.9362,2025-12-14T01:23,http://example.com/51
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-25.8513,-64.1214,2025-10-31T03:21,http://example.com/52
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-42.3929,-62.7448,2025-07-14T06:28,http://example.com/53
+Caída de puente peatonal,Sección de puente peatonal cedió por sobrepeso,accidente,-43.8542,-65.1957,2025-05-06T10:10,http://example.com/54
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-31.599,-64.3085,2025-08-12T11:22,http://example.com/55
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-29.7426,-68.3576,2025-10-09T00:54,http://example.com/56
+Marcha por el medio ambiente,Activistas reclamaron por la contaminación de un río local,evento,-32.7809,-58.8612,2025-07-04T10:32,http://example.com/57
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-42.327,-70.1656,2025-08-10T04:26,http://example.com/58
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-43.4184,-73.4455,2025-09-12T20:38,http://example.com/59
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-39.6421,-66.6603,2025-05-10T20:20,http://example.com/60
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-30.0663,-56.3179,2025-04-11T22:21,http://example.com/61
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-32.8785,-56.7732,2025-07-16T08:41,http://example.com/62
+Ola de calor extremo,Temperaturas superaron los 40 grados en varias provincias del norte,evento,-42.7687,-63.7274,2025-12-14T21:38,http://example.com/63
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-50.4636,-70.4983,2025-03-02T17:58,http://example.com/64
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-38.7109,-72.1335,2025-05-02T11:02,http://example.com/65
+Camión volcado en rotonda,Un camión cisterna volcó al tomar mal una rotonda,accidente,-23.0832,-70.2997,2025-05-18T14:41,http://example.com/66
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-39.4069,-58.985,2025-04-04T07:07,http://example.com/67
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-46.843,-53.7618,2025-08-21T20:34,http://example.com/68
+Interrupción telefónica masiva,Falla en central telefónica dejó sin servicio a zona comercial,cortes,-35.5481,-67.4944,2025-09-15T13:08,http://example.com/69
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-52.7998,-58.1696,2025-08-20T16:27,http://example.com/70
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-38.8432,-70.4033,2025-09-12T15:24,http://example.com/71
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-33.7251,-68.4605,2025-05-22T13:53,http://example.com/72
+Desfile de carnaval,Colorido desfile de comparsas recorrió las calles del centro,evento,-48.5168,-72.2357,2025-08-25T09:17,http://example.com/73
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-31.8415,-71.6895,2025-05-21T10:27,http://example.com/74
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-53.6406,-66.6741,2025-12-15T10:48,http://example.com/75
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-27.3085,-54.2547,2025-04-22T23:44,http://example.com/76
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-44.6322,-63.2096,2025-09-15T03:10,http://example.com/77
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-47.4739,-70.1567,2025-12-01T16:47,http://example.com/78
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-50.0238,-68.6176,2025-11-24T11:39,http://example.com/79
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-33.0254,-61.1764,2025-06-27T00:52,http://example.com/80
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-30.8689,-72.1427,2025-12-22T16:50,http://example.com/81
+Desfile de carnaval,Colorido desfile de comparsas recorrió las calles del centro,evento,-41.7184,-61.6489,2025-06-20T21:43,http://example.com/82
+Nevadas en zona cordillerana,Importante acumulación de nieve cortó pasos montañosos,evento,-28.9856,-66.7282,2025-12-30T12:12,http://example.com/83
+Caída de árbol sobre auto,Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-52.5562,-62.9239,2025-07-14T20:11,http://example.com/84
+Corte de agua por contaminación,Se suspendió el servicio por detección de contaminantes en red,cortes,-53.1244,-54.4425,2025-11-26T12:28,http://example.com/85
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-30.232,-61.1947,2025-05-13T01:40,http://example.com/86
+Nevadas en zona cordillerana,Importante acumulación de nieve cortó pasos montañosos,evento,-44.5292,-65.3811,2025-11-10T16:18,http://example.com/87
+Tornado en zona pampeana,Un pequeño tornado destruyó estructuras en localidad rural,evento,-28.6331,-64.6207,2025-10-02T04:10,http://example.com/88
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-26.2083,-64.3856,2025-03-15T04:58,http://example.com/89
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-47.5418,-63.6292,2025-10-08T18:26,http://example.com/90
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-45.3551,-63.144,2025-12-04T03:16,http://example.com/91
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-29.471,-59.1007,2025-02-14T21:47,http://example.com/92
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-50.1414,-63.3277,2025-08-26T03:35,http://example.com/93
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-52.6984,-60.6862,2025-10-21T22:33,http://example.com/94
+Caída de árbol sobre auto,Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-37.447,-55.5152,2025-07-01T03:45,http://example.com/95
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-51.464,-67.2226,2025-12-07T12:49,http://example.com/96
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-47.8228,-59.1659,2025-04-29T18:20,http://example.com/97
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-22.3077,-59.1366,2025-10-15T21:08,http://example.com/98
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-49.4757,-67.7993,2025-11-15T18:10,http://example.com/99
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-41.609,-55.9124,2025-09-01T09:48,http://example.com/100
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-46.9418,-61.5849,2025-10-02T02:42,http://example.com/101
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-40.2001,-57.1133,2025-06-14T11:58,http://example.com/102
+Interrupción de servicio eléctrico,Falla en subestación eléctrica cortó el suministro por horas,cortes,-44.7049,-70.2739,2025-04-21T00:51,http://example.com/103
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-24.0104,-59.2652,2025-05-14T19:37,http://example.com/104
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-50.7333,-65.9936,2025-11-27T04:06,http://example.com/105
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-24.7402,-64.6971,2025-05-20T09:40,http://example.com/106
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-53.9679,-66.0669,2025-07-08T00:41,http://example.com/107
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-36.1265,-67.0326,2025-10-01T11:24,http://example.com/108
+Interrupción telefónica masiva,Falla en central telefónica dejó sin servicio a zona comercial,cortes,-46.5309,-72.2437,2025-11-14T16:11,http://example.com/109
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-40.3283,-72.685,2025-10-01T01:43,http://example.com/110
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-43.111,-70.8183,2025-12-06T02:54,http://example.com/111
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-44.5997,-71.3212,2025-04-03T01:40,http://example.com/112
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-49.3896,-54.2648,2025-03-14T06:25,http://example.com/113
+Protesta de comerciantes,Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-24.0186,-58.851,2025-08-09T22:09,http://example.com/114
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-32.5242,-60.9898,2025-11-05T00:53,http://example.com/115
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-22.3913,-68.5926,2025-12-14T23:14,http://example.com/116
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-44.5603,-68.9582,2025-09-24T03:29,http://example.com/117
+Ola de calor extremo,Temperaturas superaron los 40 grados en varias provincias del norte,evento,-51.7724,-62.8209,2025-06-02T17:08,http://example.com/118
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-39.8012,-68.8564,2025-07-28T02:41,http://example.com/119
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-30.9874,-67.1323,2025-12-10T12:03,http://example.com/120
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-44.822,-67.6536,2025-07-21T02:15,http://example.com/121
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-50.9846,-66.8914,2025-02-17T07:37,http://example.com/122
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-53.8787,-68.2363,2025-10-03T19:28,http://example.com/123
+Tornado en zona pampeana,Un pequeño tornado destruyó estructuras en localidad rural,evento,-30.4691,-67.1803,2025-12-08T08:24,http://example.com/124
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-30.6345,-54.0772,2025-12-27T03:05,http://example.com/125
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-52.7407,-69.7147,2025-05-29T05:25,http://example.com/126
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-29.8007,-71.8952,2025-07-03T18:46,http://example.com/127
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-42.2016,-58.2857,2025-02-15T22:02,http://example.com/128
+Accidente de moto en autopista,Motociclista perdió el control a alta velocidad y resultó herido,accidente,-49.8079,-69.0499,2025-11-07T20:38,http://example.com/129
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-23.395,-69.8902,2025-06-10T05:11,http://example.com/130
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-49.6241,-66.5498,2025-02-18T09:45,http://example.com/131
+Tornado en zona pampeana,Un pequeño tornado destruyó estructuras en localidad rural,evento,-42.56,-70.6982,2025-08-25T07:05,http://example.com/132
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-39.3422,-71.3254,2025-11-29T05:19,http://example.com/133
+Accidente de tránsito nocturno,Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-54.4774,-61.5955,2025-10-25T17:48,http://example.com/134
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-32.047,-61.9645,2025-06-10T01:49,http://example.com/135
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-51.8994,-68.7865,2025-11-11T00:17,http://example.com/136
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-43.6307,-67.0021,2025-11-07T08:00,http://example.com/137
+Desfile de carnaval,Colorido desfile de comparsas recorrió las calles del centro,evento,-53.798,-55.7246,2025-10-22T21:15,http://example.com/138
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-32.8685,-58.1318,2025-10-05T13:33,http://example.com/139
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-51.6986,-71.9234,2025-11-20T02:45,http://example.com/140
+Desfile de carnaval,Colorido desfile de comparsas recorrió las calles del centro,evento,-46.5884,-53.734,2025-06-27T20:00,http://example.com/141
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-54.2736,-59.142,2025-09-06T23:59,http://example.com/142
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-36.4636,-62.0481,2025-08-21T08:41,http://example.com/143
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-37.6932,-72.7411,2025-11-15T09:59,http://example.com/144
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-45.3633,-56.9891,2025-10-01T08:11,http://example.com/145
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-22.0192,-63.5569,2025-06-10T19:06,http://example.com/146
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-40.5766,-62.8143,2025-03-31T23:32,http://example.com/147
+Choque tren-camión,Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-37.4696,-65.2598,2025-12-23T18:32,http://example.com/148
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-37.0728,-59.5591,2025-04-07T00:59,http://example.com/149
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-30.3296,-71.0953,2025-09-08T14:40,http://example.com/150
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-43.5364,-71.6048,2025-10-22T05:45,http://example.com/151
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-24.6414,-58.4872,2025-11-10T20:25,http://example.com/152
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-31.9704,-68.3256,2025-05-20T19:18,http://example.com/153
+Vuelco de colectivo,Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-21.9207,-54.7066,2025-03-26T16:24,http://example.com/154
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.256,-62.9039,2025-03-24T22:45,http://example.com/155
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-29.9533,-56.6173,2025-02-16T22:43,http://example.com/156
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-30.2047,-57.4747,2025-12-16T05:20,http://example.com/157
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-34.4606,-64.4676,2025-12-26T17:24,http://example.com/158
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-24.0732,-68.7562,2025-10-28T22:10,http://example.com/159
+Feria de antigüedades,Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-28.5246,-61.9628,2025-09-27T22:47,http://example.com/160
+Ola de calor extremo,Temperaturas superaron los 40 grados en varias provincias del norte,evento,-50.8567,-65.5263,2025-06-30T03:48,http://example.com/161
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-35.5482,-63.4327,2025-08-06T06:43,http://example.com/162
+Interrupción de servicio eléctrico,Falla en subestación eléctrica cortó el suministro por horas,cortes,-22.2385,-65.3028,2025-04-23T07:20,http://example.com/163
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-31.1432,-70.4379,2025-03-18T19:16,http://example.com/164
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-52.3696,-72.2625,2025-07-21T06:46,http://example.com/165
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-54.2018,-62.6531,2025-05-05T22:39,http://example.com/166
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-24.0214,-67.2709,2025-07-19T05:45,http://example.com/167
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-32.5926,-68.6005,2025-11-04T01:55,http://example.com/168
+Ola de calor extremo,Temperaturas superaron los 40 grados en varias provincias del norte,evento,-53.2562,-59.0017,2025-09-17T06:07,http://example.com/169
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-27.9969,-68.6158,2025-04-30T07:24,http://example.com/170
+Feria de antigüedades,Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-24.916,-68.2133,2025-06-23T20:46,http://example.com/171
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-51.1574,-69.5381,2025-06-22T23:07,http://example.com/172
+Corte de agua por contaminación,Se suspendió el servicio por detección de contaminantes en red,cortes,-49.4228,-68.4959,2025-09-30T08:02,http://example.com/173
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-35.3284,-71.5145,2025-06-07T19:45,http://example.com/174
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-41.811,-55.6433,2025-05-26T19:47,http://example.com/175
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-27.7677,-67.5266,2025-09-13T13:30,http://example.com/176
+Protesta de comerciantes,Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-25.3805,-56.9472,2025-08-20T18:39,http://example.com/177
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-25.7747,-60.2484,2025-12-02T07:10,http://example.com/178
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-22.5459,-65.7271,2025-02-27T06:54,http://example.com/179
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-35.8766,-68.1947,2025-10-07T20:05,http://example.com/180
+Interrupción de servicio eléctrico,Falla en subestación eléctrica cortó el suministro por horas,cortes,-49.7591,-72.2746,2025-08-09T23:25,http://example.com/181
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-47.9409,-72.3089,2025-10-13T21:28,http://example.com/182
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-25.3038,-57.3419,2025-07-21T10:19,http://example.com/183
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-34.3629,-68.859,2025-05-05T11:02,http://example.com/184
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-44.0504,-63.7025,2025-05-26T00:03,http://example.com/185
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-47.4909,-67.9319,2025-12-15T10:37,http://example.com/186
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-36.6954,-60.3137,2025-04-14T15:06,http://example.com/187
+Accidente de moto en autopista,Motociclista perdió el control a alta velocidad y resultó herido,accidente,-31.8359,-62.7479,2025-12-03T19:53,http://example.com/188
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-50.739,-72.8194,2025-05-11T21:21,http://example.com/189
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-29.0935,-66.5499,2025-02-24T15:36,http://example.com/190
+Accidente de moto en autopista,Motociclista perdió el control a alta velocidad y resultó herido,accidente,-47.0003,-64.507,2025-02-14T15:54,http://example.com/191
+Caída de puente peatonal,Sección de puente peatonal cedió por sobrepeso,accidente,-34.3263,-70.6777,2025-10-18T09:24,http://example.com/192
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-37.9162,-63.6273,2025-02-20T00:38,http://example.com/193
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-49.8688,-58.0416,2025-04-29T23:45,http://example.com/194
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-34.3552,-63.8096,2025-08-03T20:33,http://example.com/195
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-39.861,-69.0166,2025-12-19T16:01,http://example.com/196
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-36.3062,-58.5275,2025-09-28T20:22,http://example.com/197
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-39.1217,-59.9063,2025-04-12T10:49,http://example.com/198
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-50.4557,-65.5206,2025-04-02T02:59,http://example.com/199
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-34.2377,-69.0373,2025-12-30T04:16,http://example.com/200
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-24.4675,-72.5044,2025-10-05T09:17,http://example.com/201
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-43.7373,-65.8816,2025-10-13T09:39,http://example.com/202
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-43.3809,-71.499,2025-12-10T04:40,http://example.com/203
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-27.0859,-58.4222,2025-11-29T16:25,http://example.com/204
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-50.4126,-54.3839,2025-07-05T16:00,http://example.com/205
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-34.2042,-70.2069,2025-02-16T05:55,http://example.com/206
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-43.4226,-69.3677,2025-03-08T00:02,http://example.com/207
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-46.7948,-68.4686,2025-04-19T14:45,http://example.com/208
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-40.4959,-72.7173,2025-06-26T08:45,http://example.com/209
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-53.2993,-65.3748,2025-10-07T12:40,http://example.com/210
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-50.7733,-60.3999,2025-08-07T08:49,http://example.com/211
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-43.9474,-67.6216,2025-09-15T07:54,http://example.com/212
+Tormenta eléctrica severa,Rayos provocaron incendios y cortes de luz en zona rural,evento,-45.4281,-71.0542,2025-06-13T01:41,http://example.com/213
+Feria de antigüedades,Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-27.8218,-60.1418,2025-05-03T21:19,http://example.com/214
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-50.2479,-61.441,2025-03-22T10:13,http://example.com/215
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-35.5994,-64.0788,2025-12-02T09:32,http://example.com/216
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-22.8445,-66.7174,2025-05-05T00:26,http://example.com/217
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-43.8847,-73.4284,2025-04-30T05:14,http://example.com/218
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-50.8893,-63.6364,2025-05-10T19:45,http://example.com/219
+Marcha por el medio ambiente,Activistas reclamaron por la contaminación de un río local,evento,-29.8454,-64.4636,2025-10-14T17:29,http://example.com/220
+Accidente de moto en autopista,Motociclista perdió el control a alta velocidad y resultó herido,accidente,-41.1076,-60.0613,2025-05-21T22:49,http://example.com/221
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-52.8328,-63.363,2025-07-27T22:19,http://example.com/222
+Marcha por la seguridad,Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-46.5681,-54.1993,2025-09-05T07:12,http://example.com/223
+Choque tren-camión,Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-25.7278,-61.5233,2025-05-24T18:11,http://example.com/224
+Corte de agua por rotura,Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-45.1153,-66.7143,2025-10-29T04:42,http://example.com/225
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-32.66,-56.9212,2025-11-05T17:26,http://example.com/226
+Interrupción telefónica masiva,Falla en central telefónica dejó sin servicio a zona comercial,cortes,-53.8034,-63.4291,2025-05-15T06:18,http://example.com/227
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-26.4729,-66.4465,2025-06-10T17:07,http://example.com/228
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-48.6524,-59.9671,2025-09-12T17:24,http://example.com/229
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-49.8693,-55.7494,2025-11-15T10:58,http://example.com/230
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-48.1475,-55.1648,2025-08-22T10:53,http://example.com/231
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-52.508,-61.0627,2025-10-14T01:07,http://example.com/232
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-29.9729,-65.7003,2025-05-03T17:42,http://example.com/233
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-47.1599,-55.5759,2025-09-24T14:42,http://example.com/234
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-43.6241,-69.7037,2025-03-29T03:30,http://example.com/235
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-39.2469,-68.4788,2025-06-06T18:09,http://example.com/236
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-37.133,-72.0367,2025-03-24T07:13,http://example.com/237
+Corte de agua por rotura,Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-53.0283,-69.2798,2025-07-25T10:23,http://example.com/238
+Protesta de comerciantes,Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-44.8686,-61.1917,2025-02-14T05:10,http://example.com/239
+Vuelco de colectivo,Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-48.2415,-58.5441,2025-03-20T19:13,http://example.com/240
+Accidente de tránsito nocturno,Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-27.1705,-69.1192,2025-07-14T18:03,http://example.com/241
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-50.3489,-69.2573,2025-11-19T10:53,http://example.com/242
+Caída de puente peatonal,Sección de puente peatonal cedió por sobrepeso,accidente,-45.2108,-58.6841,2025-12-25T18:52,http://example.com/243
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-24.6862,-71.0114,2025-07-31T00:33,http://example.com/244
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-32.097,-67.3116,2025-10-20T06:49,http://example.com/245
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-27.6667,-54.4953,2025-04-01T08:30,http://example.com/246
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-44.796,-58.2215,2025-12-15T08:27,http://example.com/247
+Caída de árbol sobre auto,Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-23.2723,-61.6375,2025-12-02T10:54,http://example.com/248
+Interrupción telefónica masiva,Falla en central telefónica dejó sin servicio a zona comercial,cortes,-43.6963,-65.9513,2025-03-29T10:47,http://example.com/249
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-42.3592,-67.0189,2025-12-02T02:31,http://example.com/250
+Tormenta eléctrica severa,Rayos provocaron incendios y cortes de luz en zona rural,evento,-35.2711,-59.2312,2025-06-21T11:29,http://example.com/251
+Ola de calor extremo,Temperaturas superaron los 40 grados en varias provincias del norte,evento,-29.3969,-60.0403,2025-05-21T19:17,http://example.com/252
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-51.5502,-71.0029,2025-12-14T19:13,http://example.com/253
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-38.0281,-61.7401,2025-04-30T13:09,http://example.com/254
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-29.5029,-64.6477,2025-11-16T15:14,http://example.com/255
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.9823,-67.8522,2025-09-17T17:01,http://example.com/256
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-33.5677,-54.089,2025-09-16T05:05,http://example.com/257
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-34.9277,-72.6794,2025-06-25T14:34,http://example.com/258
+Corte de agua por rotura,Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-37.8351,-59.0047,2025-05-29T03:42,http://example.com/259
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-27.3734,-60.778,2025-12-23T07:57,http://example.com/260
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-27.8053,-59.6119,2025-03-11T22:48,http://example.com/261
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-23.9002,-54.0874,2025-06-01T08:59,http://example.com/262
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-31.1166,-67.3776,2025-12-18T23:32,http://example.com/263
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-42.1952,-59.6384,2025-05-25T17:38,http://example.com/264
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-24.1862,-71.4002,2025-04-18T12:50,http://example.com/265
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-51.7484,-61.7252,2025-09-13T14:53,http://example.com/266
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-48.6985,-61.1131,2025-07-03T08:16,http://example.com/267
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-45.1552,-62.4333,2025-08-25T12:32,http://example.com/268
+Nevadas en zona cordillerana,Importante acumulación de nieve cortó pasos montañosos,evento,-39.5242,-63.1265,2025-11-24T09:11,http://example.com/269
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-31.4372,-62.9638,2025-09-12T21:16,http://example.com/270
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-32.0346,-70.8436,2025-07-17T09:34,http://example.com/271
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-33.4009,-64.0751,2025-02-28T13:55,http://example.com/272
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-38.7021,-65.2665,2025-02-15T07:01,http://example.com/273
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-48.2157,-64.8481,2025-10-18T15:57,http://example.com/274
+Caída de puente peatonal,Sección de puente peatonal cedió por sobrepeso,accidente,-51.0827,-56.0045,2025-06-06T22:39,http://example.com/275
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-34.3692,-69.4457,2025-05-29T11:35,http://example.com/276
+Accidente de moto en autopista,Motociclista perdió el control a alta velocidad y resultó herido,accidente,-49.4687,-61.4702,2025-08-16T03:56,http://example.com/277
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-43.6965,-53.8344,2025-09-29T22:15,http://example.com/278
+Feria de emprendedores,Más de cien emprendedores locales exhibieron sus productos,evento,-31.6287,-55.0911,2025-12-21T01:11,http://example.com/279
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-35.0563,-66.3778,2025-06-04T12:41,http://example.com/280
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-50.722,-67.7092,2025-07-31T15:32,http://example.com/281
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-22.1432,-64.8844,2025-04-14T23:47,http://example.com/282
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-33.224,-63.3875,2025-12-08T23:28,http://example.com/283
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-42.207,-65.9277,2025-10-06T01:37,http://example.com/284
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-40.3844,-56.2568,2025-11-23T20:55,http://example.com/285
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-51.461,-62.0706,2025-04-26T23:06,http://example.com/286
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-29.5814,-69.7436,2025-07-18T19:23,http://example.com/287
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-52.9,-54.088,2025-10-31T20:41,http://example.com/288
+Crecida del río amenaza pueblos,El nivel del río superó el umbral de alerta en tres localidades,evento,-31.1743,-69.5325,2025-09-02T02:48,http://example.com/289
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-24.6753,-66.2272,2025-09-07T09:45,http://example.com/290
+Feria de antigüedades,Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-24.1846,-68.284,2025-03-20T14:17,http://example.com/291
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-41.1351,-63.7295,2025-07-20T21:01,http://example.com/292
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.384,-60.5127,2025-06-29T16:11,http://example.com/293
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-45.5194,-69.3994,2025-12-31T19:10,http://example.com/294
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-44.3715,-65.3986,2025-11-05T05:44,http://example.com/295
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-43.254,-56.0539,2025-10-21T12:51,http://example.com/296
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-49.0503,-70.9463,2025-09-03T18:54,http://example.com/297
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-34.2139,-71.1774,2025-09-25T09:13,http://example.com/298
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-43.0944,-72.2999,2025-07-05T06:34,http://example.com/299
+Tormenta eléctrica severa,Rayos provocaron incendios y cortes de luz en zona rural,evento,-29.3193,-68.9463,2025-04-04T23:24,http://example.com/300
+Marcha por el medio ambiente,Activistas reclamaron por la contaminación de un río local,evento,-54.7067,-53.7381,2025-12-18T21:39,http://example.com/301
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-32.3355,-73.2486,2025-05-23T07:53,http://example.com/302
+Helada tardía daña viñedos,Una helada fuera de temporada afectó producción vitivinícola,evento,-24.6077,-55.6578,2025-08-28T13:27,http://example.com/303
+Interrupción telefónica masiva,Falla en central telefónica dejó sin servicio a zona comercial,cortes,-26.2291,-63.9392,2025-10-30T03:49,http://example.com/304
+Camión volcado en rotonda,Un camión cisterna volcó al tomar mal una rotonda,accidente,-41.6279,-54.8418,2025-09-03T04:53,http://example.com/305
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-45.4773,-72.7267,2025-11-24T15:23,http://example.com/306
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-24.8485,-61.2878,2025-11-13T06:56,http://example.com/307
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-28.5877,-68.2021,2025-04-22T02:59,http://example.com/308
+Paro de médicos en hospital público,Profesionales de la salud pararon en reclamo de insumos,evento,-50.4043,-55.8651,2025-07-05T00:44,http://example.com/309
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-38.0527,-60.4382,2025-05-18T16:54,http://example.com/310
+Corte de agua por contaminación,Se suspendió el servicio por detección de contaminantes en red,cortes,-42.8806,-68.9132,2025-05-05T15:18,http://example.com/311
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-38.6364,-73.2904,2025-03-21T20:57,http://example.com/312
+Camión volcado en rotonda,Un camión cisterna volcó al tomar mal una rotonda,accidente,-40.9018,-71.943,2025-05-24T00:44,http://example.com/313
+Feria del libro infantil,Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-36.8434,-67.0964,2025-04-08T00:05,http://example.com/314
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-25.863,-53.8005,2025-05-25T22:30,http://example.com/315
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-42.3899,-58.5747,2025-05-17T09:29,http://example.com/316
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-44.1342,-61.3884,2025-04-23T02:56,http://example.com/317
+Tormenta eléctrica severa,Rayos provocaron incendios y cortes de luz en zona rural,evento,-47.2558,-72.5299,2025-11-11T03:15,http://example.com/318
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-28.5448,-65.2315,2025-12-06T21:18,http://example.com/319
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-33.273,-72.7833,2025-03-06T07:37,http://example.com/320
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-40.8262,-72.9367,2025-09-01T10:16,http://example.com/321
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-27.9494,-56.3749,2025-04-28T05:33,http://example.com/322
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-23.7686,-58.4464,2025-09-24T09:36,http://example.com/323
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-46.7906,-54.5747,2025-09-27T18:22,http://example.com/324
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-37.6618,-61.8771,2025-04-30T05:21,http://example.com/325
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-28.2467,-69.7133,2025-03-02T19:42,http://example.com/326
+Caída de árbol sobre auto,Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-52.2731,-62.853,2025-11-25T00:24,http://example.com/327
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-41.4233,-68.6915,2025-10-28T16:45,http://example.com/328
+Maratón nocturna,Competencia nocturna convocó a más de mil participantes,evento,-50.7034,-54.6427,2025-04-22T20:40,http://example.com/329
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-51.1758,-57.1384,2025-09-05T03:01,http://example.com/330
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-28.9462,-65.1789,2025-03-12T01:03,http://example.com/331
+Corte de agua por contaminación,Se suspendió el servicio por detección de contaminantes en red,cortes,-28.5069,-62.9543,2025-11-06T16:30,http://example.com/332
+Corte de agua por contaminación,Se suspendió el servicio por detección de contaminantes en red,cortes,-50.5918,-60.3828,2025-07-19T07:06,http://example.com/333
+Corte de gas por fuga,Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-53.9693,-61.5454,2025-12-04T14:17,http://example.com/334
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-22.7949,-58.492,2025-06-14T02:18,http://example.com/335
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-46.8477,-69.5606,2025-08-04T17:30,http://example.com/336
+Nevadas en zona cordillerana,Importante acumulación de nieve cortó pasos montañosos,evento,-22.5918,-65.3725,2025-06-07T20:41,http://example.com/337
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-25.1986,-69.9879,2025-06-01T08:31,http://example.com/338
+Choque tren-camión,Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-39.55,-54.7008,2025-12-01T02:38,http://example.com/339
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-27.1942,-56.5435,2025-05-26T07:13,http://example.com/340
+Protesta de trabajadores municipales,Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-38.6235,-57.3213,2025-10-30T09:36,http://example.com/341
+Festival de jazz en plaza,Músicos locales e internacionales animaron la noche en plaza central,evento,-39.9557,-62.786,2025-04-14T00:16,http://example.com/342
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-48.2145,-61.3126,2025-07-24T08:42,http://example.com/343
+Temporal de viento,Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-30.0758,-67.9582,2025-09-12T10:19,http://example.com/344
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-30.0679,-67.9176,2025-06-28T15:23,http://example.com/345
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-24.0787,-70.225,2025-11-08T15:27,http://example.com/346
+Corte de agua por rotura,Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-24.2448,-63.5468,2025-11-06T06:25,http://example.com/347
+Derrumbe en obra en construcción,Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-27.3195,-63.0671,2025-03-10T16:42,http://example.com/348
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-43.8336,-60.0639,2025-03-30T13:48,http://example.com/349
+Torneo de ajedrez escolar,Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-31.8242,-53.7357,2025-06-24T18:35,http://example.com/350
+Sequía afecta ganadería,Falta de lluvias complica producción ganadera en zona semiárida,evento,-54.4699,-66.8813,2025-11-01T18:58,http://example.com/351
+Colisión en cruce ferroviario,Auto chocó contra barrera de paso a nivel,accidente,-39.0982,-54.16,2025-04-02T05:48,http://example.com/352
+Caída de puente peatonal,Sección de puente peatonal cedió por sobrepeso,accidente,-46.904,-67.0117,2025-09-26T16:40,http://example.com/353
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-41.2452,-64.0218,2025-05-09T10:53,http://example.com/354
+Choque múltiple en niebla,Tres vehículos colisionaron por baja visibilidad,accidente,-47.8838,-56.8833,2025-02-23T04:23,http://example.com/355
+Corte de luz por tormenta,Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-33.3059,-64.6925,2025-06-16T23:54,http://example.com/356
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-25.2407,-58.0832,2025-03-25T11:45,http://example.com/357
+Derrumbe parcial de edificio,Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-38.9188,-59.0248,2025-07-23T08:29,http://example.com/358
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-52.5262,-55.307,2025-02-23T07:40,http://example.com/359
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-37.587,-56.0583,2025-03-02T15:31,http://example.com/360
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-36.3108,-66.5467,2025-10-23T04:16,http://example.com/361
+Corte de luz por vandalismo,Robo de cables dejó sin electricidad a todo un barrio,cortes,-22.6084,-57.9489,2025-07-05T22:56,http://example.com/362
+Feria del trueque,Vecinos intercambiaron productos y servicios sin dinero,evento,-45.6185,-66.7165,2025-04-24T06:48,http://example.com/363
+Corte de agua por rotura,Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-28.8273,-57.4253,2025-04-30T05:46,http://example.com/364
+Festival de cine independiente,Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-27.178,-65.9097,2025-05-23T12:46,http://example.com/365
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-48.1371,-57.1445,2025-05-21T05:38,http://example.com/366
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-50.4335,-60.4693,2025-12-04T15:39,http://example.com/367
+Feria de ropa usada,Gran cantidad de ropa de segunda mano a precios accesibles,evento,-32.0402,-59.9857,2025-06-19T02:21,http://example.com/368
+Incendio en depósito,Un depósito de materiales inflamables se incendió en zona industrial,accidente,-46.1728,-54.4067,2025-11-21T22:19,http://example.com/369
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-43.3743,-64.0944,2025-12-28T21:24,http://example.com/370
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-39.8989,-59.6298,2025-07-24T05:27,http://example.com/371
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-36.8907,-60.2411,2025-08-08T18:24,http://example.com/372
+Corte de luz en zona rural,Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-33.4763,-73.2468,2025-02-25T21:58,http://example.com/373
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-36.7929,-58.1091,2025-04-12T12:31,http://example.com/374
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-27.5288,-55.2505,2025-11-30T22:40,http://example.com/375
+Protesta de comerciantes,Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-33.3085,-55.3117,2025-02-28T14:26,http://example.com/376
+Nevadas en zona cordillerana,Importante acumulación de nieve cortó pasos montañosos,evento,-44.7436,-70.2214,2025-11-06T12:44,http://example.com/377
+Maratón solidaria,Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-54.0348,-66.7102,2025-05-30T20:51,http://example.com/378
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-52.8919,-58.1507,2025-08-05T15:04,http://example.com/379
+Inundación en barrio bajo,Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-54.6412,-59.9129,2025-06-30T00:38,http://example.com/380
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-29.2842,-61.4899,2025-03-21T13:30,http://example.com/381
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-47.8749,-59.4175,2025-05-06T10:00,http://example.com/382
+Caída de árbol sobre auto,Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-44.9846,-70.5082,2025-07-03T06:13,http://example.com/383
+Inauguración de mural comunitario,Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-25.2522,-56.5612,2025-10-27T15:34,http://example.com/384
+Camión volcado en rotonda,Un camión cisterna volcó al tomar mal una rotonda,accidente,-34.8504,-68.7893,2025-12-07T22:13,http://example.com/385
+Festival de danza folclórica,Grupos de danza de distintas provincias actuaron en el parque,evento,-47.9608,-53.9735,2025-05-25T14:50,http://example.com/386
+Corte eléctrico por mantenimiento,La empresa anunció corte programado de 6 horas en zona norte,cortes,-40.3551,-65.073,2025-02-24T13:26,http://example.com/387
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-29.1881,-66.0962,2025-08-14T11:20,http://example.com/388
+Desfile de carnaval,Colorido desfile de comparsas recorrió las calles del centro,evento,-46.5206,-60.9105,2025-08-26T17:17,http://example.com/389
+Feria agroecológica,Productores locales ofrecieron frutas y verduras orgánicas,evento,-22.5647,-64.847,2025-11-21T14:50,http://example.com/390
+Accidente de tránsito nocturno,Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-33.4355,-63.1511,2025-05-11T06:50,http://example.com/391
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-22.9028,-60.0957,2025-07-09T10:53,http://example.com/392
+Torneo de fútbol barrial,Equipos de distintos barrios disputaron el torneo de verano,evento,-23.2756,-66.9405,2025-11-03T18:19,http://example.com/393
+Tormenta eléctrica severa,Rayos provocaron incendios y cortes de luz en zona rural,evento,-42.7058,-71.8467,2025-05-04T13:45,http://example.com/394
+Corte de ruta por protesta,Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-23.7616,-71.9254,2025-07-18T04:58,http://example.com/395
+Incendio en vivienda familiar,Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-46.5733,-68.5612,2025-10-23T05:20,http://example.com/396
+Apagón por sobrecarga,Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-22.7481,-57.0748,2025-11-09T12:19,http://example.com/397
+Paro de transporte público,Choferes de colectivos realizaron paro por 24 horas,evento,-27.8305,-72.127,2025-06-18T21:57,http://example.com/398
+Marcha por el medio ambiente,Activistas reclamaron por la contaminación de un río local,evento,-28.2854,-59.3831,2025-09-14T13:13,http://example.com/399
+Choque entre camiones,Colisión entre dos camiones de carga en ruta nacional,accidente,-43.0559,-66.3484,2025-05-18T00:35,http://example.com/400
+Corte de gas programado,La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-32.8843,-55.9292,2025-12-28T01:45,http://example.com/401
+Tornado en zona pampeana,Un pequeño tornado destruyó estructuras en localidad rural,evento,-24.6691,-73.3323,2025-12-21T10:06,http://example.com/402
+Corte de agua por obras viales,Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-54.0454,-70.6988,2025-05-31T23:53,http://example.com/403
+Choque tren-camión,Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-30.7203,-57.8396,2025-02-15T20:16,http://example.com/404
+Torneo de básquet femenino,Equipos de toda la provincia compitieron en el torneo regional,evento,-38.7034,-65.0871,2025-06-20T14:43,http://example.com/405
+Explosión en fábrica,Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-37.2572,-57.4847,2025-05-21T11:58,http://example.com/406
+Corte de internet masivo,Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-36.0105,-60.2855,2025-06-06T16:18,http://example.com/407
+Protesta de comerciantes,Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-39.5374,-70.101,2025-12-09T03:25,http://example.com/408
+Interrupción de servicio eléctrico,Falla en subestación eléctrica cortó el suministro por horas,cortes,-49.7873,-66.0003,2025-05-24T20:40,http://example.com/409
+Festival de teatro callejero,Compañías locales realizaron obras en espacios públicos,evento,-23.2899,-57.5269,2025-04-28T06:03,http://example.com/410
+Granizo destruye cultivos,Fuerte granizada afectó hectáreas de producción agrícola,evento,-40.7364,-60.8311,2025-09-06T10:44,http://example.com/411
+Feria de antigüedades,Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-37.1209,-69.8164,2025-08-08T17:15,http://example.com/412
+Protesta de docentes,Maestros marcharon al ministerio reclamando mejoras salariales,evento,-48.1302,-56.6554,2025-04-08T03:11,http://example.com/413
+Tornado en zona pampeana,Un pequeño tornado destruyó estructuras en localidad rural,evento,-31.558,-67.6938,2025-07-18T00:50,http://example.com/414
+Vuelco de colectivo,Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-43.9939,-56.4765,2025-05-21T15:55,http://example.com/415
+Exposición de fotografía,Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-51.2905,-68.1082,2025-05-04T05:38,http://example.com/416
+Concierto de folklore,Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-30.0549,-71.6558,2025-06-29T19:14,http://example.com/417
+Manifestación de vecinos,Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-40.3514,-72.1588,2025-11-19T14:58,http://example.com/418
+Vuelco de colectivo,Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-31.8077,-66.7886,2025-12-13T15:46,http://example.com/419
+Manifestación estudiantil,Estudiantes universitarios tomaron las calles por recortes en educación,evento,-23.6647,-65.2229,2025-11-27T20:53,http://example.com/420
+Accidente de tránsito nocturno,Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-36.5536,-55.9678,2025-12-15T12:55,http://example.com/421
+Corte de agua en zona industrial,Mantenimiento de emergencia en planta potabilizadora,cortes,-39.4641,-67.248,2025-12-28T15:08,http://example.com/422
+Feria de ciencias escolar,Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-45.8847,-58.6104,2025-07-16T03:54,http://example.com/423
+Interrupción de agua caliente,Falla en sistema de calefacción central de edificios municipales,cortes,-39.5414,-64.1993,2025-03-23T13:14,http://example.com/424
+Marcha por el medio ambiente,Activistas reclamaron por la contaminación de un río local,evento,-39.1869,-61.9345,2025-09-24T19:01,http://example.com/425

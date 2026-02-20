@@ -8,6 +8,7 @@ import ar.edu.utn.frba.dds.model.entities.criterios.CriterioFechaCarga;
 import ar.edu.utn.frba.dds.model.entities.criterios.CriterioRangoFechas;
 import ar.edu.utn.frba.dds.model.entities.criterios.CriterioTitulo;
 import ar.edu.utn.frba.dds.model.entities.criterios.CriterioUbicacion;
+import ar.edu.utn.frba.dds.model.entities.fuentes.FuenteDataSet;
 import ar.edu.utn.frba.dds.model.entities.fuentes.FuenteDinamica;
 import ar.edu.utn.frba.dds.model.entities.fuentes.TipoFuente;
 import ar.edu.utn.frba.dds.model.entities.solicitudes.SolicitudDeCarga;
@@ -49,6 +50,8 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           .getResultList();
 
       FuenteDinamica fuenteAsociada;
+      FuenteDataSet dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd'T'HH:mm",',');
+      repositorioFuentes.registrarFuente(dataset);
 
       if (fuentesDinamicas.isEmpty()) {
         // Si NO existe, la creamos y persistimos.
