@@ -51,7 +51,7 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           .getResultList();
 
       FuenteDinamica fuenteAsociada;
-      Fuente dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
+      Fuente dataset = new FuenteDataSet("/uploads/hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
       repositorioFuentes.registrarFuente(dataset);
       List<Hecho> hechosDataset = dataset.getHechos();
 
