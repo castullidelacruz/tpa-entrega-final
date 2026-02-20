@@ -54,9 +54,10 @@ public class Bootstrap implements WithSimplePersistenceUnit {
       repositorioFuentes.registrarFuente(dataset);
       List<Hecho> hechosDataset = dataset.getHechos();
 
+      repositorioHechos.cargarHecho(hechosDataset.get(0));
+
       while (!hechosDataset.isEmpty()) {
-        repositorioHechos.cargarHecho(hechosDataset.get(0));
-        hechosDataset.remove(0);
+        repositorioHechos.cargarHecho(hechosDataset.remove(0));
       }
 
       if (fuentesDinamicas.isEmpty()) {
