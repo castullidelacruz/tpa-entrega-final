@@ -31,8 +31,10 @@ public class RepositorioColecciones implements WithSimplePersistenceUnit  {
   }
 
   public void consesuareEchos() {
-    List<Coleccion> colecciones = getColecciones();
-    colecciones.forEach(Coleccion::actualizarHechosConsensuados);
+    withTransaction(() -> {
+      List<Coleccion> colecciones = getColecciones();
+      colecciones.forEach(Coleccion::actualizarHechosConsensuados);
+    });
   }
 
   public Coleccion getColeccionById(Long id) {
