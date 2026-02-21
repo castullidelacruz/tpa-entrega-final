@@ -107,5 +107,53 @@ public class LocalizadorDeProvincias {
     }
     return Double.parseDouble(null);
   }
+  public static String[] getProvinciaYMunicipio(double lat, double lon) {
+    try {
+      String urlStr = "https://apis.datos.gob.ar/georef/api/ubicacion?lat="
+          + lat + "&lon=" + lon;
+
+      String respuesta = hacerRequest(urlStr);
+
+      // Provincia
+      int provIdx = respuesta.indexOf("\"provincia\"");
+      int nombreProvIdx = respuesta.indexOf("\"nombre\"", provIdx);
+      int startProv = respuesta.indexOf(":", nombreProvIdx) + 2;
+      int endProv = respuesta.indexOf("\"", startProv);
+      String provincia = respuesta.substring(startProv, endProv);
+
+      // Municipio
+      int munIdx = respuesta.indexOf("\"municipio\"");
+      int nombreMunIdx = respuesta.indexOf("\"nombre\"", munIdx);
+      int startMun = respuesta.indexOf(":", nombreMunIdx) + 2;
+      int endMun = respuesta.indexOf("\"", startMun);
+      String municipio = respuesta.substring(startMun, endMun);
+
+      return new String[]{provincia, municipio};
+
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return new String[]{"No encontrada", "No encontrada"};
+  }
+  private static String hacerRequest(String urlStr) throws Exception {
+    URL url = new URL(urlStr);
+    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+    conn.setRequestMethod("GET");
+
+    BufferedReader in = new BufferedReader(
+        new InputStreamReader(conn.getInputStream(), "UTF-8"));
+
+    StringBuilder content = new StringBuilder();
+    String line;
+
+    while ((line = in.readLine()) != null) {
+      content.append(line);
+    }
+
+    in.close();
+    conn.disconnect();
+
+    return content.toString();
+  }
 
 }

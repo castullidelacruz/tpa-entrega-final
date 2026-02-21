@@ -145,6 +145,9 @@ public class Router {
       ctx.result("Hechos consensuados");
     } );
 
+    //funcionalidad mapa ciudad municipio
+    app.get("/api/ubicacion", hechoController::obtenerUbicacion);
+
   }
 }
 

@@ -53,6 +53,11 @@
       <label for="categoria">Categoría</label>
       <input type="text" name="categoria" placeholder="Ej: Incendios, Accidentes, Contaminación" required>
 
+      <label>Seleccionar ubicación en el mapa</label>
+      <div id="map" style="height: 400px; margin-bottom: 20px;"></div>
+
+      <div id="ubicacionTexto"></div>
+
       {{! Campo: Latitud }}
       <label for="latitud">Latitud</label>
       <input type="number" step="0.0001" name="latitud" placeholder="-34.6037" required>
@@ -83,7 +88,13 @@
   {{! ==========================================
       SCRIPT: Vista Previa de Multimedia
       ========================================== }}
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet/dist/leaflet.css"
+  />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script>
+
     const input = document.querySelector('input[name="multimedia"]');
     const previewContainer = document.getElementById('preview-container');
     const previewContent = document.getElementById('preview-content');
@@ -110,6 +121,43 @@
       }
 
       previewContainer.style.display = 'block';
+    });
+  </script>
+  <script>
+    // Inicializar mapa centrado en Argentina
+    var map = L.map('map').setView([-34.6037, -58.3816], 6);
+
+    // 🗺️ Mapa de calles (OpenStreetMap)
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; OpenStreetMap & CartoDB'
+    }).addTo(map);
+
+    var marker;
+
+    map.on('click', function(e) {
+
+        var lat = e.latlng.lat;
+        var lon = e.latlng.lng;
+
+        console.log("CLICK EN:", lat, lon);
+
+        // 🔥 ahora sí setea los inputs correctos
+        document.querySelector('input[name="latitud"]').value = lat;
+        document.querySelector('input[name="longitud"]').value = lon;
+
+        if (marker) {
+            map.removeLayer(marker);
+        }
+
+        marker = L.marker([lat, lon]).addTo(map);
+
+        fetch(`/api/ubicacion?lat=${lat}&lon=${lon}`)
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("ubicacionTexto").innerText =
+                    "Provincia: " + data.provincia +
+                    " | Municipio: " + data.municipio;
+            });
     });
   </script>
 {{/partial}}

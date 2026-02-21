@@ -13,6 +13,7 @@ import ar.edu.utn.frba.dds.model.entities.criterios.CriterioUbicacion;
 import ar.edu.utn.frba.dds.model.entities.solicitudes.DetectorDeSpam;
 import ar.edu.utn.frba.dds.model.entities.solicitudes.DetectorDeSpamInteligente;
 import ar.edu.utn.frba.dds.model.entities.solicitudes.SolicitudDeCarga;
+import ar.edu.utn.frba.dds.model.estadistica.LocalizadorDeProvincias;
 import ar.edu.utn.frba.dds.repositories.RepositorioHechos;
 import ar.edu.utn.frba.dds.repositories.RepositorioSolicitudesDeCarga;
 import ar.edu.utn.frba.dds.server.AppRole;
@@ -182,6 +183,18 @@ public class HechoController implements WithSimplePersistenceUnit {
     }
 
     return "/uploads/" + uniqueName;
+  }
+  public void obtenerUbicacion(Context ctx) {
+
+    double lat = Double.parseDouble(ctx.queryParam("lat"));
+    double lon = Double.parseDouble(ctx.queryParam("lon"));
+
+    String[] datos = LocalizadorDeProvincias.getProvinciaYMunicipio(lat, lon);
+
+    ctx.json(Map.of(
+        "provincia", datos[0],
+        "municipio", datos[1]
+    ));
   }
 
   // --- Formulario de búsqueda ---
