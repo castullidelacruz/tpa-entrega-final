@@ -1,0 +1,383 @@
+descripcion,categoria,latitud,longitud,titulo,fechaacontecimiento
+Corte de luz en zona centro,cortes,-34.6037,-58.3816,Corte de luz centro,2025-01-18 12:00
+Choque de autos en Av. Libertador,accidente,-34.5875,-58.3817,Accidente vial,2025-01-19 08:30
+Feria en Plaza San Martín,evento,-34.5997,-58.3819,Feria artesanal,2025-01-20 10:00
+Baja presión de agua en barrio norte,cortes,-34.6075,-58.3821,Corte de agua,2025-01-21 09:15
+Marcha pacífica en Av. 9 de Julio,evento,-34.6088,-58.3712,Manifestación,2025-01-22 14:00
+Descarrilamiento tren suburbano,accidente,-34.6112,-58.3734,Accidente ferroviario,2025-01-23 16:45
+Corte programado por mantenimiento,cortes,-34.6150,-58.3770,Corte de luz zona sur,2025-01-24 18:30
+Expo en centro cultural,evento,-34.6175,-58.3795,Feria tecnológica,2025-01-25 11:00
+Colisión múltiple en autopista,accidente,-34.6190,-58.3810,Accidente de tránsito,2025-01-26 13:20
+Corte no programado,cortes,-34.6210,-58.3830,Corte de luz barrio oeste,2025-01-27 15:00
+Desborde de arroyo en barrio sur,evento,-34.6225,-58.3845,Inundación leve,2025-01-28 07:30
+Caída en vivienda particular,accidente,-34.6240,-58.3860,Accidente doméstico,2025-01-29 09:45
+Corte preventivo por mantenimiento,cortes,-34.6255,-58.3875,Corte de luz zona norte,2025-01-30 12:15
+Feria de comidas regionales,evento,-34.6270,-58.3890,Feria gastronómica,2025-02-01 10:00
+Incidente en construcción,accidente,-34.6285,-58.3905,Accidente laboral,2025-02-02 11:30
+Mantenimiento en red principal,cortes,-34.6300,-58.3920,Corte de agua programado,2025-02-03 08:00
+Competencia de atletismo,evento,-34.6315,-58.3935,Feria deportiva,2025-02-04 09:00
+Choque moto-auto,accidente,-34.6330,-58.3950,Accidente vehicular,2025-02-05 17:30
+Corte inesperado,cortes,-34.6345,-58.3965,Corte de luz barrio centro,2025-02-06 14:20
+Exposición de arte local,evento,-34.6360,-58.3980,Feria cultural,2025-02-07 13:00
+Tren descarrila parcialmente,accidente,-34.6375,-58.3995,Accidente ferroviario leve,2025-02-08 15:45
+Rotura de cañería principal,cortes,-34.6390,-58.4010,Corte de agua emergencia,2025-02-09 16:10
+Concierto en plaza principal,evento,-34.6405,-58.4025,Feria musical,2025-02-10 20:00
+Choque lateral,accidente,-34.6420,-58.4040,Accidente vial leve,2025-02-11 07:20
+Barrio norte sin electricidad,cortes,-34.6435,-58.4055,Corte de luz prolongado,2025-02-12 19:00
+Competencia nocturna convocó a más de mil participantes,evento,-51.5402,-71.9769,Maratón nocturna,2025-06-12 13:55
+Equipos de distintos barrios disputaron el torneo de verano,evento,-39.4499,-60.0465,Torneo de fútbol barrial,2025-08-27 05:41
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-36.237,-60.5656,Corte de luz por tormenta,2025-06-08 19:24
+Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-35.7424,-57.844,Choque tren-camión,2025-09-25 15:12
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-50.4701,-69.7734,Protesta de trabajadores municipales,2025-03-18 14:07
+Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-29.0141,-55.2551,Vuelco de colectivo,2025-04-21 06:35
+Estudiantes universitarios tomaron las calles por recortes en educación,evento,-26.8102,-56.3488,Manifestación estudiantil,2025-09-08 08:39
+Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-48.0447,-53.7438,Concierto de folklore,2025-09-23 09:59
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-26.1264,-70.7176,Corte de luz por vandalismo,2025-08-16 02:48
+Falla en sistema de calefacción central de edificios municipales,cortes,-51.127,-65.35,Interrupción de agua caliente,2025-07-19 00:55
+Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-48.6685,-70.1134,Exposición de fotografía,2025-02-14 14:39
+Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-40.7322,-62.4776,Corte de agua por obras viales,2025-03-22 08:31
+Compañías locales realizaron obras en espacios públicos,evento,-54.4071,-63.5817,Festival de teatro callejero,2025-12-10 08:11
+Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-44.3465,-53.7145,Explosión en fábrica,2025-06-02 17:03
+Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-26.9458,-57.3401,Explosión en fábrica,2025-04-16 05:05
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-35.3695,-55.0594,Festival de cine independiente,2025-06-11 04:40
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-37.2599,-61.4511,Sequía afecta ganadería,2025-06-23 11:11
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-43.7048,-66.8061,Derrumbe parcial de edificio,2025-04-26 08:41
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-42.1936,-69.3884,Derrumbe en obra en construcción,2025-11-30 14:00
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-38.8033,-72.4395,Festival de cine independiente,2025-12-17 02:27
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-28.3551,-60.0326,Protesta de trabajadores municipales,2025-08-21 10:06
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-36.735,-60.8214,Corte de luz por tormenta,2025-05-18 12:16
+Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-35.9926,-54.1811,Accidente de tránsito nocturno,2025-09-21 11:47
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-36.7838,-72.5622,Marcha por la seguridad,2025-06-27 16:37
+Falla en subestación eléctrica cortó el suministro por horas,cortes,-40.9353,-59.6193,Interrupción de servicio eléctrico,2025-07-09 03:59
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-26.351,-67.9362,Corte de gas por fuga,2025-12-14 01:23
+Competencia nocturna convocó a más de mil participantes,evento,-25.8513,-64.1214,Maratón nocturna,2025-10-31 03:21
+Auto chocó contra barrera de paso a nivel,accidente,-42.3929,-62.7448,Colisión en cruce ferroviario,2025-07-14 06:28
+Sección de puente peatonal cedió por sobrepeso,accidente,-43.8542,-65.1957,Caída de puente peatonal,2025-05-06 10:10
+Auto chocó contra barrera de paso a nivel,accidente,-31.599,-64.3085,Colisión en cruce ferroviario,2025-08-12 11:22
+Estudiantes universitarios tomaron las calles por recortes en educación,evento,-29.7426,-68.3576,Manifestación estudiantil,2025-10-09 00:54
+Activistas reclamaron por la contaminación de un río local,evento,-32.7809,-58.8612,Marcha por el medio ambiente,2025-07-04 10:32
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-42.327,-70.1656,Derrumbe en obra en construcción,2025-08-10 04:26
+Competencia nocturna convocó a más de mil participantes,evento,-43.4184,-73.4455,Maratón nocturna,2025-09-12 20:38
+Más de cien emprendedores locales exhibieron sus productos,evento,-39.6421,-66.6603,Feria de emprendedores,2025-05-10 20:20
+Vecinos intercambiaron productos y servicios sin dinero,evento,-30.0663,-56.3179,Feria del trueque,2025-04-11 22:21
+Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-32.8785,-56.7732,Exposición de fotografía,2025-07-16 08:41
+Temperaturas superaron los 40 grados en varias provincias del norte,evento,-42.7687,-63.7274,Ola de calor extremo,2025-12-14 21:38
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-50.4636,-70.4983,Festival de cine independiente,2025-03-02 17:58
+Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-38.7109,-72.1335,Corte de ruta por protesta,2025-05-02 11:02
+Un camión cisterna volcó al tomar mal una rotonda,accidente,-23.0832,-70.2997,Camión volcado en rotonda,2025-05-18 14:41
+Profesionales de la salud pararon en reclamo de insumos,evento,-39.4069,-58.985,Paro de médicos en hospital público,2025-04-04 07:07
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-46.843,-53.7618,Corte de luz en zona rural,2025-08-21 20:34
+Falla en central telefónica dejó sin servicio a zona comercial,cortes,-35.5481,-67.4944,Interrupción telefónica masiva,2025-09-15 13:08
+Grupos de danza de distintas provincias actuaron en el parque,evento,-52.7998,-58.1696,Festival de danza folclórica,2025-08-20 16:27
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-38.8432,-70.4033,Incendio en depósito,2025-09-12 15:24
+Equipos de toda la provincia compitieron en el torneo regional,evento,-33.7251,-68.4605,Torneo de básquet femenino,2025-05-22 13:53
+Colorido desfile de comparsas recorrió las calles del centro,evento,-48.5168,-72.2357,Desfile de carnaval,2025-08-25 09:17
+Fuerte granizada afectó hectáreas de producción agrícola,evento,-31.8415,-71.6895,Granizo destruye cultivos,2025-05-21 10:27
+Equipos de distintos barrios disputaron el torneo de verano,evento,-53.6406,-66.6741,Torneo de fútbol barrial,2025-12-15 10:48
+Estudiantes universitarios tomaron las calles por recortes en educación,evento,-27.3085,-54.2547,Manifestación estudiantil,2025-04-22 23:44
+Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-44.6322,-63.2096,Apagón por sobrecarga,2025-09-15 03:10
+Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-47.4739,-70.1567,Corte de internet masivo,2025-12-01 16:47
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-50.0238,-68.6176,Feria de ropa usada,2025-11-24 11:39
+Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-33.0254,-61.1764,Corte de ruta por protesta,2025-06-27 00:52
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-30.8689,-72.1427,Protesta de trabajadores municipales,2025-12-22 16:50
+Colorido desfile de comparsas recorrió las calles del centro,evento,-41.7184,-61.6489,Desfile de carnaval,2025-06-20 21:43
+Importante acumulación de nieve cortó pasos montañosos,evento,-28.9856,-66.7282,Nevadas en zona cordillerana,2025-12-30 12:12
+Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-52.5562,-62.9239,Caída de árbol sobre auto,2025-07-14 20:11
+Se suspendió el servicio por detección de contaminantes en red,cortes,-53.1244,-54.4425,Corte de agua por contaminación,2025-11-26 12:28
+Músicos locales e internacionales animaron la noche en plaza central,evento,-30.232,-61.1947,Festival de jazz en plaza,2025-05-13 01:40
+Importante acumulación de nieve cortó pasos montañosos,evento,-44.5292,-65.3811,Nevadas en zona cordillerana,2025-11-10 16:18
+Un pequeño tornado destruyó estructuras en localidad rural,evento,-28.6331,-64.6207,Tornado en zona pampeana,2025-10-02 04:10
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-26.2083,-64.3856,Maratón solidaria,2025-03-15 04:58
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-47.5418,-63.6292,Sequía afecta ganadería,2025-10-08 18:26
+Más de cien emprendedores locales exhibieron sus productos,evento,-45.3551,-63.144,Feria de emprendedores,2025-12-04 03:16
+Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-29.471,-59.1007,Inauguración de mural comunitario,2025-02-14 21:47
+Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-50.1414,-63.3277,Incendio en vivienda familiar,2025-08-26 03:35
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-52.6984,-60.6862,Marcha por la seguridad,2025-10-21 22:33
+Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-37.447,-55.5152,Caída de árbol sobre auto,2025-07-01 03:45
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-51.464,-67.2226,Corte de luz en zona rural,2025-12-07 12:49
+Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-47.8228,-59.1659,Corte de agua por obras viales,2025-04-29 18:20
+Choferes de colectivos realizaron paro por 24 horas,evento,-22.3077,-59.1366,Paro de transporte público,2025-10-15 21:08
+Una helada fuera de temporada afectó producción vitivinícola,evento,-49.4757,-67.7993,Helada tardía daña viñedos,2025-11-15 18:10
+Tres vehículos colisionaron por baja visibilidad,accidente,-41.609,-55.9124,Choque múltiple en niebla,2025-09-01 09:48
+Una helada fuera de temporada afectó producción vitivinícola,evento,-46.9418,-61.5849,Helada tardía daña viñedos,2025-10-02 02:42
+Colisión entre dos camiones de carga en ruta nacional,accidente,-40.2001,-57.1133,Choque entre camiones,2025-06-14 11:58
+Falla en subestación eléctrica cortó el suministro por horas,cortes,-44.7049,-70.2739,Interrupción de servicio eléctrico,2025-04-21 00:51
+Productores locales ofrecieron frutas y verduras orgánicas,evento,-24.0104,-59.2652,Feria agroecológica,2025-05-14 19:37
+Choferes de colectivos realizaron paro por 24 horas,evento,-50.7333,-65.9936,Paro de transporte público,2025-11-27 04:06
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-24.7402,-64.6971,Torneo de ajedrez escolar,2025-05-20 09:40
+Más de cien emprendedores locales exhibieron sus productos,evento,-53.9679,-66.0669,Feria de emprendedores,2025-07-08 00:41
+Auto chocó contra barrera de paso a nivel,accidente,-36.1265,-67.0326,Colisión en cruce ferroviario,2025-10-01 11:24
+Falla en central telefónica dejó sin servicio a zona comercial,cortes,-46.5309,-72.2437,Interrupción telefónica masiva,2025-11-14 16:11
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-40.3283,-72.685,Feria del libro infantil,2025-10-01 01:43
+El nivel del río superó el umbral de alerta en tres localidades,evento,-43.111,-70.8183,Crecida del río amenaza pueblos,2025-12-06 02:54
+Choferes de colectivos realizaron paro por 24 horas,evento,-44.5997,-71.3212,Paro de transporte público,2025-04-03 01:40
+Equipos de distintos barrios disputaron el torneo de verano,evento,-49.3896,-54.2648,Torneo de fútbol barrial,2025-03-14 06:25
+Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-24.0186,-58.851,Protesta de comerciantes,2025-08-09 22:09
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-32.5242,-60.9898,Temporal de viento,2025-11-05 00:53
+Tres vehículos colisionaron por baja visibilidad,accidente,-22.3913,-68.5926,Choque múltiple en niebla,2025-12-14 23:14
+Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-44.5603,-68.9582,Corte de agua por obras viales,2025-09-24 03:29
+Temperaturas superaron los 40 grados en varias provincias del norte,evento,-51.7724,-62.8209,Ola de calor extremo,2025-06-02 17:08
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-39.8012,-68.8564,Inundación en barrio bajo,2025-07-28 02:41
+Equipos de toda la provincia compitieron en el torneo regional,evento,-30.9874,-67.1323,Torneo de básquet femenino,2025-12-10 12:03
+Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-44.822,-67.6536,Manifestación de vecinos,2025-07-21 02:15
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-50.9846,-66.8914,Sequía afecta ganadería,2025-02-17 07:37
+Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-53.8787,-68.2363,Feria de ciencias escolar,2025-10-03 19:28
+Un pequeño tornado destruyó estructuras en localidad rural,evento,-30.4691,-67.1803,Tornado en zona pampeana,2025-12-08 08:24
+Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-30.6345,-54.0772,Explosión en fábrica,2025-12-27 03:05
+Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-52.7407,-69.7147,Corte de internet masivo,2025-05-29 05:25
+Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-29.8007,-71.8952,Corte de internet masivo,2025-07-03 18:46
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-42.2016,-58.2857,Marcha por la seguridad,2025-02-15 22:02
+Motociclista perdió el control a alta velocidad y resultó herido,accidente,-49.8079,-69.0499,Accidente de moto en autopista,2025-11-07 20:38
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-23.395,-69.8902,Temporal de viento,2025-06-10 05:11
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-49.6241,-66.5498,Inundación en barrio bajo,2025-02-18 09:45
+Un pequeño tornado destruyó estructuras en localidad rural,evento,-42.56,-70.6982,Tornado en zona pampeana,2025-08-25 07:05
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-39.3422,-71.3254,Protesta de trabajadores municipales,2025-11-29 05:19
+Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-54.4774,-61.5955,Accidente de tránsito nocturno,2025-10-25 17:48
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-32.047,-61.9645,Inundación en barrio bajo,2025-06-10 01:49
+Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-51.8994,-68.7865,Incendio en vivienda familiar,2025-11-11 00:17
+Colisión entre dos camiones de carga en ruta nacional,accidente,-43.6307,-67.0021,Choque entre camiones,2025-11-07 08:00
+Colorido desfile de comparsas recorrió las calles del centro,evento,-53.798,-55.7246,Desfile de carnaval,2025-10-22 21:15
+Equipos de toda la provincia compitieron en el torneo regional,evento,-32.8685,-58.1318,Torneo de básquet femenino,2025-10-05 13:33
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-51.6986,-71.9234,Temporal de viento,2025-11-20 02:45
+Colorido desfile de comparsas recorrió las calles del centro,evento,-46.5884,-53.734,Desfile de carnaval,2025-06-27 20:00
+Colisión entre dos camiones de carga en ruta nacional,accidente,-54.2736,-59.142,Choque entre camiones,2025-09-06 23:59
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-36.4636,-62.0481,Maratón solidaria,2025-08-21 08:41
+Fuerte granizada afectó hectáreas de producción agrícola,evento,-37.6932,-72.7411,Granizo destruye cultivos,2025-11-15 09:59
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-45.3633,-56.9891,Corte de luz por vandalismo,2025-10-01 08:11
+El nivel del río superó el umbral de alerta en tres localidades,evento,-22.0192,-63.5569,Crecida del río amenaza pueblos,2025-06-10 19:06
+Fuerte granizada afectó hectáreas de producción agrícola,evento,-40.5766,-62.8143,Granizo destruye cultivos,2025-03-31 23:32
+Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-37.4696,-65.2598,Choque tren-camión,2025-12-23 18:32
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-37.0728,-59.5591,Corte de gas por fuga,2025-04-07 00:59
+Grupos de danza de distintas provincias actuaron en el parque,evento,-30.3296,-71.0953,Festival de danza folclórica,2025-09-08 14:40
+Competencia nocturna convocó a más de mil participantes,evento,-43.5364,-71.6048,Maratón nocturna,2025-10-22 05:45
+Mantenimiento de emergencia en planta potabilizadora,cortes,-24.6414,-58.4872,Corte de agua en zona industrial,2025-11-10 20:25
+Productores locales ofrecieron frutas y verduras orgánicas,evento,-31.9704,-68.3256,Feria agroecológica,2025-05-20 19:18
+Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-21.9207,-54.7066,Vuelco de colectivo,2025-03-26 16:24
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.256,-62.9039,Derrumbe parcial de edificio,2025-03-24 22:45
+Vecinos intercambiaron productos y servicios sin dinero,evento,-29.9533,-56.6173,Feria del trueque,2025-02-16 22:43
+Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-30.2047,-57.4747,Inauguración de mural comunitario,2025-12-16 05:20
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-34.4606,-64.4676,Incendio en depósito,2025-12-26 17:24
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-24.0732,-68.7562,Feria del libro infantil,2025-10-28 22:10
+Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-28.5246,-61.9628,Feria de antigüedades,2025-09-27 22:47
+Temperaturas superaron los 40 grados en varias provincias del norte,evento,-50.8567,-65.5263,Ola de calor extremo,2025-06-30 03:48
+Choferes de colectivos realizaron paro por 24 horas,evento,-35.5482,-63.4327,Paro de transporte público,2025-08-06 06:43
+Falla en subestación eléctrica cortó el suministro por horas,cortes,-22.2385,-65.3028,Interrupción de servicio eléctrico,2025-04-23 07:20
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-31.1432,-70.4379,Torneo de ajedrez escolar,2025-03-18 19:16
+Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-52.3696,-72.2625,Concierto de folklore,2025-07-21 06:46
+Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-54.2018,-62.6531,Inauguración de mural comunitario,2025-05-05 22:39
+Productores locales ofrecieron frutas y verduras orgánicas,evento,-24.0214,-67.2709,Feria agroecológica,2025-07-19 05:45
+Tres vehículos colisionaron por baja visibilidad,accidente,-32.5926,-68.6005,Choque múltiple en niebla,2025-11-04 01:55
+Temperaturas superaron los 40 grados en varias provincias del norte,evento,-53.2562,-59.0017,Ola de calor extremo,2025-09-17 06:07
+La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-27.9969,-68.6158,Corte de gas programado,2025-04-30 07:24
+Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-24.916,-68.2133,Feria de antigüedades,2025-06-23 20:46
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-51.1574,-69.5381,Incendio en depósito,2025-06-22 23:07
+Se suspendió el servicio por detección de contaminantes en red,cortes,-49.4228,-68.4959,Corte de agua por contaminación,2025-09-30 08:02
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-35.3284,-71.5145,Corte de gas por fuga,2025-06-07 19:45
+Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-41.811,-55.6433,Explosión en fábrica,2025-05-26 19:47
+Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-27.7677,-67.5266,Manifestación de vecinos,2025-09-13 13:30
+Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-25.3805,-56.9472,Protesta de comerciantes,2025-08-20 18:39
+Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-25.7747,-60.2484,Corte de internet masivo,2025-12-02 07:10
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-22.5459,-65.7271,Feria de ropa usada,2025-02-27 06:54
+Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-35.8766,-68.1947,Exposición de fotografía,2025-10-07 20:05
+Falla en subestación eléctrica cortó el suministro por horas,cortes,-49.7591,-72.2746,Interrupción de servicio eléctrico,2025-08-09 23:25
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-47.9409,-72.3089,Torneo de ajedrez escolar,2025-10-13 21:28
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-25.3038,-57.3419,Corte de luz en zona rural,2025-07-21 10:19
+Vecinos intercambiaron productos y servicios sin dinero,evento,-34.3629,-68.859,Feria del trueque,2025-05-05 11:02
+Grupos de danza de distintas provincias actuaron en el parque,evento,-44.0504,-63.7025,Festival de danza folclórica,2025-05-26 00:03
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-47.4909,-67.9319,Sequía afecta ganadería,2025-12-15 10:37
+Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-36.6954,-60.3137,Apagón por sobrecarga,2025-04-14 15:06
+Motociclista perdió el control a alta velocidad y resultó herido,accidente,-31.8359,-62.7479,Accidente de moto en autopista,2025-12-03 19:53
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-50.739,-72.8194,Festival de cine independiente,2025-05-11 21:21
+Productores locales ofrecieron frutas y verduras orgánicas,evento,-29.0935,-66.5499,Feria agroecológica,2025-02-24 15:36
+Motociclista perdió el control a alta velocidad y resultó herido,accidente,-47.0003,-64.507,Accidente de moto en autopista,2025-02-14 15:54
+Sección de puente peatonal cedió por sobrepeso,accidente,-34.3263,-70.6777,Caída de puente peatonal,2025-10-18 09:24
+Grupos de danza de distintas provincias actuaron en el parque,evento,-37.9162,-63.6273,Festival de danza folclórica,2025-02-20 00:38
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-49.8688,-58.0416,Corte de luz por tormenta,2025-04-29 23:45
+Auto chocó contra barrera de paso a nivel,accidente,-34.3552,-63.8096,Colisión en cruce ferroviario,2025-08-03 20:33
+Vecinos intercambiaron productos y servicios sin dinero,evento,-39.861,-69.0166,Feria del trueque,2025-12-19 16:01
+Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-36.3062,-58.5275,Feria de ciencias escolar,2025-09-28 20:22
+Maestros marcharon al ministerio reclamando mejoras salariales,evento,-39.1217,-59.9063,Protesta de docentes,2025-04-12 10:49
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-50.4557,-65.5206,Derrumbe parcial de edificio,2025-04-02 02:59
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-34.2377,-69.0373,Marcha por la seguridad,2025-12-30 04:16
+Equipos de distintos barrios disputaron el torneo de verano,evento,-24.4675,-72.5044,Torneo de fútbol barrial,2025-10-05 09:17
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-43.7373,-65.8816,Marcha por la seguridad,2025-10-13 09:39
+Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-43.3809,-71.499,Exposición de fotografía,2025-12-10 04:40
+Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-27.0859,-58.4222,Incendio en vivienda familiar,2025-11-29 16:25
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-50.4126,-54.3839,Corte de gas por fuga,2025-07-05 16:00
+Competencia nocturna convocó a más de mil participantes,evento,-34.2042,-70.2069,Maratón nocturna,2025-02-16 05:55
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-43.4226,-69.3677,Incendio en depósito,2025-03-08 00:02
+La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-46.7948,-68.4686,Corte de gas programado,2025-04-19 14:45
+Falla en sistema de calefacción central de edificios municipales,cortes,-40.4959,-72.7173,Interrupción de agua caliente,2025-06-26 08:45
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-53.2993,-65.3748,Corte de luz en zona rural,2025-10-07 12:40
+Una helada fuera de temporada afectó producción vitivinícola,evento,-50.7733,-60.3999,Helada tardía daña viñedos,2025-08-07 08:49
+Falla en nodo principal dejó sin servicio a miles de usuarios,cortes,-43.9474,-67.6216,Corte de internet masivo,2025-09-15 07:54
+Rayos provocaron incendios y cortes de luz en zona rural,evento,-45.4281,-71.0542,Tormenta eléctrica severa,2025-06-13 01:41
+Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-27.8218,-60.1418,Feria de antigüedades,2025-05-03 21:19
+Profesionales de la salud pararon en reclamo de insumos,evento,-50.2479,-61.441,Paro de médicos en hospital público,2025-03-22 10:13
+Compañías locales realizaron obras en espacios públicos,evento,-35.5994,-64.0788,Festival de teatro callejero,2025-12-02 09:32
+Equipos de toda la provincia compitieron en el torneo regional,evento,-22.8445,-66.7174,Torneo de básquet femenino,2025-05-05 00:26
+Grupos de danza de distintas provincias actuaron en el parque,evento,-43.8847,-73.4284,Festival de danza folclórica,2025-04-30 05:14
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-50.8893,-63.6364,Corte de luz en zona rural,2025-05-10 19:45
+Activistas reclamaron por la contaminación de un río local,evento,-29.8454,-64.4636,Marcha por el medio ambiente,2025-10-14 17:29
+Motociclista perdió el control a alta velocidad y resultó herido,accidente,-41.1076,-60.0613,Accidente de moto en autopista,2025-05-21 22:49
+Profesionales de la salud pararon en reclamo de insumos,evento,-52.8328,-63.363,Paro de médicos en hospital público,2025-07-27 22:19
+Vecinos exigieron más patrullajes tras serie de robos en el barrio,evento,-46.5681,-54.1993,Marcha por la seguridad,2025-09-05 07:12
+Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-25.7278,-61.5233,Choque tren-camión,2025-05-24 18:11
+Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-45.1153,-66.7143,Corte de agua por rotura,2025-10-29 04:42
+Mantenimiento de emergencia en planta potabilizadora,cortes,-32.66,-56.9212,Corte de agua en zona industrial,2025-11-05 17:26
+Falla en central telefónica dejó sin servicio a zona comercial,cortes,-53.8034,-63.4291,Interrupción telefónica masiva,2025-05-15 06:18
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-26.4729,-66.4465,Temporal de viento,2025-06-10 17:07
+Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-48.6524,-59.9671,Inauguración de mural comunitario,2025-09-12 17:24
+Tres vehículos colisionaron por baja visibilidad,accidente,-49.8693,-55.7494,Choque múltiple en niebla,2025-11-15 10:58
+Más de cien emprendedores locales exhibieron sus productos,evento,-48.1475,-55.1648,Feria de emprendedores,2025-08-22 10:53
+La empresa anunció corte programado de 6 horas en zona norte,cortes,-52.508,-61.0627,Corte eléctrico por mantenimiento,2025-10-14 01:07
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-29.9729,-65.7003,Feria del libro infantil,2025-05-03 17:42
+Maestros marcharon al ministerio reclamando mejoras salariales,evento,-47.1599,-55.5759,Protesta de docentes,2025-09-24 14:42
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-43.6241,-69.7037,Incendio en depósito,2025-03-29 03:30
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-39.2469,-68.4788,Feria del libro infantil,2025-06-06 18:09
+Vecinos intercambiaron productos y servicios sin dinero,evento,-37.133,-72.0367,Feria del trueque,2025-03-24 07:13
+Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-53.0283,-69.2798,Corte de agua por rotura,2025-07-25 10:23
+Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-44.8686,-61.1917,Protesta de comerciantes,2025-02-14 05:10
+Un colectivo de larga distancia volcó en la banquina sin víctimas fatales,accidente,-48.2415,-58.5441,Vuelco de colectivo,2025-03-20 19:13
+Choque frontal entre dos autos en ruta provincial a la madrugada,accidente,-27.1705,-69.1192,Accidente de tránsito nocturno,2025-07-14 18:03
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-50.3489,-69.2573,Protesta de trabajadores municipales,2025-11-19 10:53
+Sección de puente peatonal cedió por sobrepeso,accidente,-45.2108,-58.6841,Caída de puente peatonal,2025-12-25 18:52
+Una helada fuera de temporada afectó producción vitivinícola,evento,-24.6862,-71.0114,Helada tardía daña viñedos,2025-07-31 00:33
+Fuerte granizada afectó hectáreas de producción agrícola,evento,-32.097,-67.3116,Granizo destruye cultivos,2025-10-20 06:49
+Profesionales de la salud pararon en reclamo de insumos,evento,-27.6667,-54.4953,Paro de médicos en hospital público,2025-04-01 08:30
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-44.796,-58.2215,Feria del libro infantil,2025-12-15 08:27
+Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-23.2723,-61.6375,Caída de árbol sobre auto,2025-12-02 10:54
+Falla en central telefónica dejó sin servicio a zona comercial,cortes,-43.6963,-65.9513,Interrupción telefónica masiva,2025-03-29 10:47
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-42.3592,-67.0189,Festival de cine independiente,2025-12-02 02:31
+Rayos provocaron incendios y cortes de luz en zona rural,evento,-35.2711,-59.2312,Tormenta eléctrica severa,2025-06-21 11:29
+Temperaturas superaron los 40 grados en varias provincias del norte,evento,-29.3969,-60.0403,Ola de calor extremo,2025-05-21 19:17
+Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-51.5502,-71.0029,Feria de ciencias escolar,2025-12-14 19:13
+Estudiantes universitarios tomaron las calles por recortes en educación,evento,-38.0281,-61.7401,Manifestación estudiantil,2025-04-30 13:09
+Más de cien emprendedores locales exhibieron sus productos,evento,-29.5029,-64.6477,Feria de emprendedores,2025-11-16 15:14
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.9823,-67.8522,Derrumbe parcial de edificio,2025-09-17 17:01
+Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-33.5677,-54.089,Corte de ruta por protesta,2025-09-16 05:05
+Músicos locales e internacionales animaron la noche en plaza central,evento,-34.9277,-72.6794,Festival de jazz en plaza,2025-06-25 14:34
+Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-37.8351,-59.0047,Corte de agua por rotura,2025-05-29 03:42
+Mantenimiento de emergencia en planta potabilizadora,cortes,-27.3734,-60.778,Corte de agua en zona industrial,2025-12-23 07:57
+Fuerte granizada afectó hectáreas de producción agrícola,evento,-27.8053,-59.6119,Granizo destruye cultivos,2025-03-11 22:48
+Compañías locales realizaron obras en espacios públicos,evento,-23.9002,-54.0874,Festival de teatro callejero,2025-06-01 08:59
+Falla en sistema de calefacción central de edificios municipales,cortes,-31.1166,-67.3776,Interrupción de agua caliente,2025-12-18 23:32
+Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-42.1952,-59.6384,Incendio en vivienda familiar,2025-05-25 17:38
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-24.1862,-71.4002,Corte de luz por tormenta,2025-04-18 12:50
+El nivel del río superó el umbral de alerta en tres localidades,evento,-51.7484,-61.7252,Crecida del río amenaza pueblos,2025-09-13 14:53
+El nivel del río superó el umbral de alerta en tres localidades,evento,-48.6985,-61.1131,Crecida del río amenaza pueblos,2025-07-03 08:16
+Mantenimiento de emergencia en planta potabilizadora,cortes,-45.1552,-62.4333,Corte de agua en zona industrial,2025-08-25 12:32
+Importante acumulación de nieve cortó pasos montañosos,evento,-39.5242,-63.1265,Nevadas en zona cordillerana,2025-11-24 09:11
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-31.4372,-62.9638,Maratón solidaria,2025-09-12 21:16
+Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-32.0346,-70.8436,Corte de ruta por protesta,2025-07-17 09:34
+Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-33.4009,-64.0751,Manifestación de vecinos,2025-02-28 13:55
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-38.7021,-65.2665,Temporal de viento,2025-02-15 07:01
+La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-48.2157,-64.8481,Corte de gas programado,2025-10-18 15:57
+Sección de puente peatonal cedió por sobrepeso,accidente,-51.0827,-56.0045,Caída de puente peatonal,2025-06-06 22:39
+La empresa anunció corte programado de 6 horas en zona norte,cortes,-34.3692,-69.4457,Corte eléctrico por mantenimiento,2025-05-29 11:35
+Motociclista perdió el control a alta velocidad y resultó herido,accidente,-49.4687,-61.4702,Accidente de moto en autopista,2025-08-16 03:56
+Una explosión en una planta industrial dejó varios heridos y daños materiales,accidente,-43.6965,-53.8344,Explosión en fábrica,2025-09-29 22:15
+Más de cien emprendedores locales exhibieron sus productos,evento,-31.6287,-55.0911,Feria de emprendedores,2025-12-21 01:11
+Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-35.0563,-66.3778,Concierto de folklore,2025-06-04 12:41
+Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-50.722,-67.7092,Apagón por sobrecarga,2025-07-31 15:32
+El nivel del río superó el umbral de alerta en tres localidades,evento,-22.1432,-64.8844,Crecida del río amenaza pueblos,2025-04-14 23:47
+Productores locales ofrecieron frutas y verduras orgánicas,evento,-33.224,-63.3875,Feria agroecológica,2025-12-08 23:28
+Una helada fuera de temporada afectó producción vitivinícola,evento,-42.207,-65.9277,Helada tardía daña viñedos,2025-10-06 01:37
+Estudiantes universitarios tomaron las calles por recortes en educación,evento,-40.3844,-56.2568,Manifestación estudiantil,2025-11-23 20:55
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-51.461,-62.0706,Derrumbe en obra en construcción,2025-04-26 23:06
+Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-29.5814,-69.7436,Concierto de folklore,2025-07-18 19:23
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-52.9,-54.088,Feria de ropa usada,2025-10-31 20:41
+El nivel del río superó el umbral de alerta en tres localidades,evento,-31.1743,-69.5325,Crecida del río amenaza pueblos,2025-09-02 02:48
+Tres vehículos colisionaron por baja visibilidad,accidente,-24.6753,-66.2272,Choque múltiple en niebla,2025-09-07 09:45
+Coleccionistas y curiosos se dieron cita en la feria de objetos vintage,evento,-24.1846,-68.284,Feria de antigüedades,2025-03-20 14:17
+Auto chocó contra barrera de paso a nivel,accidente,-41.1351,-63.7295,Colisión en cruce ferroviario,2025-07-20 21:01
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-42.384,-60.5127,Derrumbe parcial de edificio,2025-06-29 16:11
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-45.5194,-69.3994,Corte de luz por tormenta,2025-12-31 19:10
+Músicos locales e internacionales animaron la noche en plaza central,evento,-44.3715,-65.3986,Festival de jazz en plaza,2025-11-05 05:44
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-43.254,-56.0539,Torneo de ajedrez escolar,2025-10-21 12:51
+Músicos locales e internacionales animaron la noche en plaza central,evento,-49.0503,-70.9463,Festival de jazz en plaza,2025-09-03 18:54
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-34.2139,-71.1774,Maratón solidaria,2025-09-25 09:13
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-43.0944,-72.2999,Derrumbe en obra en construcción,2025-07-05 06:34
+Rayos provocaron incendios y cortes de luz en zona rural,evento,-29.3193,-68.9463,Tormenta eléctrica severa,2025-04-04 23:24
+Activistas reclamaron por la contaminación de un río local,evento,-54.7067,-53.7381,Marcha por el medio ambiente,2025-12-18 21:39
+Profesionales de la salud pararon en reclamo de insumos,evento,-32.3355,-73.2486,Paro de médicos en hospital público,2025-05-23 07:53
+Una helada fuera de temporada afectó producción vitivinícola,evento,-24.6077,-55.6578,Helada tardía daña viñedos,2025-08-28 13:27
+Falla en central telefónica dejó sin servicio a zona comercial,cortes,-26.2291,-63.9392,Interrupción telefónica masiva,2025-10-30 03:49
+Un camión cisterna volcó al tomar mal una rotonda,accidente,-41.6279,-54.8418,Camión volcado en rotonda,2025-09-03 04:53
+Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-45.4773,-72.7267,Corte de agua por obras viales,2025-11-24 15:23
+Excavaciones para ampliación de avenida cortaron cañería principal,cortes,-24.8485,-61.2878,Corte de agua por obras viales,2025-11-13 06:56
+Choferes de colectivos realizaron paro por 24 horas,evento,-28.5877,-68.2021,Paro de transporte público,2025-04-22 02:59
+Profesionales de la salud pararon en reclamo de insumos,evento,-50.4043,-55.8651,Paro de médicos en hospital público,2025-07-05 00:44
+Compañías locales realizaron obras en espacios públicos,evento,-38.0527,-60.4382,Festival de teatro callejero,2025-05-18 16:54
+Se suspendió el servicio por detección de contaminantes en red,cortes,-42.8806,-68.9132,Corte de agua por contaminación,2025-05-05 15:18
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-38.6364,-73.2904,Feria de ropa usada,2025-03-21 20:57
+Un camión cisterna volcó al tomar mal una rotonda,accidente,-40.9018,-71.943,Camión volcado en rotonda,2025-05-24 00:44
+Gran convocatoria en la feria de literatura para niños y jóvenes,evento,-36.8434,-67.0964,Feria del libro infantil,2025-04-08 00:05
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-25.863,-53.8005,Inundación en barrio bajo,2025-05-25 22:30
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-42.3899,-58.5747,Corte de luz por vandalismo,2025-05-17 09:29
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-44.1342,-61.3884,Derrumbe en obra en construcción,2025-04-23 02:56
+Rayos provocaron incendios y cortes de luz en zona rural,evento,-47.2558,-72.5299,Tormenta eléctrica severa,2025-11-11 03:15
+La empresa anunció corte programado de 6 horas en zona norte,cortes,-28.5448,-65.2315,Corte eléctrico por mantenimiento,2025-12-06 21:18
+Un corto circuito desató un incendio que consumió dos habitaciones,accidente,-33.273,-72.7833,Incendio en vivienda familiar,2025-03-06 07:37
+Colisión entre dos camiones de carga en ruta nacional,accidente,-40.8262,-72.9367,Choque entre camiones,2025-09-01 10:16
+Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-27.9494,-56.3749,Manifestación de vecinos,2025-04-28 05:33
+Equipos de toda la provincia compitieron en el torneo regional,evento,-23.7686,-58.4464,Torneo de básquet femenino,2025-09-24 09:36
+Alumnos de secundaria presentaron proyectos científicos innovadores,evento,-46.7906,-54.5747,Feria de ciencias escolar,2025-09-27 18:22
+Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-37.6618,-61.8771,Apagón por sobrecarga,2025-04-30 05:21
+Productores agropecuarios cortaron ruta nacional en reclamo de precios,evento,-28.2467,-69.7133,Corte de ruta por protesta,2025-03-02 19:42
+Un árbol caído por el viento aplastó un vehículo estacionado,accidente,-52.2731,-62.853,Caída de árbol sobre auto,2025-11-25 00:24
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-41.4233,-68.6915,Corte de gas por fuga,2025-10-28 16:45
+Competencia nocturna convocó a más de mil participantes,evento,-50.7034,-54.6427,Maratón nocturna,2025-04-22 20:40
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-51.1758,-57.1384,Corte de luz por vandalismo,2025-09-05 03:01
+Artistas nacionales celebraron el folklore argentino en auditorio municipal,evento,-28.9462,-65.1789,Concierto de folklore,2025-03-12 01:03
+Se suspendió el servicio por detección de contaminantes en red,cortes,-28.5069,-62.9543,Corte de agua por contaminación,2025-11-06 16:30
+Se suspendió el servicio por detección de contaminantes en red,cortes,-50.5918,-60.3828,Corte de agua por contaminación,2025-07-19 07:06
+Técnicos cortaron el suministro ante una fuga en red secundaria,cortes,-53.9693,-61.5454,Corte de gas por fuga,2025-12-04 14:17
+Vecinos cortaron calle para reclamar por baches y falta de alumbrado,evento,-22.7949,-58.492,Manifestación de vecinos,2025-06-14 02:18
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-46.8477,-69.5606,Sequía afecta ganadería,2025-08-04 17:30
+Importante acumulación de nieve cortó pasos montañosos,evento,-22.5918,-65.3725,Nevadas en zona cordillerana,2025-06-07 20:41
+Músicos locales e internacionales animaron la noche en plaza central,evento,-25.1986,-69.9879,Festival de jazz en plaza,2025-06-01 08:31
+Un camión quedó atrapado en las vías y fue embestido por un tren,accidente,-39.55,-54.7008,Choque tren-camión,2025-12-01 02:38
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-27.1942,-56.5435,Maratón solidaria,2025-05-26 07:13
+Empleados municipales realizaron huelga por incumplimiento de paritarias,evento,-38.6235,-57.3213,Protesta de trabajadores municipales,2025-10-30 09:36
+Músicos locales e internacionales animaron la noche en plaza central,evento,-39.9557,-62.786,Festival de jazz en plaza,2025-04-14 00:16
+Exceso de demanda eléctrica provocó corte en varios barrios,cortes,-48.2145,-61.3126,Apagón por sobrecarga,2025-07-24 08:42
+Ráfagas de hasta 100 km/h volaron techos y derribaron postes,evento,-30.0758,-67.9582,Temporal de viento,2025-09-12 10:19
+Compañías locales realizaron obras en espacios públicos,evento,-30.0679,-67.9176,Festival de teatro callejero,2025-06-28 15:23
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-24.0787,-70.225,Torneo de ajedrez escolar,2025-11-08 15:27
+Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-24.2448,-63.5468,Corte de agua por rotura,2025-11-06 06:25
+Un andamio colapsó en una obra en construcción hiriendo a dos operarios,accidente,-27.3195,-63.0671,Derrumbe en obra en construcción,2025-03-10 16:42
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-43.8336,-60.0639,Corte de luz por vandalismo,2025-03-30 13:48
+Estudiantes de primaria y secundaria compitieron en torneo municipal,evento,-31.8242,-53.7357,Torneo de ajedrez escolar,2025-06-24 18:35
+Falta de lluvias complica producción ganadera en zona semiárida,evento,-54.4699,-66.8813,Sequía afecta ganadería,2025-11-01 18:58
+Auto chocó contra barrera de paso a nivel,accidente,-39.0982,-54.16,Colisión en cruce ferroviario,2025-04-02 05:48
+Sección de puente peatonal cedió por sobrepeso,accidente,-46.904,-67.0117,Caída de puente peatonal,2025-09-26 16:40
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-41.2452,-64.0218,Inundación en barrio bajo,2025-05-09 10:53
+Tres vehículos colisionaron por baja visibilidad,accidente,-47.8838,-56.8833,Choque múltiple en niebla,2025-02-23 04:23
+Fuertes vientos derribaron postes dejando sin luz a miles de hogares,cortes,-33.3059,-64.6925,Corte de luz por tormenta,2025-06-16 23:54
+Colisión entre dos camiones de carga en ruta nacional,accidente,-25.2407,-58.0832,Choque entre camiones,2025-03-25 11:45
+Un edificio antiguo sufrió un derrumbe parcial en su fachada,accidente,-38.9188,-59.0248,Derrumbe parcial de edificio,2025-07-23 08:29
+Maestros marcharon al ministerio reclamando mejoras salariales,evento,-52.5262,-55.307,Protesta de docentes,2025-02-23 07:40
+Maestros marcharon al ministerio reclamando mejoras salariales,evento,-37.587,-56.0583,Protesta de docentes,2025-03-02 15:31
+Vecinos y artistas pintaron un mural en la pared de la escuela,evento,-36.3108,-66.5467,Inauguración de mural comunitario,2025-10-23 04:16
+Robo de cables dejó sin electricidad a todo un barrio,cortes,-22.6084,-57.9489,Corte de luz por vandalismo,2025-07-05 22:56
+Vecinos intercambiaron productos y servicios sin dinero,evento,-45.6185,-66.7165,Feria del trueque,2025-04-24 06:48
+Una rotura en cañería maestra dejó sin agua a varios barrios,cortes,-28.8273,-57.4253,Corte de agua por rotura,2025-04-30 05:46
+Proyecciones al aire libre de cortometrajes nacionales e internacionales,evento,-27.178,-65.9097,Festival de cine independiente,2025-05-23 12:46
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-48.1371,-57.1445,Feria de ropa usada,2025-05-21 05:38
+Mantenimiento de emergencia en planta potabilizadora,cortes,-50.4335,-60.4693,Corte de agua en zona industrial,2025-12-04 15:39
+Gran cantidad de ropa de segunda mano a precios accesibles,evento,-32.0402,-59.9857,Feria de ropa usada,2025-06-19 02:21
+Un depósito de materiales inflamables se incendió en zona industrial,accidente,-46.1728,-54.4067,Incendio en depósito,2025-11-21 22:19
+Falla en sistema de calefacción central de edificios municipales,cortes,-43.3743,-64.0944,Interrupción de agua caliente,2025-12-28 21:24
+La empresa distribuidora realizó corte para mantenimiento preventivo,cortes,-39.8989,-59.6298,Corte de gas programado,2025-07-24 05:27
+La empresa anunció corte programado de 6 horas en zona norte,cortes,-36.8907,-60.2411,Corte eléctrico por mantenimiento,2025-08-08 18:24
+Granizo dañó líneas de alta tensión dejando pueblos sin electricidad,cortes,-33.4763,-73.2468,Corte de luz en zona rural,2025-02-25 21:58
+La empresa anunció corte programado de 6 horas en zona norte,cortes,-36.7929,-58.1091,Corte eléctrico por mantenimiento,2025-04-12 12:31
+Falla en sistema de calefacción central de edificios municipales,cortes,-27.5288,-55.2505,Interrupción de agua caliente,2025-11-30 22:40
+Comerciantes del centro cerraron sus negocios en señal de protesta,evento,-33.3085,-55.3117,Protesta de comerciantes,2025-02-28 14:26
+Importante acumulación de nieve cortó pasos montañosos,evento,-44.7436,-70.2214,Nevadas en zona cordillerana,2025-11-06 12:44
+Cientos de corredores participaron en carrera a beneficio de un hospital,evento,-54.0348,-66.7102,Maratón solidaria,2025-05-30 20:51
+Equipos de distintos barrios disputaron el torneo de verano,evento,-52.8919,-58.1507,Torneo de fútbol barrial,2025-08-05 15:04
+Lluvias intensas anegaron calles y viviendas en zona inundable,evento,-54.6412,-59.9129,Inundación en barrio bajo,2025-06-30 00:38
+Maestros marcharon al ministerio reclamando mejoras salariales,evento,-29.2842,-61.4899,Protesta de docentes,2025-03-21 13:30
+Muestra de fotógrafos locales sobre paisajes patagónicos,evento,-47.8749,-59.4175,Exposición de fotografía,2025-05-06 10:00

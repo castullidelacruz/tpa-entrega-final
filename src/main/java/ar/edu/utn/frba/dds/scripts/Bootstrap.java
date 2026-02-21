@@ -51,20 +51,31 @@ public class Bootstrap implements WithSimplePersistenceUnit {
           .getResultList();
 
       FuenteDinamica fuenteAsociada;
-      Fuente dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
-      repositorioFuentes.registrarFuente(dataset);
-      List<Hecho> hechosDataset = dataset.getHechos();
 
-      //repositorioHechos.cargarHecho(hechosDataset.get(0));
-      /*
-      while (!hechosDataset.isEmpty()) {
-        repositorioHechos.cargarHecho(hechosDataset.remove(0));
-      }
+      /* =======================
+   SEED DATASET (SOLO UNA VEZ)
+   ======================= */
 
-       */
+      Long cantidadHechosDataset = entityManager()
+          .createQuery("SELECT COUNT(h) FROM Hecho h WHERE h.origen = :origen", Long.class)
+          .setParameter("origen", TipoFuente.DATASET)
+          .getSingleResult();
 
-      for (Hecho h : hechosDataset) {
-        repositorioHechos.cargarHecho(h);
+      if (cantidadHechosDataset == 0) {
+
+        Fuente dataset = new FuenteDataSet("hechos_argentina.csv","yyyy-MM-dd HH:mm",',');
+        repositorioFuentes.registrarFuente(dataset);
+
+        List<Hecho> hechosDataset = dataset.getHechos();
+
+        for (Hecho h : hechosDataset) {
+          repositorioHechos.cargarHecho(h);
+        }
+
+        System.out.println("Seeder DATASET ejecutado");
+
+      } else {
+        System.out.println("Seeder DATASET omitido - ya existen datos");
       }
 
       if (fuentesDinamicas.isEmpty()) {
